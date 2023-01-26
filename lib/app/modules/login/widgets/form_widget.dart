@@ -128,7 +128,6 @@ class _FormWidgetState extends State<FormWidget> {
                 ),
               ],
             ),
-            const SizedBox(height: 15.0),
             Container(
               decoration: HelperTheme().buttonBoxDecoration(),
               width: controller.buttonwidth,
@@ -150,7 +149,7 @@ class _FormWidgetState extends State<FormWidget> {
                   }),
             ),
             Container(
-              margin: const EdgeInsets.fromLTRB(10, 20, 10, 10),
+              margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: Text.rich(
                 TextSpan(
                   children: [
@@ -161,14 +160,11 @@ class _FormWidgetState extends State<FormWidget> {
                 ),
               ),
             ),
-            Container(
-              margin: const EdgeInsets.fromLTRB(10, 20, 10, 20),
-              child: const Center(
-                child: Image(
-                    image: AssetImage('assets/images/azzorti_login.png'),
-                    width: 75,
-                    height: 75),
-              ),
+            const Center(
+              child: Image(
+                  image: AssetImage('assets/images/azzorti_login.png'),
+                  width: 80,
+                  height: 80),
             ),
           ],
         ),

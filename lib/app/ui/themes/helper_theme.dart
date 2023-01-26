@@ -276,16 +276,7 @@ class HelperTheme {
       boxShadow: const [
         BoxShadow(color: Colors.black26, offset: Offset(0, 4), blurRadius: 5.0)
       ],
-      gradient: const LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        stops: [0.0, 1.0],
-        colors: [
-          primary,
-          secondary,
-        ],
-      ),
-      color: Colors.yellow.shade300,
+      color: primary,
       borderRadius: BorderRadius.circular(10),
     );
   }

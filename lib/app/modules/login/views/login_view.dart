@@ -12,28 +12,35 @@ class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HelperTheme.primary,
-      body: Stack(
-        children: [
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: controller.headerHeight,
-                  child: const HeaderWidget(),
+      backgroundColor: HelperTheme.white,
+      body: Center(
+        child: Stack(
+          children: [
+            SingleChildScrollView(
+              child: Container(
+                decoration: HelperTheme().buttonBoxDecoration(),
+                //color: HelperTheme.primary,
+                margin: const EdgeInsets.fromLTRB(25, 0, 25, 0),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: controller.headerHeight,
+                      child: const HeaderWidget(),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+                      child: Column(
+                        children: const [
+                          FormWidget(),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-                Container(
-                  margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                  child: Column(
-                    children: const [
-                      FormWidget(),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          )
-        ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
