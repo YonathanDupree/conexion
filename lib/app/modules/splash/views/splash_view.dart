@@ -11,7 +11,7 @@ class SplashView extends GetView<SplashController> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: HelperTheme.primary,
+        backgroundColor: HelperTheme.white,
         body: Container(
           width: double.infinity,
           color: Colors.transparent,

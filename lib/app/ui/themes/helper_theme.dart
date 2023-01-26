@@ -52,7 +52,7 @@ class HelperTheme {
 
   static const TextStyle textButtonBlackXl = TextStyle(
     fontFamily: fontName,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.bold,
     fontSize: 20,
     color: black,
   );
@@ -90,6 +90,14 @@ class HelperTheme {
     fontWeight: FontWeight.w400,
     fontSize: 18,
     color: white,
+  );
+
+  static const TextStyle subTitleBlack = TextStyle(
+    fontFamily: fontName,
+    fontWeight: FontWeight.bold,
+    fontSize: 16,
+    letterSpacing: 0.18,
+    color: black,
   );
 
   static const TextStyle subTitleLigh = TextStyle(
@@ -179,7 +187,14 @@ class HelperTheme {
     letterSpacing: 0.18,
     color: black,
   );
-
+  static const TextStyle labelBlackLgUnder = TextStyle(
+    fontFamily: fontName,
+    fontWeight: FontWeight.bold,
+    fontSize: 16,
+    letterSpacing: 0.18,
+    color: black,
+    decoration: TextDecoration.underline,
+  );
   static const TextStyle labelWhiteMd = TextStyle(
     fontFamily: fontName,
     fontWeight: FontWeight.w400,
@@ -187,6 +202,7 @@ class HelperTheme {
     letterSpacing: 0.18,
     color: white,
   );
+
   static const TextStyle labelLightMd = TextStyle(
     fontFamily: fontName,
     fontWeight: FontWeight.w400,
@@ -301,8 +317,8 @@ class HelperTheme {
         ),
       ),
       minimumSize: MaterialStateProperty.all(const Size(50, 50)),
-      backgroundColor: MaterialStateProperty.all(primary),
-      shadowColor: MaterialStateProperty.all(primary),
+      backgroundColor: MaterialStateProperty.all(white),
+      shadowColor: MaterialStateProperty.all(black),
     );
   }
 

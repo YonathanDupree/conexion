@@ -6,6 +6,7 @@ import 'package:get_storage/get_storage.dart';
 
 import 'app/modules/splash/bindings/splash_binding.dart';
 import 'app/routes/app_pages.dart';
+import 'app/translations/app_translations.dart';
 
 Future<void> main() async {
   await GetStorage.init();
@@ -19,6 +20,7 @@ Future<void> main() async {
 
   runApp(
     GetMaterialApp(
+      translationsKeys: AppTranslation.translations,
       locale: locale,
       debugShowCheckedModeBanner: false,
       initialRoute: AppPages.INITIAL,
