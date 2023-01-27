@@ -148,6 +148,7 @@ class _FormWidgetState extends State<FormWidget> {
                     await controller.login(loginFormKey);
                   }),
             ),
+            const SizedBox(height: 15.0),
             Container(
               margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: Text.rich(

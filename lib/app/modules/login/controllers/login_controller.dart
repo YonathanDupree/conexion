@@ -5,7 +5,7 @@ import 'package:get_storage/get_storage.dart';
 class LoginController extends GetxController {
   //TODO: Implement LoginController
 
-  double headerHeight = 250;
+  double headerHeight = 225;
   double buttonwidth = 200;
   GetStorage box = GetStorage();
   RxString selectedCountry = "".obs;

@@ -20,7 +20,7 @@ class LoginView extends GetView<LoginController> {
               child: Container(
                 decoration: HelperTheme().buttonBoxDecoration(),
                 //color: HelperTheme.primary,
-                margin: const EdgeInsets.fromLTRB(25, 0, 25, 0),
+                margin: const EdgeInsets.fromLTRB(30, 0, 30, 0),
                 child: Column(
                   children: [
                     SizedBox(
