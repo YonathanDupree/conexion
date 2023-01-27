@@ -67,8 +67,8 @@ class LoginController extends GetxController {
     usernameFocusNode.unfocus();
     passwordFocusNode.unfocus();
     if (validation) {
-      /*_dialog.dialogProgress("Validando acceso");
-      try {
+      //_dialog.dialogProgress("Validando acceso");
+      /*try {
         UserModel data = await repository.getUser(
             usernameController.text, passwordController.text);
         title = "Notificación";

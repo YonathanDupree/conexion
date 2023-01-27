@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:conexion/app/ui/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +10,15 @@ import 'app/modules/splash/bindings/splash_binding.dart';
 import 'app/routes/app_pages.dart';
 import 'app/translations/app_translations.dart';
 
+class PostHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
+}
+
 Future<void> main() async {
   await GetStorage.init();
   GetStorage box = GetStorage();
@@ -17,6 +28,7 @@ Future<void> main() async {
   if (lang != null) {
     locale = Locale('es', lang);
   }
+  HttpOverrides.global = PostHttpOverrides();
 
   runApp(
     GetMaterialApp(

@@ -13,7 +13,7 @@ final Map<String, String> esPE = {
   'login_enter': 'Entrar',
   'login_remember': 'Recordar usuario',
   'login_version': 'Versión',
-  'login_olvide_password': 'Olvidé mi contraseña',
+  'login_forget_password': 'Olvidé mi contraseña',
   'home_gps_message':
       'El gps esta deshabilitado, por favor habilitarlo para poder continuar.',
   'home_search': 'Buscar pedido',

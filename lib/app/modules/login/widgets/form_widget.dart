@@ -25,6 +25,7 @@ class _FormWidgetState extends State<FormWidget> {
               controller: controller.usernameController,
               focusNode: controller.usernameFocusNode,
               autocorrect: false,
+              keyboardType: TextInputType.text,
               decoration: HelperTheme().textInputDecoration(
                 'login_username'.tr,
                 'login_enter_username'.tr,
@@ -155,7 +156,7 @@ class _FormWidgetState extends State<FormWidget> {
                 TextSpan(
                   children: [
                     TextSpan(
-                        text: "login_olvide_password".tr,
+                        text: "login_forget_password".tr,
                         style: HelperTheme.labelBlackLgUnder),
                   ],
                 ),
