@@ -1,0 +1,21 @@
+{
+    "login": {
+        "title": "Bienvenidos",
+        "username": "Usuario",
+        "enter_username": "Ingresar usuario",
+        "validator_username": "Campo usuario obligatorio",
+        "password": "Contraseña",
+        "validator_password": "Campo contraseña obligatorio",
+        "enter_password": "Ingresar contraseña",
+        "country": "Marca",
+        "validator_country": "Campo marca obligatorio",
+        "enter_country": "Seleccionar marca",
+        "enter": "Entrar",
+        "remember": "Recordar usuario",
+        "version": "Versión",
+        "forget_password": "Olvidé mi contraseña"
+    },
+    "home": {
+        "name": "Nombre"
+    }
+}

@@ -8,7 +8,7 @@ import 'package:get_storage/get_storage.dart';
 
 import 'app/modules/splash/bindings/splash_binding.dart';
 import 'app/routes/app_pages.dart';
-import 'app/translations/app_translations.dart';
+import 'generated/locales.g.dart';
 
 class PostHttpOverrides extends HttpOverrides {
   @override
