@@ -22,6 +22,5 @@ class HeaderWidget extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

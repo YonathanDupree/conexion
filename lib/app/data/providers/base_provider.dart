@@ -4,11 +4,11 @@ class BaseProvider {
   GetStorage box = GetStorage();
   late String BASE_URL;
 
-  /*static const BASE_URL_PE   = "servicioweb2per.azzorti.co";
-    static const BASE_URL_LIPE = "servicioweb2livper.azzorti.co";*/
+  static const BASE_URL_PE = "servicioweb2per.azzorti.co";
+  static const BASE_URL_LIPE = "servicioweb2livper.azzorti.co";
 
-  static const BASE_URL_PE = "servicioweb.dupree.pe";
-  static const BASE_URL_LIPE = "servicioweb.livva.pe";
+  /*static const BASE_URL_PE = "https://servicioweb.dupree.pe";
+  static const BASE_URL_LIPE = "https://servicioweb.livva.pe";*/
 
   BaseProvider() {
     final lang = box.read("lang");

@@ -22,7 +22,7 @@ class _FormWidgetState extends State<FormWidget> {
         child: Column(
           children: [
             TextFormField(
-              controller: controller.usernameController,
+              controller: controller.codiUsuaController,
               focusNode: controller.usernameFocusNode,
               autocorrect: false,
               keyboardType: TextInputType.text,
@@ -34,7 +34,7 @@ class _FormWidgetState extends State<FormWidget> {
             ),
             const SizedBox(height: 15.0),
             TextFormField(
-              controller: controller.passwordController,
+              controller: controller.clavUsuaController,
               focusNode: controller.passwordFocusNode,
               autocorrect: false,
               obscureText: true,

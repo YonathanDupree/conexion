@@ -1,9 +1,15 @@
+import 'package:conexion/app/modules/login/providers/user_provider.dart';
+import 'package:conexion/app/modules/login/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
+import '../../../routes/app_pages.dart';
+
 class LoginController extends GetxController {
   //TODO: Implement LoginController
+
+  final UserProvider provider = UserProvider();
 
   double headerHeight = 225;
   double buttonwidth = 200;
@@ -12,8 +18,8 @@ class LoginController extends GetxController {
   RxBool isChecked = true.obs;
   RxString versionName = "".obs;
 
-  final usernameController = TextEditingController();
-  final passwordController = TextEditingController();
+  final codiUsuaController = TextEditingController();
+  final clavUsuaController = TextEditingController();
 
   FocusNode usernameFocusNode = FocusNode();
   FocusNode passwordFocusNode = FocusNode();
@@ -52,8 +58,6 @@ class LoginController extends GetxController {
   }
 
   String? validatorCountry(String value) {
-    print("acas");
-
     if (value == "null" || value == '') {
       return 'login_validator_country'.tr;
     }
@@ -66,35 +70,35 @@ class LoginController extends GetxController {
     late String message;
     usernameFocusNode.unfocus();
     passwordFocusNode.unfocus();
+
     if (validation) {
       //_dialog.dialogProgress("Validando acceso");
-      /*try {
-        UserModel data = await repository.getUser(
-            usernameController.text, passwordController.text);
+      try {
+        User? data = await provider.getUser(
+            codiUsuaController.text, clavUsuaController.text);
         title = "Notificación";
-        message = 'Bienvenido ${data.nombEmpl.toString().capitalizeFirst}';
-        _dialog.dialogClose();
-        SnackbarUtil().snackbarSuccess(title, message);
+        message = 'Bienvenido ${data?.nombEmpl.toString().capitalizeFirst}';
+        print(data?.apelEmpl);
+
+        //message = 'Bienvenido ${data.nombEmpl.toString().capitalizeFirst}';
+        //_dialog.dialogClose();
+        //SnackbarUtil().snackbarSuccess(title, message);
         if (isChecked.value) {
-          box.write("username", usernameController.text);
-          box.write("password", passwordController.text);
+          box.write("codiUsua", codiUsuaController.text);
+          box.write("clavUsua", clavUsuaController.text);
         } else {
-          box.remove('username');
-          box.remove('password');
+          box.remove('codiUsua');
+          box.remove('clavUsua');
         }
-        box.write("isLogin", data.tipoVinc);
-        box.write("codi_usua", usernameController.text);
-        if (data.tipoVinc == 'M') {
-          Get.toNamed("/massive");
-        } else {
-          Get.toNamed("/main");
-        }
+        box.write("isLogin", "S");
+
+        Get.offAndToNamed(Routes.HOME);
       } catch (error) {
         title = "Error";
         message = error.toString();
-        _dialog.dialogClose();
-        SnackbarUtil().snackbarError(title, message);
-      }*/
+        //_dialog.dialogClose();
+        //SnackbarUtil().snackbarError(title, message);
+      }
     }
   }
 
