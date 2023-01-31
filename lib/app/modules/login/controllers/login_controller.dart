@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 import '../../../routes/app_pages.dart';
+import '../../../ui/utils/dialog_util.dart';
+import '../../../ui/utils/snackbar_util.dart';
 
 class LoginController extends GetxController {
   //TODO: Implement LoginController
@@ -17,6 +19,7 @@ class LoginController extends GetxController {
   RxString selectedCountry = "".obs;
   RxBool isChecked = true.obs;
   RxString versionName = "".obs;
+  final _dialog = DialogUtil();
 
   final codiUsuaController = TextEditingController();
   final clavUsuaController = TextEditingController();
@@ -72,17 +75,14 @@ class LoginController extends GetxController {
     passwordFocusNode.unfocus();
 
     if (validation) {
-      //_dialog.dialogProgress("Validando acceso");
+      _dialog.dialogProgress("Validando acceso");
       try {
         User? data = await provider.getUser(
             codiUsuaController.text, clavUsuaController.text);
         title = "Notificación";
         message = 'Bienvenido ${data?.nombEmpl.toString().capitalizeFirst}';
-        print(data?.apelEmpl);
-
-        //message = 'Bienvenido ${data.nombEmpl.toString().capitalizeFirst}';
-        //_dialog.dialogClose();
-        //SnackbarUtil().snackbarSuccess(title, message);
+        _dialog.dialogClose();
+        SnackbarUtil().snackbarSuccess(title, message);
         if (isChecked.value) {
           box.write("codiUsua", codiUsuaController.text);
           box.write("clavUsua", clavUsuaController.text);
@@ -96,8 +96,8 @@ class LoginController extends GetxController {
       } catch (error) {
         title = "Error";
         message = error.toString();
-        //_dialog.dialogClose();
-        //SnackbarUtil().snackbarError(title, message);
+        _dialog.dialogClose();
+        SnackbarUtil().snackbarError(title, message);
       }
     }
   }
@@ -108,6 +108,9 @@ class LoginController extends GetxController {
 
   @override
   void onInit() {
+    selectedCountry.value = box.read("country") ?? '';
+    codiUsuaController.text = box.read("codiUsua") ?? '';
+    clavUsuaController.text = box.read("clavUsua") ?? '';
     super.onInit();
   }
 
