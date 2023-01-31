@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-import '../modules/forget/bindings/forget_binding.dart';
-import '../modules/forget/views/forget_view.dart';
+import '../modules/forgot/bindings/forgot_binding.dart';
+import '../modules/forgot/views/forgot_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -33,9 +33,9 @@ class AppPages {
       binding: LoginBinding(),
     ),
     GetPage(
-      name: _Paths.FORGET,
-      page: () => const ForgetView(),
-      binding: ForgetBinding(),
+      name: _Paths.FORGOT,
+      page: () => const ForgotView(),
+      binding: ForgotBinding(),
     ),
   ];
 }

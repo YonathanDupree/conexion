@@ -313,6 +313,19 @@ class HelperTheme {
     );
   }
 
+  ButtonStyle buttonStyleForgot() {
+    return ButtonStyle(
+      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
+      minimumSize: MaterialStateProperty.all(const Size(50, 50)),
+      backgroundColor: MaterialStateProperty.all(primary),
+      shadowColor: MaterialStateProperty.all(black),
+    );
+  }
+
   ButtonStyle buttonStyleplatform() {
     return ButtonStyle(
       shape: MaterialStateProperty.all<RoundedRectangleBorder>(

@@ -26,6 +26,23 @@ class LocaleKeys {
   static const login_version = 'login_version';
   static const login_forget_password = 'login_forget_password';
   static const home_name = 'home_name';
+  static const login_forgot_password = 'login_forgot_password';
+  static const forgot_title = 'forgot_title';
+  static const forgot_subtitle = 'forgot_subtitle';
+  static const forgot_confirm_forgot = 'forgot_confirm_forgot';
+  static const forgot_identity = 'forgot_identity';
+  static const forgot_enter_identity = 'forgot_enter_identity';
+  static const forgot_password = 'forgot_password';
+  static const forgot_enter_password = 'forgot_enter_password';
+  static const forgot_confirm_password = 'forgot_confirm_password';
+  static const forgot_confirm_enter_password = 'forgot_confirm_enter_password';
+  static const forgot_next = 'forgot_next';
+  static const forgot_validator_identity = 'forgot_validator_identity';
+  static const forgot_validator_number_identity =
+      'forgot_validator_number_identity';
+  static const forgot_validator_password = 'forgot_validator_password';
+  static const forgot_validator_confirm_password =
+      'forgot_validator_confirm_password';
 }
 
 class Locales {
@@ -60,7 +77,24 @@ class Locales {
     'login_enter': 'Entrar',
     'login_remember': 'Recordar usuario',
     'login_version': 'Versión',
-    'login_forget_password': 'Olvidé mi contraseña',
+    'login_forgot_password': 'Olvidé mi contraseña',
     'home_name': 'Nombre',
+    'forgot_title': 'Recuperar contraseña',
+    'forgot_subtitle':
+        'Para actualizar la contraseña debes colocar tu número de DNI y luego la nueva contraseña.',
+    'forgot_confirm_forgot':
+        'Tu contraseña se ha generado, ahora puedes usarla solo y exclusivamente para ingresar a la app de conexión.',
+    'forgot_identity': 'DNI',
+    'forgot_enter_identity': 'Ingresar DNI',
+    'forgot_password': 'Contraseña nueva',
+    'forgot_enter_password': 'Ingresar contraseña',
+    'forgot_confirm_password': 'Confirmar contraseña nueva',
+    'forgot_confirm_enter_password': 'Ingresar contraseña',
+    'forgot_next': 'Recuperar contraseña',
+    'forgot_validator_identity': 'Campo DNI obligatorio.',
+    'forgot_validator_number_identity': 'Campo DNI debe ser numérico.',
+    'forgot_validator_password': 'Campo contraseña obligatorio.',
+    'forgot_validator_confirm_password':
+        'Campo confirmar contraseña obligatorio.',
   };
 }

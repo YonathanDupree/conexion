@@ -51,4 +51,31 @@ class SnackbarUtil {
       ),
     );
   }
+
+  void snackbarInfo(String title, String message) {
+    Get.snackbar(
+      title,
+      message,
+      snackPosition: SnackPosition.BOTTOM,
+      icon: const Icon(
+        Icons.info_outline_rounded,
+        color: Colors.white,
+        size: 40,
+      ),
+      colorText: Colors.white,
+      backgroundColor: Colors.green[400],
+      borderColor: Colors.green[900],
+      borderWidth: 1,
+      borderRadius: 10,
+      margin: const EdgeInsets.only(
+        left: 10,
+        right: 10,
+        bottom: 10,
+      ),
+      duration: const Duration(seconds: 15),
+      isDismissible: true,
+      dismissDirection: DismissDirection.endToStart,
+      forwardAnimationCurve: Curves.easeOutBack,
+    );
+  }
 }

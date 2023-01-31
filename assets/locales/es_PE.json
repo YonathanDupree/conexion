@@ -13,9 +13,25 @@
         "enter": "Entrar",
         "remember": "Recordar usuario",
         "version": "Versión",
-        "forget_password": "Olvidé mi contraseña"
+        "forgot_password": "Olvidé mi contraseña"
     },
     "home": {
         "name": "Nombre"
+    },
+    "forgot": {
+        "title": "Recuperar contraseña",
+        "subtitle": "Para actualizar la contraseña debes colocar tu número de DNI y luego la nueva contraseña.",
+        "confirm_forgot": "Tu contraseña se ha generado, ahora puedes usarla solo y exclusivamente para ingresar a la app de conexión.",
+        "identity": "DNI",
+        "enter_identity": "Ingresar DNI",
+        "password": "Contraseña nueva",
+        "enter_password": "Ingresar contraseña",
+        "confirm_password": "Confirmar contraseña nueva",
+        "confirm_enter_password": "Ingresar contraseña",
+        "next": "Recuperar contraseña",
+        "validator_identity": "Campo DNI obligatorio.",
+        "validator_number_identity": "Campo DNI debe ser numérico.",
+        "validator_password": "Campo contraseña obligatorio.",
+        "validator_confirm_password": "Campo confirmar contraseña obligatorio."
     }
 }

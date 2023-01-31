@@ -153,9 +153,7 @@ class _FormWidgetState extends State<FormWidget> {
             const SizedBox(height: 15.0),
             GestureDetector(
               onTap: () async {
-                print("object");
-                //Get.offAndToNamed(Routes.FORGET);
-                Get.toNamed(Routes.FORGET);
+                Get.toNamed(Routes.FORGOT);
               },
               child: Container(
                 margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
@@ -163,7 +161,7 @@ class _FormWidgetState extends State<FormWidget> {
                   TextSpan(
                     children: [
                       TextSpan(
-                          text: "login_forget_password".tr,
+                          text: "login_forgot_password".tr,
                           style: HelperTheme.labelBlackLgUnder),
                     ],
                   ),
