@@ -15,11 +15,13 @@ class SplashController extends GetxController {
   onReady() async {
     final isLogin = box.read("isLogin");
     await 4.delay();
+    print("entro");
+    print(isLogin);
+    print("paso");
     if (isLogin == null) {
       Get.offAndToNamed(Routes.LOGIN);
     } else {
-      //Get.offAndToNamed(Routes.HOME);
-      Get.offAndToNamed(Routes.LOGIN);
+      Get.offAndToNamed(Routes.HOME);
     }
     super.onReady();
   }
