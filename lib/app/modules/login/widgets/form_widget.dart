@@ -2,6 +2,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../../../ui/themes/helper_theme.dart';
 import '../controllers/login_controller.dart';
 
@@ -150,15 +151,22 @@ class _FormWidgetState extends State<FormWidget> {
                   }),
             ),
             const SizedBox(height: 15.0),
-            Container(
-              margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: Text.rich(
-                TextSpan(
-                  children: [
-                    TextSpan(
-                        text: "login_forget_password".tr,
-                        style: HelperTheme.labelBlackLgUnder),
-                  ],
+            GestureDetector(
+              onTap: () async {
+                print("object");
+                //Get.offAndToNamed(Routes.FORGET);
+                Get.toNamed(Routes.FORGET);
+              },
+              child: Container(
+                margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+                child: Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                          text: "login_forget_password".tr,
+                          style: HelperTheme.labelBlackLgUnder),
+                    ],
+                  ),
                 ),
               ),
             ),
