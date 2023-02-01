@@ -1,11 +1,17 @@
 import 'package:get/get.dart';
 
+import '../modules/contact/bindings/contact_binding.dart';
+import '../modules/contact/views/contact_view.dart';
+import '../modules/coupon/bindings/coupon_binding.dart';
+import '../modules/coupon/views/coupon_view.dart';
 import '../modules/forgot/bindings/forgot_binding.dart';
 import '../modules/forgot/views/forgot_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/profile/bindings/profile_binding.dart';
+import '../modules/profile/views/profile_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 
@@ -36,6 +42,21 @@ class AppPages {
       name: _Paths.FORGOT,
       page: () => const ForgotView(),
       binding: ForgotBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE,
+      page: () => const ProfileView(),
+      binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.COUPON,
+      page: () => const CouponView(),
+      binding: CouponBinding(),
+    ),
+    GetPage(
+      name: _Paths.CONTACT,
+      page: () => const ContactView(),
+      binding: ContactBinding(),
     ),
   ];
 }
