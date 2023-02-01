@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:get/get.dart';
 import 'dart:convert';
 
@@ -24,27 +26,34 @@ class UserProvider extends GetConnect {
   Future<User?> getUser(String codiUsua, String clavUsua) async {
     User user = User();
 
-    final response = await http
-        .post(
-      Uri.https(BaseProvider().BASE_URL, '/hmvc/cone/api/login'),
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
-      body: jsonEncode(
-          <String, String>{'codi_usua': codiUsua, 'clav_usua': clavUsua}),
-    )
-        .timeout(const Duration(seconds: 120), onTimeout: () {
-      throw ('Error en tiempo de espera, Por favor intentalo nuevamente!');
-    });
+    try {
+      final response = await http
+          .post(
+        Uri.https(BaseProvider().BASE_URL, '/hmvc/cone/api/login'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(
+            <String, String>{'codi_usua': codiUsua, 'clav_usua': clavUsua}),
+      )
+          .timeout(const Duration(seconds: 120), onTimeout: () {
+        throw ('Error en tiempo de espera, Por favor intentalo nuevamente!');
+      });
 
-    var responseJson = jsonDecode(response.body);
-    switch (response.statusCode) {
-      case 200:
-        user = User.fromJson(responseJson["data"]);
-        break;
-      case 404:
-        throw (responseJson["message"]);
+      var responseJson = jsonDecode(response.body);
+      switch (response.statusCode) {
+        case 200:
+          user = User.fromJson(responseJson["data"]);
+          break;
+        case 404:
+          throw (responseJson["message"]);
+      }
+    } on SocketException {
+      throw ('Error de conexión con el servidor.');
+    } on FormatException {
+      throw ('Error en el formato del servicio.');
     }
+
     return user;
   }
 

@@ -43,6 +43,8 @@ class LocaleKeys {
   static const forgot_validator_password = 'forgot_validator_password';
   static const forgot_validator_confirm_password =
       'forgot_validator_confirm_password';
+  static const forgot_validator_special_characters =
+      'forgot_validator_special_characters';
 }
 
 class Locales {
@@ -96,5 +98,7 @@ class Locales {
     'forgot_validator_password': 'Campo contraseña obligatorio.',
     'forgot_validator_confirm_password':
         'Campo confirmar contraseña obligatorio.',
+    'forgot_validator_special_characters':
+        'La contraseña no debe contener caracteres especiales.',
   };
 }

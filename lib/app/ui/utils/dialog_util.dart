@@ -32,4 +32,8 @@ class DialogUtil {
   void dialogClose() {
     Get.back(closeOverlays: true);
   }
+
+  void dialogCloseError() {
+    Get.back();
+  }
 }

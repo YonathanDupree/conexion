@@ -3,9 +3,12 @@ import 'package:get/get.dart';
 
 import '../../../ui/utils/dialog_util.dart';
 import '../../../ui/utils/snackbar_util.dart';
+import '../providers/forgot_provider.dart';
 
 class ForgotController extends GetxController {
   //TODO: Implement ForgotController
+
+  final ForgotProvider provider = ForgotProvider();
 
   final numeIdenController = TextEditingController();
   final clavUsuaController = TextEditingController();
@@ -28,8 +31,8 @@ class ForgotController extends GetxController {
     if (validation) {
       _dialog.dialogProgress("Generando la nueva contraseña.");
       try {
-        /*User? data = await provider.getUser(
-            codiUsuaController.text, clavUsuaController.text);*/
+        await provider.getPassword(numeIdenController.text,
+            clavUsuaController.text, repeClavController.text);
         title = "Notificación";
         message = 'forgot_confirm_forgot'.tr;
         _dialog.dialogClose();
@@ -37,7 +40,7 @@ class ForgotController extends GetxController {
       } catch (error) {
         title = "Error";
         message = error.toString();
-        _dialog.dialogClose();
+        _dialog.dialogCloseError();
         SnackbarUtil().snackbarError(title, message);
       }
     }
@@ -57,12 +60,22 @@ class ForgotController extends GetxController {
     if (value.isEmpty) {
       return 'forgot_validator_password'.tr;
     }
+    String pattern = r'(^[a-zA-Z0-9]*$)';
+    RegExp regExp = RegExp(pattern);
+    if (!regExp.hasMatch(value)) {
+      return 'forgot_validator_special_characters'.tr;
+    }
     return null;
   }
 
   String? validatorrepeClav(String value) {
     if (value.isEmpty) {
       return 'forgot_validator_confirm_password'.tr;
+    }
+    String pattern = r'(^[a-zA-Z0-9]*$)';
+    RegExp regExp = RegExp(pattern);
+    if (!regExp.hasMatch(value)) {
+      return 'forgot_validator_special_characters'.tr;
     }
     return null;
   }

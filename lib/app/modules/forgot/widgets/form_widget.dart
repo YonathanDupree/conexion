@@ -41,7 +41,7 @@ class _FormWidgetState extends State<FormWidget> {
                   controller: controller.numeIdenController,
                   focusNode: controller.numeidenFocusNode,
                   autocorrect: false,
-                  keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.number,
                   decoration: HelperTheme().textInputDecoration(
                     'forgot_identity'.tr,
                     'forgot_enter_identity'.tr,

@@ -32,6 +32,7 @@
         "validator_identity": "Campo DNI obligatorio.",
         "validator_number_identity": "Campo DNI debe ser numérico.",
         "validator_password": "Campo contraseña obligatorio.",
-        "validator_confirm_password": "Campo confirmar contraseña obligatorio."
+        "validator_confirm_password": "Campo confirmar contraseña obligatorio.",
+        "validator_special_characters": "La contraseña no debe contener caracteres especiales."
     }
 }
