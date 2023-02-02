@@ -13,7 +13,7 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: HelperTheme.primary,
-        title: const Text("Conexión",
+        title: Text('home_name'.tr,
             style: const TextStyle(color: HelperTheme.black)),
       ),
       body: const Center(
@@ -23,6 +23,3 @@ class HomeView extends GetView<HomeController> {
     );
   }
 }
-
-/*controller.logout();
-Get.offAndToNamed(Routes.LOGIN);*/

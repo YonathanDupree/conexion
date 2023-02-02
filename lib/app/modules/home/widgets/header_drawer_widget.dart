@@ -1,3 +1,4 @@
+import 'package:conexion/app/ui/themes/helper_theme.dart';
 import 'package:flutter/material.dart';
 
 class HeaderDrawerWidget extends StatelessWidget {
@@ -7,14 +8,8 @@ class HeaderDrawerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black,
-      child: Row(
-        children: const [
-          Expanded(
-              child: Image(
-            image: AssetImage('assets/images/azzorti_gif.gif'),
-            height: 140,
-          ))
-        ],
+      child: const Image(
+        image: AssetImage('assets/images/azzorti_gif.gif'),
       ),
     );
   }

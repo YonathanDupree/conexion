@@ -16,7 +16,20 @@
         "forgot_password": "Olvidé mi contraseña"
     },
     "home": {
-        "name": "Nombre"
+        "home": "Inicio",
+        "name": "Conexión"
+    },
+    "profile": {
+        "profile": "Perfil"
+    },
+    "coupon": {
+        "coupon": "Mi cuponera"
+    },
+    "contact": {
+        "contact": "Contáctanos"
+    },
+    "exit": {
+        "exit": "Cerrar sesión"
     },
     "forgot": {
         "title": "Recuperar contraseña",

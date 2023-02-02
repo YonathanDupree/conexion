@@ -27,6 +27,11 @@ class LocaleKeys {
   static const login_forget_password = 'login_forget_password';
   static const home_name = 'home_name';
   static const login_forgot_password = 'login_forgot_password';
+  static const home_home = 'home_home';
+  static const profile_profile = 'profile_profile';
+  static const coupon_coupon = 'coupon_coupon';
+  static const contact_contact = 'contact_contact';
+  static const exit_exit = 'exit_exit';
   static const forgot_title = 'forgot_title';
   static const forgot_subtitle = 'forgot_subtitle';
   static const forgot_confirm_forgot = 'forgot_confirm_forgot';
@@ -80,7 +85,12 @@ class Locales {
     'login_remember': 'Recordar usuario',
     'login_version': 'Versión',
     'login_forgot_password': 'Olvidé mi contraseña',
-    'home_name': 'Nombre',
+    'home_home': 'Inicio',
+    'home_name': 'Conexión',
+    'profile_profile': 'Perfil',
+    'coupon_coupon': 'Mi cuponera',
+    'contact_contact': 'Contáctanos',
+    'exit_exit': 'Cerrar sesión',
     'forgot_title': 'Recuperar contraseña',
     'forgot_subtitle':
         'Para actualizar la contraseña debes colocar tu número de DNI y luego la nueva contraseña.',
