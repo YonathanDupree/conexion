@@ -1,5 +1,6 @@
 import 'package:conexion/app/modules/home/controllers/home_controller.dart';
 import 'package:conexion/app/modules/home/widgets/camera_widger.dart';
+import 'package:conexion/app/modules/home/widgets/card_widget.dart';
 import 'package:conexion/app/modules/home/widgets/dropdownbutton_widget.dart';
 import 'package:conexion/app/ui/themes/helper_theme.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class HeaderView extends GetView<HomeController> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Container(
-              height: 255,
+              height: 350,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/images/superior.png'),
@@ -59,6 +60,7 @@ class HeaderView extends GetView<HomeController> {
                         ],
                       ),
                     ),
+                    const CardWidget()
                   ])),
         ]);
   }

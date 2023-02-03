@@ -10,10 +10,24 @@ class HomeController extends GetxController {
   String? selectedFace;
   File? urlsFoto;
 
+  List<String> listSliderI = [];
+  List<String> listSliderII = [];
+
   @override
   void onInit() {
     nombEmpl = box.read("nombEmpl");
     urlsFoto = box.read("urlsFoto") != '' ? File(box.read("urlsFoto")) : null;
+
+    listSliderI.add(
+        "https://pedidos.dupree.pe/archivos/imagenes_app/COL/portada_C03.jpg");
+    listSliderI.add(
+        "https://pedidos.dupree.pe/archivos/imagenes_app/COL/portada_C04.jpg");
+
+    listSliderII.add(
+        "https://pedidos.dupree.pe/archivos/imagenes_app/COL/portada_C03.jpg");
+    listSliderII.add(
+        "https://pedidos.dupree.pe/archivos/imagenes_app/COL/portada_C04.jpg");
+
     print(box.read("urlsFoto"));
     super.onInit();
   }

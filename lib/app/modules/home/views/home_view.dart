@@ -1,3 +1,4 @@
+import 'package:conexion/app/modules/home/views/footer_view.dart';
 import 'package:conexion/app/modules/home/views/header_view.dart';
 import 'package:conexion/app/modules/home/widgets/main_drawer_widget.dart';
 import 'package:flutter/material.dart';
@@ -21,15 +22,8 @@ class HomeView extends GetView<HomeController> {
         child: Container(
             child: Column(children: const <Widget>[
           HeaderView(),
-          //_cardPortadasForm(),
-          SizedBox(
-            height: 10.0,
-          ),
+          FooterView(),
           //_swiperForm(),
-          SizedBox(
-            height: 10.0,
-          ),
-          //_swiperIIForm(context),
           SizedBox(
             height: 10.0,
           ),
