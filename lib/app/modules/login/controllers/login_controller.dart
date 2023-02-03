@@ -91,6 +91,9 @@ class LoginController extends GetxController {
           box.remove('clavUsua');
         }
         box.write("isLogin", "S");
+        box.write("numeIden", data?.numeIden.toString());
+        box.write("nombEmpl", data?.nombEmpl.toString());
+        box.write("urlsFoto", data?.urlsFoto.toString());
 
         Get.offAndToNamed(Routes.HOME);
       } catch (error) {

@@ -9,6 +9,7 @@ class User {
   String? nombPues;
   String? fechNaci;
   String? jefeInme;
+  String? urlsFoto;
 
   User(
       {this.numeIden,
@@ -20,7 +21,8 @@ class User {
       this.nombArea,
       this.nombPues,
       this.fechNaci,
-      this.jefeInme});
+      this.jefeInme,
+      this.urlsFoto});
 
   User.fromJson(Map<String, dynamic> json) {
     numeIden = json['nume_iden'];
@@ -33,6 +35,7 @@ class User {
     nombPues = json['nomb_pues'];
     fechNaci = json['fech_naci'];
     jefeInme = json['jefe_inme'];
+    urlsFoto = json['urls_foto'];
   }
 
   Map<String, dynamic> toJson() {
@@ -47,6 +50,7 @@ class User {
     data['nomb_pues'] = nombPues;
     data['fech_naci'] = fechNaci;
     data['jefe_inme'] = jefeInme;
+    data['urls_foto'] = urlsFoto;
     return data;
   }
 }
