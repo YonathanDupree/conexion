@@ -13,7 +13,8 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     nombEmpl = box.read("nombEmpl");
-    urlsFoto = box.read("urlsFoto");
+    urlsFoto = box.read("urlsFoto") != '' ? File(box.read("urlsFoto")) : null;
+    print(box.read("urlsFoto"));
     super.onInit();
   }
 
