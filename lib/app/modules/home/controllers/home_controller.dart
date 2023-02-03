@@ -8,7 +8,7 @@ class HomeController extends GetxController {
   GetStorage box = GetStorage();
   String nombEmpl = "";
   String? selectedFace;
-  File? urlsFoto;
+  String? urlsFoto;
 
   List<String> listSliderI = [];
   List<String> listSliderII = [];
@@ -16,7 +16,7 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     nombEmpl = box.read("nombEmpl");
-    urlsFoto = box.read("urlsFoto") != '' ? File(box.read("urlsFoto")) : null;
+    urlsFoto = box.read("urlsFoto");
 
     listSliderI.add(
         "https://pedidos.dupree.pe/archivos/imagenes_app/COL/portada_C03.jpg");
@@ -27,8 +27,10 @@ class HomeController extends GetxController {
         "https://pedidos.dupree.pe/archivos/imagenes_app/COL/portada_C03.jpg");
     listSliderII.add(
         "https://pedidos.dupree.pe/archivos/imagenes_app/COL/portada_C04.jpg");
-
+    print("Entro");
+    print(nombEmpl);
     print(box.read("urlsFoto"));
+    print("Salio");
     super.onInit();
   }
 
@@ -90,8 +92,10 @@ class HomeController extends GetxController {
   }
 
   void logout() {
+    print("Cierra sesión");
     box.remove("isLogin");
     box.remove("numeIden");
     box.remove("nombEmpl");
+    box.remove("urlsFoto");
   }
 }

@@ -14,7 +14,7 @@ class CameraWidget extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {},
-      child: controller.urlsFoto == null
+      child: controller.urlsFoto == ""
           ? Container(
               width: 140,
               height: 140,
@@ -25,13 +25,12 @@ class CameraWidget extends StatelessWidget {
               )))
           : ClipRRect(
               borderRadius: BorderRadius.circular(80.0),
-              child: Image.file(
-                controller.urlsFoto!,
-                width: 140,
-                height: 140,
-                fit: BoxFit.cover,
-              ),
-            ),
+              child: FadeInImage(
+                  image: NetworkImage(controller.urlsFoto.toString()),
+                  placeholder: AssetImage('assets/images/loading.gif'),
+                  fit: BoxFit.cover,
+                  height: 140,
+                  width: 140)),
     );
   }
 }

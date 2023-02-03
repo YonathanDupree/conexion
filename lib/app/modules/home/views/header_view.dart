@@ -7,15 +7,15 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-class HeaderView extends GetView<HomeController> {
+class HeaderView extends GetView {
   const HeaderView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    /*Get.lazyPut<LoginController>(
-      () => LoginController(),
+    Get.lazyPut<HomeController>(
+      () => HomeController(),
     );
-    final controller = Get.find<LoginController>();*/
+    final controller = Get.find<HomeController>();
 
     return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -59,6 +59,9 @@ class HeaderView extends GetView<HomeController> {
                           const CameraWidget()
                         ],
                       ),
+                    ),
+                    const SizedBox(
+                      height: 5.0,
                     ),
                     const CardWidget()
                   ])),

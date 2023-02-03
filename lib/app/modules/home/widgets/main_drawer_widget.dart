@@ -73,7 +73,7 @@ class MainDrawerWidget extends StatelessWidget {
             title: Text('exit_exit'.tr, style: HelperTheme.subTitleLigh),
             leading: const Icon(Icons.exit_to_app_outlined,
                 size: 25, color: HelperTheme.secondary),
-            onTap: () {
+            onTap: () async {
               controller.logout();
               Get.offAndToNamed(Routes.LOGIN);
             },

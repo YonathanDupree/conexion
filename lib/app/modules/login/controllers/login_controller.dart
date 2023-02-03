@@ -94,12 +94,12 @@ class LoginController extends GetxController {
         box.write("numeIden", data?.numeIden.toString());
         box.write("nombEmpl", data?.nombEmpl.toString());
         box.write("urlsFoto", data?.urlsFoto.toString());
-
         Get.offAndToNamed(Routes.HOME);
       } catch (error) {
         title = "Error";
         message = error.toString();
-        _dialog.dialogClose();
+        _dialog.dialogCloseError();
+        //_dialog.dialogClose();
         SnackbarUtil().snackbarError(title, message);
       }
     }

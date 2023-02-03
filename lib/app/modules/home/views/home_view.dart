@@ -23,7 +23,6 @@ class HomeView extends GetView<HomeController> {
             child: Column(children: const <Widget>[
           HeaderView(),
           FooterView(),
-          //_swiperForm(),
           SizedBox(
             height: 10.0,
           ),
