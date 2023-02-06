@@ -1,14 +1,21 @@
 import 'dart:io';
 
+import 'package:conexion/app/modules/home/providers/home_provider.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
+import '../../../ui/utils/dialog_util.dart';
+import '../../../ui/utils/snackbar_util.dart';
+
 class HomeController extends GetxController {
   //TODO: Implement HomeController
+  final HomeProvider provider = HomeProvider();
+
   GetStorage box = GetStorage();
   String? nombEmpl = "";
-  String? selectedFace;
+  String? estaUsua;
   String? urlsFoto;
+  final _dialog = DialogUtil();
 
   List<String> listSliderI = [];
   List<String> listSliderII = [];
@@ -52,42 +59,25 @@ class HomeController extends GetxController {
     {"name": "Triste", "icon": "assets/images/triste.png"},
   ];
 
-  Future<void> login() async {
+  Future<void> saveEmotion() async {
     box.read("numeIden");
-
-    /*bool validation = loginFormKey.currentState!.validate();
+    print(box.read("numeIden"));
     late String title;
     late String message;
-    usernameFocusNode.unfocus();
-    passwordFocusNode.unfocus();
 
-    if (validation) {
-      _dialog.dialogProgress("Validando acceso");
-      try {
-        User? data = await provider.getUser(
-            codiUsuaController.text, clavUsuaController.text);
-        title = "Notificación";
-        message = 'Bienvenido ${data?.nombEmpl.toString().capitalizeFirst}';
-        _dialog.dialogClose();
-        SnackbarUtil().snackbarSuccess(title, message);
-        if (isChecked.value) {
-          box.write("codiUsua", codiUsuaController.text);
-          box.write("clavUsua", clavUsuaController.text);
-        } else {
-          box.remove('codiUsua');
-          box.remove('clavUsua');
-        }
-        box.write("isLogin", "S");
-        box.write("numeIden", data?.numeIden.toString());
+    try {
+      print(estaUsua);
+      message = await provider.saveEmotion(box.read("numeIden"), estaUsua!);
 
-        Get.offAndToNamed(Routes.HOME);
-      } catch (error) {
-        title = "Error";
-        message = error.toString();
-        _dialog.dialogClose();
-        SnackbarUtil().snackbarError(title, message);
-      }
-    }*/
+      title = "Notificación";
+      _dialog.dialogClose();
+      SnackbarUtil().snackbarSuccess(title, message);
+    } catch (error) {
+      title = "Error";
+      message = error.toString();
+      _dialog.dialogClose();
+      SnackbarUtil().snackbarError(title, message);
+    }
   }
 
   void logout() {

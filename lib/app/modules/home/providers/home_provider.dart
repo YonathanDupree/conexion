@@ -1,35 +1,28 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:get/get.dart';
-import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 
 import '../../../data/providers/base_provider.dart';
-import '../user_model.dart';
 
-class UserProvider extends GetConnect {
+class HomeProvider extends GetConnect {
   @override
   void onInit() {
-    httpClient.defaultDecoder = (map) {
-      if (map is Map<String, dynamic>) return User.fromJson(map);
-      if (map is List) return map.map((item) => User.fromJson(item)).toList();
-    };
     httpClient.baseUrl = 'YOUR-API-URL';
   }
 
-  Future<User?> getUser(String codiUsua, String clavUsua) async {
-    User user = User();
-
+  Future saveEmotion(String numeIden, String estaUsua) async {
+    String respuesta = "";
     try {
       final response = await http
           .post(
-        Uri.https(BaseProvider().BASE_URL, '/hmvc/cone/api/login'),
+        Uri.https(BaseProvider().BASE_URL, '/hmvc/cone/api/emotion'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
         body: jsonEncode(
-            <String, String>{'codi_usua': codiUsua, 'clav_usua': clavUsua}),
+            <String, String>{'nume_iden': numeIden, 'esta_usua': estaUsua}),
       )
           .timeout(const Duration(seconds: 120), onTimeout: () {
         throw ('Error en tiempo de espera, Por favor intentalo nuevamente!');
@@ -38,7 +31,7 @@ class UserProvider extends GetConnect {
       var responseJson = jsonDecode(response.body);
       switch (response.statusCode) {
         case 200:
-          user = User.fromJson(responseJson["data"]);
+          respuesta = responseJson["message"];
           break;
         case 404:
           throw (responseJson["message"]);
@@ -49,9 +42,6 @@ class UserProvider extends GetConnect {
       throw ('Error en el formato del servicio.');
     }
 
-    return user;
+    return respuesta;
   }
-
-  Future<Response<User>> postUser(User user) async => await post('user', user);
-  Future<Response> deleteUser(int id) async => await delete('user/$id');
 }

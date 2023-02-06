@@ -9,12 +9,9 @@ class DropDownWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.lazyPut<HomeController>(
-      () => HomeController(),
-    );
     final controller = Get.find<HomeController>();
 
-    return Container(
+    return SizedBox(
       height: 50.0,
       width: 200,
       child: Center(
@@ -69,14 +66,16 @@ class DropDownWidget extends StatelessWidget {
                 ),
               ),
             ),
-            value: controller.selectedFace,
+            value: controller.estaUsua,
             validator: (value) {
               if (value == null) {
                 return 'Por favor seleccionar su estado';
               }
             },
             onChanged: (value) async {
-              controller.selectedFace = value.toString();
+              controller.estaUsua = value.toString();
+              await controller.saveEmotion();
+
               /*setState(() async {
                 controller.selectedFace = value.toString();
                 final Preferences = await SharedPreferences.getInstance();
