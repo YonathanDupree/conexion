@@ -7,16 +7,11 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-class HeaderView extends GetView {
+class HeaderView extends GetView<HomeController> {
   const HeaderView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Get.lazyPut<HomeController>(
-      () => HomeController(),
-    );
-    final controller = Get.find<HomeController>();
-
     return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -35,7 +30,8 @@ class HeaderView extends GetView {
                       height: 10.0,
                     ),
                     Text('Hola ${controller.nombEmpl}!',
-                        style: HelperTheme.titleBlackMd),
+                        style: HelperTheme.titleBlackMd,
+                        textAlign: TextAlign.left),
                     const SizedBox(
                       height: 15.0,
                     ),

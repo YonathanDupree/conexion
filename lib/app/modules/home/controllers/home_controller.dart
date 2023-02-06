@@ -6,7 +6,7 @@ import 'package:get_storage/get_storage.dart';
 class HomeController extends GetxController {
   //TODO: Implement HomeController
   GetStorage box = GetStorage();
-  String nombEmpl = "";
+  String? nombEmpl = "";
   String? selectedFace;
   String? urlsFoto;
 
@@ -15,6 +15,7 @@ class HomeController extends GetxController {
 
   @override
   void onInit() {
+    print("onInit");
     nombEmpl = box.read("nombEmpl");
     urlsFoto = box.read("urlsFoto");
 
@@ -27,15 +28,13 @@ class HomeController extends GetxController {
         "https://pedidos.dupree.pe/archivos/imagenes_app/COL/portada_C03.jpg");
     listSliderII.add(
         "https://pedidos.dupree.pe/archivos/imagenes_app/COL/portada_C04.jpg");
-    print("Entro");
-    print(nombEmpl);
-    print(box.read("urlsFoto"));
-    print("Salio");
+
     super.onInit();
   }
 
   @override
   void onReady() {
+    print("onReady");
     super.onReady();
   }
 

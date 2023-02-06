@@ -75,7 +75,8 @@ class MainDrawerWidget extends StatelessWidget {
                 size: 25, color: HelperTheme.secondary),
             onTap: () async {
               controller.logout();
-              Get.offAndToNamed(Routes.LOGIN);
+              Get.offAllNamed(Routes.LOGIN);
+              //Get.offAndToNamed(Routes.LOGIN);
             },
           ),
           Container(

@@ -94,7 +94,8 @@ class LoginController extends GetxController {
         box.write("numeIden", data?.numeIden.toString());
         box.write("nombEmpl", data?.nombEmpl.toString());
         box.write("urlsFoto", data?.urlsFoto.toString());
-        Get.offAndToNamed(Routes.HOME);
+        //Get.offAndToNamed(Routes.HOME);
+        Get.offAllNamed(Routes.HOME);
       } catch (error) {
         title = "Error";
         message = error.toString();
