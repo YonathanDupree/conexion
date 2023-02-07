@@ -34,8 +34,8 @@ class DropDownWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(100.0),
                   borderSide: const BorderSide(color: Colors.red, width: 2.0)),
             ),
-            hint: const Text(
-              'Agrega tu estado',
+            hint: Text(
+              'home_state'.tr,
             ),
             icon: const Icon(
               Icons.arrow_drop_down,
@@ -69,26 +69,12 @@ class DropDownWidget extends StatelessWidget {
             value: controller.estaUsua,
             validator: (value) {
               if (value == null) {
-                return 'Por favor seleccionar su estado';
+                return 'home_select_state'.tr;
               }
             },
             onChanged: (value) async {
               controller.estaUsua = value.toString();
               await controller.saveEmotion();
-
-              /*setState(() async {
-                controller.selectedFace = value.toString();
-                final Preferences = await SharedPreferences.getInstance();
-                final String? nume_iden = Preferences.getString('nume_iden');
-
-
-                final response = await _registrarEstado.getRegistrarEstado(
-                    selectedFace!, nume_iden!);
-
-                if (response != "") {
-                  print(response);
-                }
-              });*/
             },
           ),
         ),

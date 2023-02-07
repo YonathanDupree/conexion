@@ -32,9 +32,7 @@ class FooterView extends GetView<HomeController> {
                               .getSliderI()[index]
                               .urlsAcce
                               .toString();
-                          print(url);
                           controller.showUrl(url);
-                          //_launchUrl('$url');
                         },
                       )),
             const SizedBox(
@@ -50,7 +48,8 @@ class FooterView extends GetView<HomeController> {
                   : FadeInImage(
                       image: NetworkImage(
                           controller.getSliderII()[0].urlsSlid.toString()),
-                      placeholder: AssetImage('assets/images/loading.gif'),
+                      placeholder:
+                          const AssetImage('assets/images/loading.gif'),
                       fit: BoxFit.cover,
                       height: 185,
                       width: MediaQuery.of(context).size.width - 10,

@@ -2,8 +2,6 @@ import 'package:conexion/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../login/controllers/login_controller.dart';
-
 class CameraWidget extends StatelessWidget {
   const CameraWidget({Key? key}) : super(key: key);
 

@@ -100,7 +100,6 @@ class LoginController extends GetxController {
         title = "Error";
         message = error.toString();
         _dialog.dialogCloseError();
-        //_dialog.dialogClose();
         SnackbarUtil().snackbarError(title, message);
       }
     }

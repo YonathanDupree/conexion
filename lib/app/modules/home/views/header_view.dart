@@ -42,14 +42,14 @@ class HeaderView extends GetView<HomeController> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Column(
-                            children: const [
-                              Text('¿Como te sientes hoy?',
+                            children: [
+                              Text("home_feel".tr,
                                   style: HelperTheme.subTitleBlack,
                                   textAlign: TextAlign.left),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5.0,
                               ),
-                              DropDownWidget(),
+                              const DropDownWidget(),
                             ],
                           ),
                           const CameraWidget()

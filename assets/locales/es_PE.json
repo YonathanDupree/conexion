@@ -17,7 +17,11 @@
     },
     "home": {
         "home": "Inicio",
-        "name": "Conexión"
+        "name": "Conexión",
+        "feel": "¿Como te sientes hoy?",
+        "state": "Agrega tu estado",
+        "select_state": "Por favor seleccionar su estado"
+
     },
     "profile": {
         "profile": "Perfil"

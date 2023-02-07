@@ -19,14 +19,13 @@ class HomeView extends GetView<HomeController> {
             style: const TextStyle(color: HelperTheme.black)),
       ),
       body: SingleChildScrollView(
-        child: Container(
-            child: Column(children: const <Widget>[
+        child: Column(children: const <Widget>[
           HeaderView(),
           FooterView(),
           SizedBox(
             height: 10.0,
           ),
-        ])),
+        ]),
       ),
       drawer: const MainDrawerWidget(),
     );

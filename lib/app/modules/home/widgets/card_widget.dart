@@ -1,7 +1,6 @@
 import 'package:conexion/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart';
 
 class CardWidget extends StatelessWidget {
   const CardWidget({Key? key}) : super(key: key);

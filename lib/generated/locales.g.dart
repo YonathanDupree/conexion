@@ -28,6 +28,9 @@ class LocaleKeys {
   static const home_name = 'home_name';
   static const login_forgot_password = 'login_forgot_password';
   static const home_home = 'home_home';
+  static const home_feel = 'home_feel';
+  static const home_state = 'home_state';
+  static const home_select_state = 'home_select_state';
   static const profile_profile = 'profile_profile';
   static const coupon_coupon = 'coupon_coupon';
   static const contact_contact = 'contact_contact';
@@ -87,6 +90,9 @@ class Locales {
     'login_forgot_password': 'Olvidé mi contraseña',
     'home_home': 'Inicio',
     'home_name': 'Conexión',
+    'home_feel': '¿Como te sientes hoy?',
+    'home_state': 'Agrega tu estado',
+    'home_select_state': 'Por favor seleccionar su estado',
     'profile_profile': 'Perfil',
     'coupon_coupon': 'Mi cuponera',
     'contact_contact': 'Contáctanos',
