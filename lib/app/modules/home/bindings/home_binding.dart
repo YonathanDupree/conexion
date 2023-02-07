@@ -1,3 +1,4 @@
+import 'package:conexion/app/modules/home/providers/slid_provider.dart';
 import 'package:conexion/app/modules/home/providers/spec_provider.dart';
 import 'package:get/get.dart';
 
@@ -12,6 +13,9 @@ class HomeBinding extends Bindings {
     Get.put(HomeController());
     Get.lazyPut<SpecProvider>(
       () => SpecProvider(),
+    );
+    Get.lazyPut<SlidProvider>(
+      () => SlidProvider(),
     );
   }
 }

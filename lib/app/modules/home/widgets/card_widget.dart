@@ -31,7 +31,7 @@ class CardWidget extends StatelessWidget {
                       )))
                   : FadeInImage(
                       image: NetworkImage(
-                          controller.specialist[0].imagPort.toString()),
+                          controller.getSpecNutri()[0].imagPort.toString()),
                       placeholder:
                           const AssetImage('assets/images/loading.gif'),
                       fit: BoxFit.fill,
@@ -40,6 +40,7 @@ class CardWidget extends StatelessWidget {
             ))),
         onTap: () async {
           print(controller.specialist[0].imagPort.toString());
+          print(controller.getSliderI().length);
         },
       ),
       InkWell(
@@ -62,7 +63,7 @@ class CardWidget extends StatelessWidget {
                         )))
                     : FadeInImage(
                         image: NetworkImage(
-                            controller.specialist[1].imagPort.toString()),
+                            controller.getSpecPsyc()[0].imagPort.toString()),
                         placeholder:
                             const AssetImage('assets/images/loading.gif'),
                         fit: BoxFit.fill,

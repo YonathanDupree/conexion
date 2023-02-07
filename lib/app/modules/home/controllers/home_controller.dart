@@ -2,18 +2,22 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:conexion/app/modules/home/providers/home_provider.dart';
+import 'package:conexion/app/modules/home/providers/slid_provider.dart';
 import 'package:conexion/app/modules/home/providers/spec_provider.dart';
 import 'package:conexion/app/modules/home/spec_model.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../ui/utils/dialog_util.dart';
 import '../../../ui/utils/snackbar_util.dart';
+import '../slid_model.dart';
 
 class HomeController extends GetxController {
   //TODO: Implement HomeController
   final HomeProvider provider = HomeProvider();
   final SpecProvider specprovider = SpecProvider();
+  final SlidProvider slidprovider = SlidProvider();
 
   GetStorage box = GetStorage();
   String? nombEmpl = "";
@@ -25,6 +29,7 @@ class HomeController extends GetxController {
   List<String> listSliderII = [];
 
   var specialist = <Spec>[].obs;
+  var slider = <Slid>[].obs;
 
   @override
   Future<void> onInit() async {
@@ -32,6 +37,7 @@ class HomeController extends GetxController {
     nombEmpl = box.read("nombEmpl");
     urlsFoto = box.read("urlsFoto");
     await getSpec();
+    await getSlid();
     listSliderI.add(
         "https://pedidos.dupree.pe/archivos/imagenes_app/COL/portada_C03.jpg");
     listSliderI.add(
@@ -101,18 +107,56 @@ class HomeController extends GetxController {
     }
   }
 
+  Future<void> getSlid() async {
+    late String title;
+    late String message;
+
+    try {
+      List<Slid> slider = await slidprovider.getSlid();
+      changeSlide(slider);
+      inspect(slider);
+
+      print(slider[0].numeSlid);
+    } catch (error) {
+      title = "Error";
+      message = error.toString();
+      _dialog.dialogClose();
+      SnackbarUtil().snackbarError(title, message);
+    }
+  }
+
   void changeSpecialist(List<Spec> data) {
     specialist.clear();
     specialist(data);
+  }
+
+  void changeSlide(List<Slid> data) {
+    slider.clear();
+    slider(data);
   }
 
   List<Spec> getSpecNutri() {
     return specialist.where((item) => item.codiSani == 'N').toList();
   }
 
-  /*List<Spec> getSpecPsyc() {
+  List<Spec> getSpecPsyc() {
     return specialist.where((item) => item.codiSani == 'P').toList();
-  }*/
+  }
+
+  List<Slid> getSliderI() {
+    return slider.where((item) => item.numeSlid == 'I').toList();
+  }
+
+  List<Slid> getSliderII() {
+    return slider.where((item) => item.numeSlid == 'II').toList();
+  }
+
+  Future<void> showUrl(String url) async {
+    Uri _url = Uri.parse(url);
+    if (await launchUrl(_url)) {
+      //throw Exception('Could not launch $url');
+    }
+  }
 
   void logout() {
     box.remove("isLogin");

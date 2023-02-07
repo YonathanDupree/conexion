@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-
 import '../../../data/providers/base_provider.dart';
 
 import '../spec_model.dart';
