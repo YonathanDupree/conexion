@@ -1,3 +1,4 @@
+import 'package:conexion/app/modules/home/providers/spec_provider.dart';
 import 'package:get/get.dart';
 
 import '../controllers/home_controller.dart';
@@ -9,5 +10,8 @@ class HomeBinding extends Bindings {
       () => HomeController(),
     );*/
     Get.put(HomeController());
+    Get.lazyPut<SpecProvider>(
+      () => SpecProvider(),
+    );
   }
 }

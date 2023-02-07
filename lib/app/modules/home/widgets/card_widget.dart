@@ -8,14 +8,11 @@ class CardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.lazyPut<HomeController>(
-      () => HomeController(),
-    );
     final controller = Get.find<HomeController>();
 
     return Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
       InkWell(
-        child: Card(
+        child: Obx(() => Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
             color: Colors.transparent,
@@ -23,71 +20,57 @@ class CardWidget extends StatelessWidget {
             elevation: 0,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15),
-              child: const FadeInImage(
-                  image: NetworkImage('https://i.imgur.com/Urn8eMx.png'),
-                  placeholder: AssetImage('assets/images/loading.gif'),
-                  fit: BoxFit.fill,
-                  height: 140,
-                  width: 150),
-            )),
+              child: controller.specialist.isEmpty
+                  ? Container(
+                      width: 150,
+                      height: 140,
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                        image: AssetImage('assets/images/loading.gif'),
+                        fit: BoxFit.cover,
+                      )))
+                  : FadeInImage(
+                      image: NetworkImage(
+                          controller.specialist[0].imagPort.toString()),
+                      placeholder:
+                          const AssetImage('assets/images/loading.gif'),
+                      fit: BoxFit.fill,
+                      height: 140,
+                      width: 150),
+            ))),
         onTap: () async {
-          /*_loading.build(context);
-              HttpOverrides.global = MyHttpOverrides();
-              final response = await _cargarsanitario.getCargarSanitario("N");
-              if (response.length > 0) {
-                Navigator.of(context, rootNavigator: true).pop('dialog');
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => Nutricionista(
-                      response[0].nomb_sani!,
-                      response[0].perf_sani!,
-                      response[0].imag_pers!,
-                      response[0].celu_sani!,
-                      response[0].mail_sani!,
-                    ),
-                  ),
-                );
-              }*/
+          print(controller.specialist[0].imagPort.toString());
         },
       ),
       InkWell(
-          child: /*Text(
-              "bbb") */
-              Card(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-            color: Colors.transparent,
-            margin: const EdgeInsets.fromLTRB(2.5, 0, 10, 0),
-            elevation: 0,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: const FadeInImage(
-                  image: NetworkImage('https://i.imgur.com/Dtq8J6v.png'),
-                  placeholder: AssetImage('assets/images/loading.gif'),
-                  fit: BoxFit.fill,
-                  height: 140,
-                  width: 150),
-            ),
-          ),
+          child: Obx(() => Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30)),
+              color: Colors.transparent,
+              margin: const EdgeInsets.fromLTRB(2.5, 0, 10, 0),
+              elevation: 0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: controller.specialist.isEmpty
+                    ? Container(
+                        width: 150,
+                        height: 140,
+                        decoration: const BoxDecoration(
+                            image: DecorationImage(
+                          image: AssetImage('assets/images/loading.gif'),
+                          fit: BoxFit.cover,
+                        )))
+                    : FadeInImage(
+                        image: NetworkImage(
+                            controller.specialist[1].imagPort.toString()),
+                        placeholder:
+                            const AssetImage('assets/images/loading.gif'),
+                        fit: BoxFit.fill,
+                        height: 140,
+                        width: 150),
+              ))),
           onTap: () async {
-            /*_loading.build(context);
-                HttpOverrides.global = MyHttpOverrides();
-                final response = await _cargarsanitario.getCargarSanitario("P");
-                if (response.length > 0) {
-                  Navigator.of(context, rootNavigator: true).pop('dialog');
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      fullscreenDialog: true,
-                      builder: (context) => Psicologo(
-                        response[0].nomb_sani!,
-                        response[0].perf_sani!,
-                        response[0].imag_pers!,
-                        response[0].celu_sani!,
-                        response[0].mail_sani!,
-                      ),
-                    ),
-                  );
-                }*/
+            print(controller.specialist[1].imagPort.toString());
           }),
     ]);
   }

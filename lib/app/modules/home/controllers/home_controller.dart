@@ -1,6 +1,9 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:conexion/app/modules/home/providers/home_provider.dart';
+import 'package:conexion/app/modules/home/providers/spec_provider.dart';
+import 'package:conexion/app/modules/home/spec_model.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -10,6 +13,7 @@ import '../../../ui/utils/snackbar_util.dart';
 class HomeController extends GetxController {
   //TODO: Implement HomeController
   final HomeProvider provider = HomeProvider();
+  final SpecProvider specprovider = SpecProvider();
 
   GetStorage box = GetStorage();
   String? nombEmpl = "";
@@ -20,12 +24,14 @@ class HomeController extends GetxController {
   List<String> listSliderI = [];
   List<String> listSliderII = [];
 
+  var specialist = <Spec>[].obs;
+
   @override
-  void onInit() {
+  Future<void> onInit() async {
     print("onInit");
     nombEmpl = box.read("nombEmpl");
     urlsFoto = box.read("urlsFoto");
-
+    await getSpec();
     listSliderI.add(
         "https://pedidos.dupree.pe/archivos/imagenes_app/COL/portada_C03.jpg");
     listSliderI.add(
@@ -40,7 +46,7 @@ class HomeController extends GetxController {
   }
 
   @override
-  void onReady() {
+  Future<void> onReady() async {
     print("onReady");
     super.onReady();
   }
@@ -61,14 +67,11 @@ class HomeController extends GetxController {
 
   Future<void> saveEmotion() async {
     box.read("numeIden");
-    print(box.read("numeIden"));
     late String title;
     late String message;
 
     try {
-      print(estaUsua);
       message = await provider.saveEmotion(box.read("numeIden"), estaUsua!);
-
       title = "Notificación";
       _dialog.dialogClose();
       SnackbarUtil().snackbarSuccess(title, message);
@@ -80,8 +83,38 @@ class HomeController extends GetxController {
     }
   }
 
+  Future<void> getSpec() async {
+    late String title;
+    late String message;
+
+    try {
+      List<Spec> specialist = await specprovider.getSpec();
+      changeSpecialist(specialist);
+      inspect(specialist);
+
+      print(specialist[0].codiSani);
+    } catch (error) {
+      title = "Error";
+      message = error.toString();
+      _dialog.dialogClose();
+      SnackbarUtil().snackbarError(title, message);
+    }
+  }
+
+  void changeSpecialist(List<Spec> data) {
+    specialist.clear();
+    specialist(data);
+  }
+
+  List<Spec> getSpecNutri() {
+    return specialist.where((item) => item.codiSani == 'N').toList();
+  }
+
+  /*List<Spec> getSpecPsyc() {
+    return specialist.where((item) => item.codiSani == 'P').toList();
+  }*/
+
   void logout() {
-    print("Cierra sesión");
     box.remove("isLogin");
     box.remove("numeIden");
     box.remove("nombEmpl");
