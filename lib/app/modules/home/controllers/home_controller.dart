@@ -25,28 +25,18 @@ class HomeController extends GetxController {
   String? urlsFoto;
   final _dialog = DialogUtil();
 
-  List<String> listSliderI = [];
-  List<String> listSliderII = [];
-
   var specialist = <Spec>[].obs;
   var slider = <Slid>[].obs;
+  RxBool isLoading = true.obs;
 
   @override
   Future<void> onInit() async {
     print("onInit");
+
     nombEmpl = box.read("nombEmpl");
     urlsFoto = box.read("urlsFoto");
     await getSpec();
     await getSlid();
-    listSliderI.add(
-        "https://pedidos.dupree.pe/archivos/imagenes_app/COL/portada_C03.jpg");
-    listSliderI.add(
-        "https://pedidos.dupree.pe/archivos/imagenes_app/COL/portada_C04.jpg");
-
-    listSliderII.add(
-        "https://pedidos.dupree.pe/archivos/imagenes_app/COL/portada_C03.jpg");
-    listSliderII.add(
-        "https://pedidos.dupree.pe/archivos/imagenes_app/COL/portada_C04.jpg");
 
     super.onInit();
   }
@@ -79,12 +69,10 @@ class HomeController extends GetxController {
     try {
       message = await provider.saveEmotion(box.read("numeIden"), estaUsua!);
       title = "Notificación";
-      _dialog.dialogClose();
       SnackbarUtil().snackbarSuccess(title, message);
     } catch (error) {
       title = "Error";
       message = error.toString();
-      _dialog.dialogClose();
       SnackbarUtil().snackbarError(title, message);
     }
   }
@@ -97,12 +85,9 @@ class HomeController extends GetxController {
       List<Spec> specialist = await specprovider.getSpec();
       changeSpecialist(specialist);
       inspect(specialist);
-
-      print(specialist[0].codiSani);
     } catch (error) {
       title = "Error";
       message = error.toString();
-      _dialog.dialogClose();
       SnackbarUtil().snackbarError(title, message);
     }
   }
@@ -115,12 +100,10 @@ class HomeController extends GetxController {
       List<Slid> slider = await slidprovider.getSlid();
       changeSlide(slider);
       inspect(slider);
-
-      print(slider[0].numeSlid);
+      changeIsLoading(false);
     } catch (error) {
       title = "Error";
       message = error.toString();
-      _dialog.dialogClose();
       SnackbarUtil().snackbarError(title, message);
     }
   }
@@ -156,6 +139,10 @@ class HomeController extends GetxController {
     if (await launchUrl(_url)) {
       //throw Exception('Could not launch $url');
     }
+  }
+
+  void changeIsLoading(bool data) {
+    isLoading(data);
   }
 
   void logout() {

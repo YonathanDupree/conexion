@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import '../../../ui/themes/helper_theme.dart';
+import '../../../ui/widgets/loading_widget.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -18,7 +19,25 @@ class HomeView extends GetView<HomeController> {
         title: Text('home_name'.tr,
             style: const TextStyle(color: HelperTheme.black)),
       ),
-      body: SingleChildScrollView(
+      body: Stack(
+        children: [
+          Obx(() {
+            if (controller.isLoading.value) {
+              return const LoadingWidget();
+            }
+            return SingleChildScrollView(
+              child: Column(children: const <Widget>[
+                HeaderView(),
+                FooterView(),
+                SizedBox(
+                  height: 10.0,
+                ),
+              ]),
+            );
+          })
+        ],
+      ),
+      /*SingleChildScrollView(
         child: Column(children: const <Widget>[
           HeaderView(),
           FooterView(),
@@ -26,7 +45,7 @@ class HomeView extends GetView<HomeController> {
             height: 10.0,
           ),
         ]),
-      ),
+      ),*/
       drawer: const MainDrawerWidget(),
     );
   }

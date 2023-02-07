@@ -12,11 +12,19 @@ class FooterView extends GetView<HomeController> {
     return Obx(() => Column(
           children: [
             Container(
-                color: Colors.white,
+                color: Colors.transparent,
                 width: double.infinity,
                 height: 200.0,
                 child: controller.slider.isEmpty
-                    ? null
+                    ? Container(
+                        width: 150,
+                        height: 140,
+                        decoration: const BoxDecoration(
+                            color: Colors.transparent,
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/loading.gif'),
+                              fit: BoxFit.cover,
+                            )))
                     : Swiper(
                         itemBuilder: (BuildContext context, int index) {
                           return Image.network(
@@ -39,12 +47,19 @@ class FooterView extends GetView<HomeController> {
               height: 5.0,
             ),
             Container(
-              color: Colors.white,
+              color: Colors.transparent,
               width: double.infinity,
               margin: const EdgeInsets.all(2),
               height: 200.0,
               child: controller.slider.isEmpty
-                  ? null
+                  ? Container(
+                      width: 150,
+                      height: 140,
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                        image: AssetImage('assets/images/loading.gif'),
+                        fit: BoxFit.cover,
+                      )))
                   : FadeInImage(
                       image: NetworkImage(
                           controller.getSliderII()[0].urlsSlid.toString()),
