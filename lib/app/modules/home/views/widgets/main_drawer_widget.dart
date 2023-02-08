@@ -12,11 +12,6 @@ class MainDrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.lazyPut<HomeController>(
-      () => HomeController(),
-    );
-    final controller = Get.find<HomeController>();
-
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -74,7 +69,10 @@ class MainDrawerWidget extends StatelessWidget {
             leading: const Icon(Icons.exit_to_app_outlined,
                 size: 25, color: HelperTheme.secondary),
             onTap: () async {
-              controller.logout();
+              Get.lazyPut<HomeController>(
+                () => HomeController(),
+              );
+              Get.find<HomeController>().logout();
               Get.offAllNamed(Routes.LOGIN);
               //Get.offAndToNamed(Routes.LOGIN);
             },

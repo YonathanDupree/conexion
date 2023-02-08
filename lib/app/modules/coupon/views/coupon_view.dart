@@ -1,3 +1,4 @@
+import 'package:conexion/app/modules/coupon/views/widgets/card_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -13,11 +14,11 @@ class CouponView extends GetView<CouponController> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: HelperTheme.primary,
-        title: const Text("Cuponera",
-            style: const TextStyle(color: HelperTheme.black)),
+        title:
+            const Text("Cuponera", style: TextStyle(color: HelperTheme.black)),
       ),
       body: const Center(
-        child: Text("Trabajando la cuponera"),
+        child: CardView(),
       ),
       drawer: MainDrawerWidget(),
     );
