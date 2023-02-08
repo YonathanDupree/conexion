@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../ui/themes/helper_theme.dart';
-import '../../home/widgets/main_drawer_widget.dart';
+import '../../home/views/widgets/main_drawer_widget.dart';
 import '../controllers/coupon_controller.dart';
 
 class CouponView extends GetView<CouponController> {
@@ -17,7 +17,7 @@ class CouponView extends GetView<CouponController> {
             style: const TextStyle(color: HelperTheme.black)),
       ),
       body: const Center(
-        child: Text("Trabajando el cuponera"),
+        child: Text("Trabajando la cuponera"),
       ),
       drawer: MainDrawerWidget(),
     );

@@ -1,11 +1,11 @@
 import 'package:conexion/app/modules/home/controllers/home_controller.dart';
-import 'package:conexion/app/modules/home/widgets/footer_drawer_widget.dart';
-import 'package:conexion/app/modules/home/widgets/header_drawer_widget.dart';
+import 'package:conexion/app/modules/home/views/widgets/footer_drawer_widget.dart';
+import 'package:conexion/app/modules/home/views/widgets/header_drawer_widget.dart';
 import 'package:conexion/app/ui/themes/helper_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../routes/app_pages.dart';
+import '../../../../routes/app_pages.dart';
 
 class MainDrawerWidget extends StatelessWidget {
   const MainDrawerWidget({super.key});

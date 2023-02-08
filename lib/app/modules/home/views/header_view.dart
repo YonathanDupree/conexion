@@ -1,7 +1,7 @@
 import 'package:conexion/app/modules/home/controllers/home_controller.dart';
-import 'package:conexion/app/modules/home/widgets/camera_widger.dart';
-import 'package:conexion/app/modules/home/widgets/card_widget.dart';
-import 'package:conexion/app/modules/home/widgets/dropdownbutton_widget.dart';
+import 'package:conexion/app/modules/home/views/widgets/camera_widger.dart';
+import 'package:conexion/app/modules/home/views/widgets/card_widget.dart';
+import 'package:conexion/app/modules/home/views/widgets/dropdownbutton_widget.dart';
 import 'package:conexion/app/ui/themes/helper_theme.dart';
 import 'package:flutter/material.dart';
 

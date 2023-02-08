@@ -2,9 +2,9 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../routes/app_pages.dart';
-import '../../../ui/themes/helper_theme.dart';
-import '../controllers/login_controller.dart';
+import '../../../../routes/app_pages.dart';
+import '../../../../ui/themes/helper_theme.dart';
+import '../../controllers/login_controller.dart';
 
 class FormWidget extends StatefulWidget {
   const FormWidget({Key? key}) : super(key: key);

@@ -1,4 +1,4 @@
-import 'package:conexion/app/modules/home/widgets/main_drawer_widget.dart';
+import 'package:conexion/app/modules/home/views/widgets/main_drawer_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';

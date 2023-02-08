@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/login_controller.dart';
-import '../widgets/form_widget.dart';
-import '../widgets/header_widget.dart';
+import 'widgets/form_widget.dart';
+import 'widgets/header_widget.dart';
 
 class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);

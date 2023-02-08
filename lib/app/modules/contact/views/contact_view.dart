@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../ui/themes/helper_theme.dart';
-import '../../home/widgets/main_drawer_widget.dart';
+import '../../home/views/widgets/main_drawer_widget.dart';
 import '../controllers/contact_controller.dart';
 
 class ContactView extends GetView<ContactController> {

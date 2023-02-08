@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../ui/themes/helper_theme.dart';
-import '../controllers/forgot_controller.dart';
+import '../../../../ui/themes/helper_theme.dart';
+import '../../controllers/forgot_controller.dart';
 
 class FormWidget extends StatefulWidget {
   const FormWidget({Key? key}) : super(key: key);
