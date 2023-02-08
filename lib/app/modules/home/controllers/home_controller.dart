@@ -35,8 +35,6 @@ class HomeController extends GetxController {
 
     nombEmpl = box.read("nombEmpl");
     urlsFoto = box.read("urlsFoto");
-    await getSpec();
-    await getSlid();
 
     super.onInit();
   }
@@ -44,6 +42,8 @@ class HomeController extends GetxController {
   @override
   Future<void> onReady() async {
     print("onReady");
+    await getSpec();
+    await getSlid();
     super.onReady();
   }
 
