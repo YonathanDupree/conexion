@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 class CouponController extends GetxController {
   //TODO: Implement CouponController
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -18,6 +17,4 @@ class CouponController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

@@ -35,9 +35,8 @@ class CardView extends GetView {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
                     elevation: 10,
-                    margin: const EdgeInsets.only(top: 10),
                     child: ClipRRect(
-                      child: Column(
+                      child: Stack(
                         children: <Widget>[
                           const FadeInImage(
                               image:
@@ -45,46 +44,45 @@ class CardView extends GetView {
                               placeholder:
                                   AssetImage('assets/images/loading.gif'),
                               fit: BoxFit.cover,
-                              height: 130,
-                              width: 145),
-                          Container(
-                              padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
-                              child: /*url_cump == null
-                                ? */
-                                  const FadeInImage(
-                                      image: NetworkImage(
-                                          "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png"),
+                              height: 140),
+                          Positioned(
+                            top: 105,
+                            left: 5,
+                            child: Container(
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: HelperTheme.black, width: 3),
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(
+                                            15.0) //                 <--- border radius here
+                                        )),
+                                child: /*url_cump == null
+                                  ? */
+                                    const FadeInImage(
+                                        image: NetworkImage(
+                                            "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png"),
+                                        placeholder: AssetImage(
+                                            'assets/images/loading.gif'),
+                                        fit: BoxFit.cover,
+                                        width: 25)
+                                /*: FadeInImage(
+                                      image: NetworkImage(url_cump),
                                       placeholder: AssetImage(
                                           'assets/images/loading.gif'),
                                       fit: BoxFit.cover,
                                       height: 25,
-                                      width: 25)
-                              /*: FadeInImage(
-                                    image: NetworkImage(url_cump),
-                                    placeholder: AssetImage(
-                                        'assets/images/loading.gif'),
-                                    fit: BoxFit.cover,
-                                    height: 25,
-                                    width: 25),*/
-                              )
+                                      width: 25),*/
+                                ),
+                          )
                         ],
                       ),
                     )),
               ),
               GestureDetector(
                 onTap: () {
-                  /*if (cupo_mome == "0") {
+                  /*if (cupo_cump == "0") {
                     _servermessage.build(
                         context, "No cuenta con cupos disponibles");
-                  } else if (cupo_mome == "2") {
-                    _solicitarcupones.build(
-                        context,
-                        cons_cupo,
-                        nume_iden,
-                        jefe_inme,
-                        auto_emp1,
-                        auto_emp2,
-                        "MI MOMENTO ESPECIAL");
                   } else {
                     _solicitarcupos.build(
                         context,
@@ -93,7 +91,7 @@ class CardView extends GetView {
                         jefe_inme,
                         auto_emp1,
                         auto_emp2,
-                        "MI MOMENTO ESPECIAL",
+                        "MI CUMPLEAÑOS",
                         "1");
                   }*/
                 },
@@ -101,10 +99,8 @@ class CardView extends GetView {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
                     elevation: 10,
-                    margin: EdgeInsets.only(top: 10),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(30),
-                      child: Column(
+                      child: Stack(
                         children: <Widget>[
                           const FadeInImage(
                               image: AssetImage(
@@ -112,56 +108,69 @@ class CardView extends GetView {
                               placeholder:
                                   AssetImage('assets/images/loading.gif'),
                               fit: BoxFit.cover,
-                              height: 130,
-                              width: 145),
-                          Container(
-                              padding: EdgeInsets.fromLTRB(0, 0, 0, 5),
-                              child: /*url_mome == null
-                                ? */
-                                  const FadeInImage(
-                                      image: NetworkImage(
-                                          "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png"),
+                              height: 140),
+                          Positioned(
+                            top: 105,
+                            left: 5,
+                            child: Container(
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: HelperTheme.black, width: 3),
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(
+                                            15.0) //                 <--- border radius here
+                                        )),
+                                child: /*url_cump == null
+                                  ? */
+                                    const FadeInImage(
+                                        image: NetworkImage(
+                                            "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png"),
+                                        placeholder: AssetImage(
+                                            'assets/images/loading.gif'),
+                                        fit: BoxFit.cover,
+                                        width: 25)
+                                /*: FadeInImage(
+                                      image: NetworkImage(url_cump),
                                       placeholder: AssetImage(
                                           'assets/images/loading.gif'),
                                       fit: BoxFit.cover,
                                       height: 25,
-                                      width: 25)
-                              /*: FadeInImage(
-                                    image: NetworkImage(url_mome),
-                                    placeholder: AssetImage(
-                                        'assets/images/loading.gif'),
-                                    fit: BoxFit.cover,
-                                    height: 25,
-                                    width: 25),*/
-                              )
+                                      width: 25),*/
+                                ),
+                          )
                         ],
                       ),
                     )),
               ),
             ],
           ),
+          const SizedBox(height: 5),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               GestureDetector(
                 onTap: () {
-                  /*if (cupo_cita == "0") {
-            _servermessage.build(context, "No cuenta con cupos disponibles");
-          } else if (cupo_cita == "2") {
-            _solicitarcupones.build(context, cons_cupo, nume_iden, jefe_inme,
-                auto_emp1, auto_emp2, "CITA MEDICA");
-          } else {
-            _solicitarcupos.build(context, cons_cupo, nume_iden, jefe_inme,
-                auto_emp1, auto_emp2, "CITA MEDICA", "1");
-          }*/
+                  /*if (cupo_cump == "0") {
+                    _servermessage.build(
+                        context, "No cuenta con cupos disponibles");
+                  } else {
+                    _solicitarcupos.build(
+                        context,
+                        cons_cupo,
+                        nume_iden,
+                        jefe_inme,
+                        auto_emp1,
+                        auto_emp2,
+                        "MI CUMPLEAÑOS",
+                        "1");
+                  }*/
                 },
                 child: Card(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
                     elevation: 10,
-                    margin: EdgeInsets.only(top: 10),
                     child: ClipRRect(
-                      child: Column(
+                      child: Stack(
                         children: <Widget>[
                           const FadeInImage(
                               image:
@@ -169,52 +178,63 @@ class CardView extends GetView {
                               placeholder:
                                   AssetImage('assets/images/loading.gif'),
                               fit: BoxFit.cover,
-                              height: 130,
-                              width: 145),
-                          Container(
-                              padding: EdgeInsets.fromLTRB(0, 0, 0, 5),
-                              child: /*url_cita == null
-                        ? */
-                                  const FadeInImage(
-                                      image: NetworkImage(
-                                          "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png"),
+                              height: 140),
+                          Positioned(
+                            top: 105,
+                            left: 5,
+                            child: Container(
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: HelperTheme.black, width: 3),
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(
+                                            15.0) //                 <--- border radius here
+                                        )),
+                                child: /*url_cump == null
+                                  ? */
+                                    const FadeInImage(
+                                        image: NetworkImage(
+                                            "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png"),
+                                        placeholder: AssetImage(
+                                            'assets/images/loading.gif'),
+                                        fit: BoxFit.cover,
+                                        width: 25)
+                                /*: FadeInImage(
+                                      image: NetworkImage(url_cump),
                                       placeholder: AssetImage(
                                           'assets/images/loading.gif'),
                                       fit: BoxFit.cover,
                                       height: 25,
-                                      width: 25)
-                              /*: FadeInImage(
-                            image: NetworkImage(url_cita),
-                            placeholder:
-                                AssetImage('assets/images/loading.gif'),
-                            fit: BoxFit.cover,
-                            height: 25,
-                            width: 25),*/
-                              )
+                                      width: 25),*/
+                                ),
+                          )
                         ],
                       ),
                     )),
               ),
               GestureDetector(
                 onTap: () {
-                  /*if (cupo_tram == "0") {
-            _servermessage.build(context, "No cuenta con cupos disponibles");
-          } else if (cupo_tram == "2") {
-            _solicitarcupones.build(context, cons_cupo, nume_iden, jefe_inme,
-                auto_emp1, auto_emp2, "MIS TRAMITES");
-          } else {
-            _solicitarcupos.build(context, cons_cupo, nume_iden, jefe_inme,
-                auto_emp1, auto_emp2, "MIS TRAMITES", "1");
-          }*/
+                  /*if (cupo_cump == "0") {
+                    _servermessage.build(
+                        context, "No cuenta con cupos disponibles");
+                  } else {
+                    _solicitarcupos.build(
+                        context,
+                        cons_cupo,
+                        nume_iden,
+                        jefe_inme,
+                        auto_emp1,
+                        auto_emp2,
+                        "MI CUMPLEAÑOS",
+                        "1");
+                  }*/
                 },
                 child: Card(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
                     elevation: 10,
-                    margin: EdgeInsets.only(top: 10),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(30),
-                      child: Column(
+                      child: Stack(
                         children: <Widget>[
                           const FadeInImage(
                               image: AssetImage(
@@ -222,130 +242,168 @@ class CardView extends GetView {
                               placeholder:
                                   AssetImage('assets/images/loading.gif'),
                               fit: BoxFit.cover,
-                              height: 130,
-                              width: 145),
-                          Container(
-                              padding: EdgeInsets.fromLTRB(0, 0, 0, 5),
-                              child: /*url_tram == null
-                        ? */
-                                  const FadeInImage(
-                                      image: NetworkImage(
-                                          "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png"),
+                              height: 140),
+                          Positioned(
+                            top: 105,
+                            left: 5,
+                            child: Container(
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: HelperTheme.black, width: 3),
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(
+                                            15.0) //                 <--- border radius here
+                                        )),
+                                child: /*url_cump == null
+                                  ? */
+                                    const FadeInImage(
+                                        image: NetworkImage(
+                                            "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png"),
+                                        placeholder: AssetImage(
+                                            'assets/images/loading.gif'),
+                                        fit: BoxFit.cover,
+                                        width: 25)
+                                /*: FadeInImage(
+                                      image: NetworkImage(url_cump),
                                       placeholder: AssetImage(
                                           'assets/images/loading.gif'),
                                       fit: BoxFit.cover,
                                       height: 25,
-                                      width: 25)
-                              /*: FadeInImage(
-                            image: NetworkImage(url_tram),
-                            placeholder:
-                                AssetImage('assets/images/loading.gif'),
-                            fit: BoxFit.cover,
-                            height: 25,
-                            width: 25),*/
-                              )
+                                      width: 25),*/
+                                ),
+                          )
                         ],
                       ),
                     )),
               ),
             ],
           ),
+          const SizedBox(height: 5),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               GestureDetector(
                 onTap: () {
-                  /*if (cupo_ingr == "0") {
-            _servermessage.build(context, "No cuenta con cupos disponibles");
-          } else {
-            _solicitarcupos.build(context, cons_cupo, nume_iden, jefe_inme,
-                auto_emp1, auto_emp2, "MI INGRESO", "1");
-          }*/
+                  /*if (cupo_cump == "0") {
+                    _servermessage.build(
+                        context, "No cuenta con cupos disponibles");
+                  } else {
+                    _solicitarcupos.build(
+                        context,
+                        cons_cupo,
+                        nume_iden,
+                        jefe_inme,
+                        auto_emp1,
+                        auto_emp2,
+                        "MI CUMPLEAÑOS",
+                        "1");
+                  }*/
                 },
                 child: Card(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
                     elevation: 10,
-                    margin: EdgeInsets.only(top: 10),
                     child: ClipRRect(
-                      child: Column(
+                      child: Stack(
                         children: <Widget>[
                           const FadeInImage(
                               image: AssetImage('assets/images/ic_ingreso.png'),
                               placeholder:
                                   AssetImage('assets/images/loading.gif'),
                               fit: BoxFit.cover,
-                              height: 130,
-                              width: 145),
-                          Container(
-                              padding: EdgeInsets.fromLTRB(0, 0, 0, 5),
-                              child: /*url_ingr == null
-                        ? */
-                                  const FadeInImage(
-                                      image: NetworkImage(
-                                          "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png"),
+                              height: 140),
+                          Positioned(
+                            top: 105,
+                            left: 5,
+                            child: Container(
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: HelperTheme.black, width: 3),
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(
+                                            15.0) //                 <--- border radius here
+                                        )),
+                                child: /*url_cump == null
+                                  ? */
+                                    const FadeInImage(
+                                        image: NetworkImage(
+                                            "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png"),
+                                        placeholder: AssetImage(
+                                            'assets/images/loading.gif'),
+                                        fit: BoxFit.cover,
+                                        width: 25)
+                                /*: FadeInImage(
+                                      image: NetworkImage(url_cump),
                                       placeholder: AssetImage(
                                           'assets/images/loading.gif'),
                                       fit: BoxFit.cover,
                                       height: 25,
-                                      width: 25)
-                              /*: FadeInImage(
-                            image: NetworkImage(url_ingr),
-                            placeholder:
-                                AssetImage('assets/images/loading.gif'),
-                            fit: BoxFit.cover,
-                            height: 25,
-                            width: 25),*/
-                              )
+                                      width: 25),*/
+                                ),
+                          )
                         ],
                       ),
                     )),
               ),
               GestureDetector(
                 onTap: () {
-                  /*if (cupo_sali == "0") {
-            _servermessage.build(context, "No cuenta con cupos disponibles");
-          } else {
-            _solicitarcupos.build(context, cons_cupo, nume_iden, jefe_inme,
-                auto_emp1, auto_emp2, "MI SALIDA", "1");
-          }*/
+                  /*if (cupo_cump == "0") {
+                    _servermessage.build(
+                        context, "No cuenta con cupos disponibles");
+                  } else {
+                    _solicitarcupos.build(
+                        context,
+                        cons_cupo,
+                        nume_iden,
+                        jefe_inme,
+                        auto_emp1,
+                        auto_emp2,
+                        "MI CUMPLEAÑOS",
+                        "1");
+                  }*/
                 },
                 child: Card(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
                     elevation: 10,
-                    margin: EdgeInsets.only(top: 10),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(30),
-                      child: Column(
+                      child: Stack(
                         children: <Widget>[
                           const FadeInImage(
                               image: AssetImage('assets/images/ic_salida.png'),
                               placeholder:
                                   AssetImage('assets/images/loading.gif'),
                               fit: BoxFit.cover,
-                              height: 130,
-                              width: 145),
-                          Container(
-                              padding: EdgeInsets.fromLTRB(0, 0, 0, 5),
-                              child: /*url_sali == null
-                        ? */
-                                  const FadeInImage(
-                                      image: NetworkImage(
-                                          "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png"),
+                              height: 140),
+                          Positioned(
+                            top: 105,
+                            left: 5,
+                            child: Container(
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: HelperTheme.black, width: 3),
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(
+                                            15.0) //                 <--- border radius here
+                                        )),
+                                child: /*url_cump == null
+                                  ? */
+                                    const FadeInImage(
+                                        image: NetworkImage(
+                                            "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png"),
+                                        placeholder: AssetImage(
+                                            'assets/images/loading.gif'),
+                                        fit: BoxFit.cover,
+                                        width: 25)
+                                /*: FadeInImage(
+                                      image: NetworkImage(url_cump),
                                       placeholder: AssetImage(
                                           'assets/images/loading.gif'),
                                       fit: BoxFit.cover,
                                       height: 25,
-                                      width: 25)
-                              /*: FadeInImage(
-                            image: NetworkImage(url_sali),
-                            placeholder:
-                                AssetImage('assets/images/loading.gif'),
-                            fit: BoxFit.cover,
-                            height: 25,
-                            width: 25),*/
-                              )
+                                      width: 25),*/
+                                ),
+                          )
                         ],
                       ),
                     )),
@@ -354,6 +412,7 @@ class CardView extends GetView {
           ),
           const SizedBox(height: 10),
           Container(
+            alignment: Alignment.bottomCenter,
             padding: EdgeInsets.all(15.0),
             child: Column(
               children: [

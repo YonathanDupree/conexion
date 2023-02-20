@@ -14,12 +14,13 @@ class CouponView extends GetView<CouponController> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: HelperTheme.primary,
-        title:
-            const Text("Cuponera", style: TextStyle(color: HelperTheme.black)),
+        title: const Text("Mi cuponera",
+            style: TextStyle(color: HelperTheme.black)),
       ),
       body: const Center(
         child: CardView(),
       ),
+      backgroundColor: HelperTheme.white,
       drawer: MainDrawerWidget(),
     );
   }
