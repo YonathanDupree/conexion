@@ -10,9 +10,9 @@ class StatusView extends GetView<CouponController> {
   Widget build(BuildContext context) {
     return const Center(
         child: FadeInImage(
-            image: AssetImage('assets/images/ic_cumpleanos.png'),
-            placeholder: AssetImage('assets/images/loading.gif'),
-            fit: BoxFit.cover,
-            height: 140));
+      image: AssetImage('assets/images/status.png'),
+      placeholder: AssetImage('assets/images/loading.gif'),
+      fit: BoxFit.cover,
+    ));
   }
 }

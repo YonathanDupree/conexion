@@ -1,10 +1,12 @@
 import 'package:get/get.dart';
 
+import '../../../ui/utils/dialog_util.dart';
+
 class CouponController extends GetxController {
   //TODO: Implement CouponController
 
   var tabIndex = 0.obs;
-  var nombreApp = "JUan";
+  final _dialog = DialogUtil();
 
   void changeTabIndex(int index) {
     tabIndex.value = index;
@@ -17,6 +19,7 @@ class CouponController extends GetxController {
 
   @override
   void onReady() {
+    _dialog.dialogCupo();
     super.onReady();
   }
 

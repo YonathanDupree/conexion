@@ -29,6 +29,31 @@ class DialogUtil {
         ));
   }
 
+  void dialogCupo() {
+    Get.dialog(
+        barrierDismissible: true,
+        Material(
+          type: MaterialType.transparency,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 400,
+                  height: 400,
+                  margin: EdgeInsets.all(15.0),
+                  color: Colors.transparent,
+                  child: const Center(
+                    child: Image(
+                        image: AssetImage('assets/images/ic_headercupo.png')),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ));
+  }
+
   void dialogClose() {
     Get.back(closeOverlays: true);
   }

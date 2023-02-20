@@ -6,11 +6,11 @@ class RequestView extends GetView {
   const RequestView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'RequestView is working',
-        style: TextStyle(fontSize: 20),
-      ),
-    );
+    return const Center(
+        child: FadeInImage(
+      image: AssetImage('assets/images/solicitudes.png'),
+      placeholder: AssetImage('assets/images/loading.gif'),
+      fit: BoxFit.cover,
+    ));
   }
 }
