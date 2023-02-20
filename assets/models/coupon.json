@@ -1,0 +1,22 @@
+{
+    "cons_cupo": "65",
+    "fech_naci": "02/12/1988",
+    "nume_dias": "5",
+    "jefe_inme": "42746837",
+    "auto_emp1": "",
+    "auto_emp2": "",
+    "tota_usad": "10.0",
+    "cupo_cump": "1",
+    "cupo_mome": "0",
+    "cupo_tram": "2",
+    "cupo_cita": "2",
+    "cupo_ingr": "2",
+    "cupo_sali": "2",
+    "url_cump": "https://intranet.dupree.pe/desarrollo/libra/public/img/1.png",
+    "url_mome": "https://intranet.dupree.pe/desarrollo/libra/public/img/0.png",
+    "url_tram": "https://intranet.dupree.pe/desarrollo/libra/public/img/2.png",
+    "url_cita": "https://intranet.dupree.pe/desarrollo/libra/public/img/2.png",
+    "url_ingr": "https://intranet.dupree.pe/desarrollo/libra/public/img/2.png",
+    "url_sali": "https://intranet.dupree.pe/desarrollo/libra/public/img/2.png",
+    "mensaje": ""
+}
