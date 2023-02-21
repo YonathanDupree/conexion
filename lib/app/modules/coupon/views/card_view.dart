@@ -27,7 +27,8 @@ class CardView extends GetView<CouponController> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        controller.registerCoupun(controller.cupoCump.value);
+                        controller.openCalendar(
+                            controller.cupoCump.value, 'Mi cumpleaños');
                       },
                       child: Card(
                           shape: RoundedRectangleBorder(
@@ -69,20 +70,8 @@ class CardView extends GetView<CouponController> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        /*if (cupo_cump == "0") {
-                    _servermessage.build(
-                        context, "No cuenta con cupos disponibles");
-                  } else {
-                    _solicitarcupos.build(
-                        context,
-                        cons_cupo,
-                        nume_iden,
-                        jefe_inme,
-                        auto_emp1,
-                        auto_emp2,
-                        "MI CUMPLEAÑOS",
-                        "1");
-                  }*/
+                        controller.openCalendar(
+                            controller.cupoMome.value, 'Mi momento especial');
                       },
                       child: Card(
                           shape: RoundedRectangleBorder(
@@ -130,20 +119,8 @@ class CardView extends GetView<CouponController> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        /*if (cupo_cump == "0") {
-                    _servermessage.build(
-                        context, "No cuenta con cupos disponibles");
-                  } else {
-                    _solicitarcupos.build(
-                        context,
-                        cons_cupo,
-                        nume_iden,
-                        jefe_inme,
-                        auto_emp1,
-                        auto_emp2,
-                        "MI CUMPLEAÑOS",
-                        "1");
-                  }*/
+                        controller.openCalendar(
+                            controller.cupoCita.value, 'Cita medica');
                       },
                       child: Card(
                           shape: RoundedRectangleBorder(
@@ -185,20 +162,8 @@ class CardView extends GetView<CouponController> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        /*if (cupo_cump == "0") {
-                    _servermessage.build(
-                        context, "No cuenta con cupos disponibles");
-                  } else {
-                    _solicitarcupos.build(
-                        context,
-                        cons_cupo,
-                        nume_iden,
-                        jefe_inme,
-                        auto_emp1,
-                        auto_emp2,
-                        "MI CUMPLEAÑOS",
-                        "1");
-                  }*/
+                        controller.openCalendar(
+                            controller.cupoTram.value, 'Mis tramites');
                       },
                       child: Card(
                           shape: RoundedRectangleBorder(
@@ -246,20 +211,8 @@ class CardView extends GetView<CouponController> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        /*if (cupo_cump == "0") {
-                    _servermessage.build(
-                        context, "No cuenta con cupos disponibles");
-                  } else {
-                    _solicitarcupos.build(
-                        context,
-                        cons_cupo,
-                        nume_iden,
-                        jefe_inme,
-                        auto_emp1,
-                        auto_emp2,
-                        "MI CUMPLEAÑOS",
-                        "1");
-                  }*/
+                        controller.openCalendar(
+                            controller.cupoIngr.value, 'Mi ingreso');
                       },
                       child: Card(
                           shape: RoundedRectangleBorder(
@@ -301,20 +254,8 @@ class CardView extends GetView<CouponController> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        /*if (cupo_cump == "0") {
-                    _servermessage.build(
-                        context, "No cuenta con cupos disponibles");
-                  } else {
-                    _solicitarcupos.build(
-                        context,
-                        cons_cupo,
-                        nume_iden,
-                        jefe_inme,
-                        auto_emp1,
-                        auto_emp2,
-                        "MI CUMPLEAÑOS",
-                        "1");
-                  }*/
+                        controller.openCalendar(
+                            controller.cupoSali.value, 'Mi salida');
                       },
                       child: Card(
                           shape: RoundedRectangleBorder(

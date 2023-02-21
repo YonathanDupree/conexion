@@ -44,6 +44,9 @@ class CouponController extends GetxController {
   RxString urlSali =
       "https://intranet.dupree.pe/desarrollo/libra/public/img/0.png".obs;
 
+  RxString tipoCupo = "".obs;
+  RxInt cantCupo = 0.obs;
+
   void changeTabIndex(int index) {
     tabIndex.value = index;
   }
@@ -99,11 +102,13 @@ class CouponController extends GetxController {
     }
   }
 
-  Future<void> registerCoupun(String valoCupo) async {
+  Future<void> openCalendar(String cantCupo, String tipoCupo) async {
     late String title;
     late String message;
 
-    if (int.parse(valoCupo) > 0) {
+    if (int.parse(cantCupo) > 0) {
+      changeCantCupo(int.parse(cantCupo));
+      changeTipoCupo(tipoCupo);
       Get.toNamed(Routes.CALENDAR);
     } else {
       title = "Error";
@@ -114,5 +119,13 @@ class CouponController extends GetxController {
 
   void changeIsLoading(bool data) {
     isLoading(data);
+  }
+
+  void changeTipoCupo(String data) {
+    tipoCupo(data);
+  }
+
+  void changeCantCupo(int data) {
+    cantCupo(data);
   }
 }

@@ -12,7 +12,7 @@ class CalendarView extends GetView<CalendarController> {
   Widget build(BuildContext context) {
     return Obx(() => Scaffold(
           appBar: AppBar(
-            title: const Text('Mi cumpleaños'),
+            title: Text(controller.couponController.tipoCupo.value),
             centerTitle: true,
             backgroundColor: HelperTheme.primary,
           ),
@@ -92,8 +92,8 @@ class CalendarView extends GetView<CalendarController> {
                               },
                               icon: const Icon(Icons
                                   .calendar_month), //icon data for elevated button
-                              label: Text(
-                                  controller.selectedFecha.value) //label text
+                              label:
+                                  Text(controller.fechSoli.value) //label text
                               ),
                         ],
                       ),
@@ -107,19 +107,29 @@ class CalendarView extends GetView<CalendarController> {
                             elevation: 5.0,
                             backgroundColor: HelperTheme.success,
                             foregroundColor: HelperTheme.primary,
-                            onPressed: () {},
+                            onPressed: () {
+                              controller.registerCoupon(1);
+                            },
                           ),
                           const SizedBox(
                             width: 20,
                           ),
-                          FloatingActionButton(
-                            heroTag: "btn2",
-                            child: Icon(Icons.filter_2),
-                            elevation: 5.0,
-                            backgroundColor: HelperTheme.danger,
-                            foregroundColor: HelperTheme.primary,
-                            onPressed: () {},
-                          ),
+                          controller.couponController.tipoCupo.value == 'Mi momento especial' ||
+                                  controller.couponController.tipoCupo.value ==
+                                      'Cita medica' ||
+                                  controller.couponController.tipoCupo.value ==
+                                      'Mis tramites'
+                              ? FloatingActionButton(
+                                  heroTag: "btn2",
+                                  child: Icon(Icons.filter_2),
+                                  elevation: 5.0,
+                                  backgroundColor: HelperTheme.danger,
+                                  foregroundColor: HelperTheme.primary,
+                                  onPressed: () {
+                                    controller.registerCoupon(2);
+                                  },
+                                )
+                              : Container(),
                         ],
                       ),
                       const SizedBox(height: 10),
