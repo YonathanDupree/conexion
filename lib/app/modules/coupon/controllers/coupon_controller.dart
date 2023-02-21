@@ -5,6 +5,7 @@ import 'package:conexion/app/modules/coupon/providers/coupon_provider.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
+import '../../../routes/app_pages.dart';
 import '../../../ui/utils/dialog_util.dart';
 import '../../../ui/utils/snackbar_util.dart';
 
@@ -18,6 +19,18 @@ class CouponController extends GetxController {
   RxBool isLoading = true.obs;
 
   String numeIden = "";
+  RxString consCupo = "0".obs;
+  RxString jefeInme = "0".obs;
+  RxString autoEmp1 = "0".obs;
+  RxString autoEmp2 = "0".obs;
+  RxString totaUsad = "0".obs;
+  RxString cupoCump = "0".obs;
+  RxString cupoMome = "0".obs;
+  RxString cupoTram = "0".obs;
+  RxString cupoCita = "0".obs;
+  RxString cupoIngr = "0".obs;
+  RxString cupoSali = "0".obs;
+
   RxString urlCump =
       "https://intranet.dupree.pe/desarrollo/libra/public/img/0.png".obs;
   RxString urlMome =
@@ -30,8 +43,6 @@ class CouponController extends GetxController {
       "https://intranet.dupree.pe/desarrollo/libra/public/img/0.png".obs;
   RxString urlSali =
       "https://intranet.dupree.pe/desarrollo/libra/public/img/0.png".obs;
-
-  RxString totaUsad = "0".obs;
 
   void changeTabIndex(int index) {
     tabIndex.value = index;
@@ -62,17 +73,41 @@ class CouponController extends GetxController {
 
     try {
       Coupon? data = await couponprovider.getCoupon(numeIden);
-      urlCump.value = data!.urlCump.toString();
+      consCupo.value = data!.consCupo.toString();
+      jefeInme.value = data.jefeInme.toString();
+      autoEmp1.value = data.autoEmp1.toString();
+      autoEmp2.value = data.autoEmp2.toString();
+      totaUsad.value = data.totaUsad.toString();
+      cupoCump.value = data.cupoCump.toString();
+      cupoMome.value = data.cupoMome.toString();
+      cupoTram.value = data.cupoTram.toString();
+      cupoCita.value = data.cupoCita.toString();
+      cupoIngr.value = data.cupoIngr.toString();
+      cupoSali.value = data.cupoSali.toString();
+      urlCump.value = data.urlCump.toString();
       urlMome.value = data.urlMome.toString();
       urlTram.value = data.urlTram.toString();
       urlCita.value = data.urlCita.toString();
       urlIngr.value = data.urlIngr.toString();
       urlSali.value = data.urlSali.toString();
-      totaUsad.value = data.totaUsad.toString();
+
       changeIsLoading(false);
     } catch (error) {
       title = "Error";
       message = error.toString();
+      SnackbarUtil().snackbarError(title, message);
+    }
+  }
+
+  Future<void> registerCoupun(String valoCupo) async {
+    late String title;
+    late String message;
+
+    if (int.parse(valoCupo) > 0) {
+      Get.toNamed(Routes.CALENDAR);
+    } else {
+      title = "Error";
+      message = "No cuenta con cupos disponibles";
       SnackbarUtil().snackbarError(title, message);
     }
   }

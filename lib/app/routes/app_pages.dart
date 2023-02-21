@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/calendar/bindings/calendar_binding.dart';
+import '../modules/calendar/views/calendar_view.dart';
 import '../modules/contact/bindings/contact_binding.dart';
 import '../modules/contact/views/contact_view.dart';
 import '../modules/coupon/bindings/coupon_binding.dart';
@@ -57,6 +59,11 @@ class AppPages {
       name: _Paths.CONTACT,
       page: () => const ContactView(),
       binding: ContactBinding(),
+    ),
+    GetPage(
+      name: _Paths.CALENDAR,
+      page: () => const CalendarView(),
+      binding: CalendarBinding(),
     ),
   ];
 }

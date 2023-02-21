@@ -11,6 +11,7 @@ abstract class Routes {
   static const PROFILE = _Paths.PROFILE;
   static const COUPON = _Paths.COUPON;
   static const CONTACT = _Paths.CONTACT;
+  static const CALENDAR = _Paths.CALENDAR;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const PROFILE = '/profile';
   static const COUPON = '/coupon';
   static const CONTACT = '/contact';
+  static const CALENDAR = '/calendar';
 }

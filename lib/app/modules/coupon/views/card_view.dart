@@ -2,6 +2,7 @@ import 'package:conexion/app/ui/themes/helper_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import '../../../ui/widgets/loading_widget.dart';
@@ -11,9 +12,6 @@ class CardView extends GetView<CouponController> {
   const CardView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    /*if(true){
-
-    }*/
     return Scaffold(
         body: Stack(
       children: [
@@ -29,20 +27,50 @@ class CardView extends GetView<CouponController> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        /*if (cupo_cump == "0") {
-                    _servermessage.build(
-                        context, "No cuenta con cupos disponibles");
-                  } else {
-                    _solicitarcupos.build(
-                        context,
-                        cons_cupo,
-                        nume_iden,
-                        jefe_inme,
-                        auto_emp1,
-                        auto_emp2,
-                        "MI CUMPLEAÑOS",
-                        "1");
-                  }*/
+                        controller.registerCoupun(controller.cupoCump.value);
+
+                        /*showDatePicker(
+                          context: context,
+                          initialDate: DateTime(DateTime.now().year,
+                              DateTime.now().month, DateTime.now().day + 2),
+                          firstDate: DateTime(DateTime.now().year,
+                              DateTime.now().month, DateTime.now().day + 2),
+                          lastDate: DateTime(DateTime.now().year,
+                              DateTime.now().month, DateTime.now().day + 30),
+                          helpText: 'Seleccione fecha',
+                          cancelText: 'Cerrar',
+                          confirmText: 'Ok',
+                          fieldLabelText: 'Ingrese fecha',
+                          errorFormatText: 'Formato invalido',
+                          builder: (context, child) {
+                            return Theme(
+                              data: ThemeData.light().copyWith(
+                                  primaryColor: HelperTheme.primary,
+                                  colorScheme: const ColorScheme.light(
+                                      primary: HelperTheme.primary,
+                                      onPrimary: Colors.black),
+                                  buttonTheme: const ButtonThemeData(
+                                    textTheme: ButtonTextTheme.primary,
+                                  ),
+                                  textButtonTheme: TextButtonThemeData(
+                                    style: TextButton.styleFrom(
+                                      foregroundColor:
+                                          Colors.black, // button text color
+                                    ),
+                                  )), // This will change to light theme.
+                              child: SizedBox(child: child),
+                            );
+                          },
+                        ).then((value) async {
+                          try {
+                            String fech_soli =
+                                DateFormat('MM/dd/yyyy').format(value!);
+                            controller.registerCoupun(
+                                controller.cupoCump.value, fech_soli);
+                          } catch (e) {
+                            debugPrint("Error cerrar");
+                          }
+                        });*/
                       },
                       child: Card(
                           shape: RoundedRectangleBorder(
