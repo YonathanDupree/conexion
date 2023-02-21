@@ -28,49 +28,6 @@ class CardView extends GetView<CouponController> {
                     GestureDetector(
                       onTap: () {
                         controller.registerCoupun(controller.cupoCump.value);
-
-                        /*showDatePicker(
-                          context: context,
-                          initialDate: DateTime(DateTime.now().year,
-                              DateTime.now().month, DateTime.now().day + 2),
-                          firstDate: DateTime(DateTime.now().year,
-                              DateTime.now().month, DateTime.now().day + 2),
-                          lastDate: DateTime(DateTime.now().year,
-                              DateTime.now().month, DateTime.now().day + 30),
-                          helpText: 'Seleccione fecha',
-                          cancelText: 'Cerrar',
-                          confirmText: 'Ok',
-                          fieldLabelText: 'Ingrese fecha',
-                          errorFormatText: 'Formato invalido',
-                          builder: (context, child) {
-                            return Theme(
-                              data: ThemeData.light().copyWith(
-                                  primaryColor: HelperTheme.primary,
-                                  colorScheme: const ColorScheme.light(
-                                      primary: HelperTheme.primary,
-                                      onPrimary: Colors.black),
-                                  buttonTheme: const ButtonThemeData(
-                                    textTheme: ButtonTextTheme.primary,
-                                  ),
-                                  textButtonTheme: TextButtonThemeData(
-                                    style: TextButton.styleFrom(
-                                      foregroundColor:
-                                          Colors.black, // button text color
-                                    ),
-                                  )), // This will change to light theme.
-                              child: SizedBox(child: child),
-                            );
-                          },
-                        ).then((value) async {
-                          try {
-                            String fech_soli =
-                                DateFormat('MM/dd/yyyy').format(value!);
-                            controller.registerCoupun(
-                                controller.cupoCump.value, fech_soli);
-                          } catch (e) {
-                            debugPrint("Error cerrar");
-                          }
-                        });*/
                       },
                       child: Card(
                           shape: RoundedRectangleBorder(

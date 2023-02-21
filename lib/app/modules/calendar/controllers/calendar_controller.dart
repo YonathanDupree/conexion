@@ -2,8 +2,7 @@ import 'package:get/get.dart';
 
 class CalendarController extends GetxController {
   //TODO: Implement CalendarController
-
-  final count = 0.obs;
+  RxString selectedFecha = "Seleccione".obs;
   @override
   void onInit() {
     super.onInit();
@@ -19,5 +18,7 @@ class CalendarController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  void changeselectedFecha(String value) {
+    selectedFecha(value);
+  }
 }
