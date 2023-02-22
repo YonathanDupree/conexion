@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AnuladoWidget extends StatelessWidget {
+class CanceledWidget extends StatelessWidget {
   final String tipoCupo;
   final String estaSoli;
   final String horaSoli;
@@ -11,7 +11,7 @@ class AnuladoWidget extends StatelessWidget {
   final String horaApro;
   final String anotObse;
 
-  const AnuladoWidget(
+  const CanceledWidget(
       {Key? key,
       required this.tipoCupo,
       required this.estaSoli,
