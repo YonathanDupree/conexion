@@ -1,5 +1,5 @@
 import 'package:conexion/app/modules/coupon/views/card_view.dart';
-import 'package:conexion/app/modules/coupon/views/request_view.dart';
+import 'package:conexion/app/modules/request/views/request_view.dart';
 import 'package:conexion/app/modules/status/views/status_view.dart';
 import 'package:flutter/material.dart';
 
@@ -13,11 +13,7 @@ class CouponView extends GetView<CouponController> {
   const CouponView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final screens = [
-      CardView(),
-      StatusView(),
-      RequestView(),
-    ];
+    final screens = [CardView(), StatusView(), RequestView()];
 
     return Obx(() => Scaffold(
         appBar: AppBar(

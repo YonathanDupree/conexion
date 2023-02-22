@@ -14,6 +14,8 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
+import '../modules/request/bindings/request_binding.dart';
+import '../modules/request/views/request_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 import '../modules/status/bindings/status_binding.dart';
@@ -71,6 +73,11 @@ class AppPages {
       name: _Paths.STATUS,
       page: () => const StatusView(),
       binding: StatusBinding(),
+    ),
+    GetPage(
+      name: _Paths.REQUEST,
+      page: () => const RequestView(),
+      binding: RequestBinding(),
     ),
   ];
 }

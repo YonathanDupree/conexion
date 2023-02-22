@@ -13,6 +13,7 @@ abstract class Routes {
   static const CONTACT = _Paths.CONTACT;
   static const CALENDAR = _Paths.CALENDAR;
   static const STATUS = _Paths.STATUS;
+  static const REQUEST = _Paths.REQUEST;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const CONTACT = '/contact';
   static const CALENDAR = '/calendar';
   static const STATUS = '/status';
+  static const REQUEST = '/request';
 }

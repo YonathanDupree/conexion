@@ -28,6 +28,14 @@ class HelperTheme {
   static const Color warning = Color(0XFFFD7E14);
   static const Color info = Color(0XFF0DCAF0);
 
+  static const TextStyle titleBlackSM = TextStyle(
+    fontFamily: fontName,
+    fontWeight: FontWeight.w500,
+    fontSize: 17,
+    letterSpacing: 0.18,
+    color: black,
+  );
+
   static const TextStyle titleBlackXl = TextStyle(
     fontFamily: fontName,
     fontWeight: FontWeight.bold,
@@ -49,49 +57,49 @@ class HelperTheme {
     letterSpacing: 0.18,
     color: black,
   );
-
   static const TextStyle textButtonBlackXl = TextStyle(
     fontFamily: fontName,
     fontWeight: FontWeight.bold,
     fontSize: 20,
     color: black,
   );
-
   static const TextStyle textButtonGreyXl = TextStyle(
     fontFamily: fontName,
     fontWeight: FontWeight.w400,
     fontSize: 20,
     color: grey,
   );
-
   static const TextStyle textButtonBlackLg = TextStyle(
     fontFamily: fontName,
     fontWeight: FontWeight.w400,
     fontSize: 18,
     color: black,
   );
-
   static const TextStyle textButtonBlackMd = TextStyle(
     fontFamily: fontName,
     fontWeight: FontWeight.w400,
     fontSize: 15,
     color: black,
   );
-
   static const TextStyle textButtonWhiteMd = TextStyle(
     fontFamily: fontName,
     fontWeight: FontWeight.w400,
     fontSize: 15,
     color: white,
   );
-
   static const TextStyle textButtonWhiteLg = TextStyle(
     fontFamily: fontName,
     fontWeight: FontWeight.w400,
     fontSize: 18,
     color: white,
   );
-
+  static const TextStyle subTitleBlackSM = TextStyle(
+    fontFamily: fontName,
+    fontWeight: FontWeight.bold,
+    fontSize: 16,
+    letterSpacing: 0.18,
+    color: success,
+  );
   static const TextStyle subTitleBlack = TextStyle(
     fontFamily: fontName,
     fontWeight: FontWeight.bold,
@@ -99,7 +107,6 @@ class HelperTheme {
     letterSpacing: 0.18,
     color: black,
   );
-
   static const TextStyle subTitleLigh = TextStyle(
     fontFamily: fontName,
     fontWeight: FontWeight.w400,
@@ -107,7 +114,6 @@ class HelperTheme {
     letterSpacing: 0.18,
     color: lightText,
   );
-
   static const TextStyle subTitleWhite = TextStyle(
     fontFamily: fontName,
     fontWeight: FontWeight.w400,
@@ -115,7 +121,6 @@ class HelperTheme {
     color: white,
     letterSpacing: 0.18,
   );
-
   static const TextStyle labelWhiteXl = TextStyle(
     fontFamily: fontName,
     fontWeight: FontWeight.w400,
@@ -397,5 +402,29 @@ class HelperTheme {
       backgroundColor: MaterialStateProperty.all(color),
       shadowColor: MaterialStateProperty.all(color),
     );
+  }
+
+  ButtonStyle buttonStyleApro() {
+    return ButtonStyle(
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+              side: const BorderSide(color: primary)),
+        ),
+        minimumSize: MaterialStateProperty.all(const Size(50, 50)),
+        backgroundColor: MaterialStateProperty.all(success),
+        shadowColor: MaterialStateProperty.all(success));
+  }
+
+  ButtonStyle buttonStyleObse() {
+    return ButtonStyle(
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+              side: const BorderSide(color: primary)),
+        ),
+        minimumSize: MaterialStateProperty.all(const Size(50, 50)),
+        backgroundColor: MaterialStateProperty.all(danger),
+        shadowColor: MaterialStateProperty.all(danger));
   }
 }

@@ -41,7 +41,6 @@ class HomeController extends GetxController {
 
   @override
   Future<void> onReady() async {
-    print("onReady");
     await getSpec();
     await getSlid();
     super.onReady();

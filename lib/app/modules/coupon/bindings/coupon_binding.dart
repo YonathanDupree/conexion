@@ -1,3 +1,4 @@
+import 'package:conexion/app/modules/request/controllers/request_controller.dart';
 import 'package:get/get.dart';
 
 import '../../status/controllers/status_controller.dart';
@@ -11,6 +12,9 @@ class CouponBinding extends Bindings {
     );
     Get.lazyPut<StatusController>(
       () => StatusController(),
+    );
+    Get.lazyPut<RequestController>(
+      () => RequestController(),
     );
   }
 }
