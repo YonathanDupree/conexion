@@ -32,7 +32,6 @@ class CouponProvider extends GetConnect {
           .timeout(const Duration(seconds: 120), onTimeout: () {
         throw ('Error en tiempo de espera, Por favor intentalo nuevamente!');
       });
-      print(response.body);
       var responseJson = jsonDecode(response.body);
       switch (response.statusCode) {
         case 200:
