@@ -12,13 +12,12 @@ class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HelperTheme.white,
+      backgroundColor: HelperTheme.primary,
       body: Center(
         child: Stack(
           children: [
             SingleChildScrollView(
               child: Container(
-                decoration: HelperTheme().buttonBoxDecoration(),
                 //color: HelperTheme.primary,
                 margin: const EdgeInsets.fromLTRB(30, 0, 30, 0),
                 child: Column(

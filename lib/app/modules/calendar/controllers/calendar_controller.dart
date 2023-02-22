@@ -8,15 +8,6 @@ class CalendarController extends GetxController {
   //TODO: Implement CalendarController
   final CalendarProvider provider = CalendarProvider();
   RxString fechSoli = "Seleccione".obs;
-  var tipos = [
-    'Mi cumpleaños',
-    //'Mi momento especial',
-    //'Cita medica',
-    //'Mis tramites',
-    'Mi ingreso',
-    'Mi salida'
-  ];
-
   final couponController = Get.find<CouponController>();
   @override
   void onInit() {

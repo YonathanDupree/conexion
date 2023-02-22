@@ -1,6 +1,6 @@
 import 'package:conexion/app/modules/coupon/views/card_view.dart';
 import 'package:conexion/app/modules/coupon/views/request_view.dart';
-import 'package:conexion/app/modules/coupon/views/status_view.dart';
+import 'package:conexion/app/modules/status/views/status_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';

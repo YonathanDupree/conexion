@@ -59,7 +59,6 @@ class CouponController extends GetxController {
 
   @override
   Future<void> onReady() async {
-    print(numeIden);
     await getCoupon(numeIden);
     _dialog.dialogCupo();
     super.onReady();
