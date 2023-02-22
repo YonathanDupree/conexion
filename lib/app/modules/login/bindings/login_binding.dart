@@ -9,9 +9,9 @@ class LoginBinding extends Bindings {
     Get.lazyPut<LoginController>(
       () => LoginController(),
     );
-    Get.lazyPut<UserProvider>(
+    /*Get.lazyPut<UserProvider>(
       () => UserProvider(),
-    );
+    );*/
     //No puede ser put(no debe arranacar oninit consume recursos) porque la baseurl podria ser diferene url para el login
     //Get.put(UserProvider());
   }

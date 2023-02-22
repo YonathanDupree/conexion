@@ -5,8 +5,9 @@ import '../controllers/status_controller.dart';
 class StatusBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<StatusController>(
+    /*Get.lazyPut<StatusController>(
       () => StatusController(),
-    );
+    );*/
+    //Get.put(StatusController);
   }
 }

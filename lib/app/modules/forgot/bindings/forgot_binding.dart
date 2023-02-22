@@ -9,8 +9,8 @@ class ForgotBinding extends Bindings {
     Get.lazyPut<ForgotController>(
       () => ForgotController(),
     );
-    Get.lazyPut<ForgotProvider>(
+    /*Get.lazyPut<ForgotProvider>(
       () => ForgotProvider(),
-    );
+    );*/
   }
 }

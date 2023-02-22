@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import '../../status/controllers/status_controller.dart';
 import '../controllers/coupon_controller.dart';
 
 class CouponBinding extends Bindings {
@@ -7,6 +8,9 @@ class CouponBinding extends Bindings {
   void dependencies() {
     Get.lazyPut<CouponController>(
       () => CouponController(),
+    );
+    Get.lazyPut<StatusController>(
+      () => StatusController(),
     );
   }
 }

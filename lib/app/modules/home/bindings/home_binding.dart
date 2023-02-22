@@ -11,11 +11,11 @@ class HomeBinding extends Bindings {
       () => HomeController(),
     );*/
     Get.put(HomeController());
-    Get.lazyPut<SpecProvider>(
+    /*Get.lazyPut<SpecProvider>(
       () => SpecProvider(),
     );
     Get.lazyPut<SlidProvider>(
       () => SlidProvider(),
-    );
+    );*/
   }
 }

@@ -8,7 +8,7 @@ class StatusView extends GetView<StatusController> {
   const StatusView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
         child: FadeInImage(
       image: AssetImage('assets/images/status.png'),
       placeholder: AssetImage('assets/images/loading.gif'),
