@@ -28,7 +28,7 @@ class CardView extends GetView<CouponController> {
                     GestureDetector(
                       onTap: () {
                         controller.openCalendar(
-                            controller.cupoCump.value, 'Mi cumpleaños');
+                            controller.cupoCump.value, 'coupon_cumpleanos'.tr);
                       },
                       child: Card(
                           shape: RoundedRectangleBorder(
@@ -49,13 +49,9 @@ class CardView extends GetView<CouponController> {
                                   left: 5,
                                   child: Container(
                                       decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: HelperTheme.black,
-                                              width: 3),
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(
-                                                  15.0) //                 <--- border radius here
-                                              )),
+                                        border: Border.all(
+                                            color: HelperTheme.white, width: 1),
+                                      ),
                                       child: FadeInImage(
                                           image: NetworkImage(
                                               controller.urlCump.toString()),
@@ -70,8 +66,8 @@ class CardView extends GetView<CouponController> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        controller.openCalendar(
-                            controller.cupoMome.value, 'Mi momento especial');
+                        controller.openCalendar(controller.cupoMome.value,
+                            'coupon_momento_especial'.tr);
                       },
                       child: Card(
                           shape: RoundedRectangleBorder(
@@ -92,13 +88,9 @@ class CardView extends GetView<CouponController> {
                                   left: 5,
                                   child: Container(
                                       decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: HelperTheme.black,
-                                              width: 3),
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(
-                                                  15.0) //                 <--- border radius here
-                                              )),
+                                        border: Border.all(
+                                            color: HelperTheme.white, width: 1),
+                                      ),
                                       child: FadeInImage(
                                           image: NetworkImage(
                                               controller.urlMome.toString()),
@@ -120,7 +112,7 @@ class CardView extends GetView<CouponController> {
                     GestureDetector(
                       onTap: () {
                         controller.openCalendar(
-                            controller.cupoCita.value, 'Cita medica');
+                            controller.cupoCita.value, 'coupon_cita_medica'.tr);
                       },
                       child: Card(
                           shape: RoundedRectangleBorder(
@@ -141,13 +133,9 @@ class CardView extends GetView<CouponController> {
                                   left: 5,
                                   child: Container(
                                       decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: HelperTheme.black,
-                                              width: 3),
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(
-                                                  15.0) //                 <--- border radius here
-                                              )),
+                                        border: Border.all(
+                                            color: HelperTheme.white, width: 1),
+                                      ),
                                       child: FadeInImage(
                                           image: NetworkImage(
                                               controller.urlCita.toString()),
@@ -163,7 +151,7 @@ class CardView extends GetView<CouponController> {
                     GestureDetector(
                       onTap: () {
                         controller.openCalendar(
-                            controller.cupoTram.value, 'Mis tramites');
+                            controller.cupoTram.value, 'coupon_tramites'.tr);
                       },
                       child: Card(
                           shape: RoundedRectangleBorder(
@@ -184,13 +172,9 @@ class CardView extends GetView<CouponController> {
                                   left: 5,
                                   child: Container(
                                       decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: HelperTheme.black,
-                                              width: 3),
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(
-                                                  15.0) //                 <--- border radius here
-                                              )),
+                                        border: Border.all(
+                                            color: HelperTheme.white, width: 1),
+                                      ),
                                       child: FadeInImage(
                                           image: NetworkImage(
                                               controller.urlTram.toString()),
@@ -212,7 +196,7 @@ class CardView extends GetView<CouponController> {
                     GestureDetector(
                       onTap: () {
                         controller.openCalendar(
-                            controller.cupoIngr.value, 'Mi ingreso');
+                            controller.cupoIngr.value, 'coupon_ingreso'.tr);
                       },
                       child: Card(
                           shape: RoundedRectangleBorder(
@@ -233,13 +217,9 @@ class CardView extends GetView<CouponController> {
                                   left: 5,
                                   child: Container(
                                       decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: HelperTheme.black,
-                                              width: 3),
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(
-                                                  15.0) //                 <--- border radius here
-                                              )),
+                                        border: Border.all(
+                                            color: HelperTheme.white, width: 1),
+                                      ),
                                       child: FadeInImage(
                                           image: NetworkImage(
                                               controller.urlIngr.toString()),
@@ -255,7 +235,7 @@ class CardView extends GetView<CouponController> {
                     GestureDetector(
                       onTap: () {
                         controller.openCalendar(
-                            controller.cupoSali.value, 'Mi salida');
+                            controller.cupoSali.value, 'coupon_salida'.tr);
                       },
                       child: Card(
                           shape: RoundedRectangleBorder(
@@ -277,12 +257,8 @@ class CardView extends GetView<CouponController> {
                                   child: Container(
                                       decoration: BoxDecoration(
                                           border: Border.all(
-                                              color: HelperTheme.black,
-                                              width: 3),
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(
-                                                  15.0) //                 <--- border radius here
-                                              )),
+                                              color: HelperTheme.white,
+                                              width: 1)),
                                       child: FadeInImage(
                                           image: NetworkImage(
                                               controller.urlSali.value),
@@ -307,13 +283,13 @@ class CardView extends GetView<CouponController> {
                         padding: const EdgeInsets.fromLTRB(25, 0, 25, 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const <Widget>[
-                            Text("Cupos usados",
-                                style: TextStyle(
+                          children: <Widget>[
+                            Text('coupon_usados'.tr,
+                                style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: HelperTheme.danger)),
-                            Text("Cupos disponibles",
-                                style: TextStyle(
+                            Text('coupon_disponible'.tr,
+                                style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: HelperTheme.danger)),
                           ],
@@ -326,12 +302,11 @@ class CardView extends GetView<CouponController> {
                             width: MediaQuery.of(context).size.width - 50,
                             animation: true,
                             animationDuration: 2000,
-                            lineHeight: 35.0,
+                            lineHeight: 30.0,
                             percent: double.parse("10") / 100,
                             center: Text(
                                 "${double.parse((double.parse(controller.totaUsad.value)).toStringAsFixed(1))} %",
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 16)),
+                                style: HelperTheme.labelBlackLg),
                             progressColor: HelperTheme.primary,
                             barRadius: const Radius.circular(16),
                           ),

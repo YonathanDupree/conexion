@@ -12,7 +12,10 @@ class CalendarView extends GetView<CalendarController> {
   Widget build(BuildContext context) {
     return Obx(() => Scaffold(
           appBar: AppBar(
-            title: Text(controller.couponController.tipoCupo.value),
+            title: Text(
+              controller.couponController.tipoCupo.value,
+              style: HelperTheme.titleBlackMd,
+            ),
             centerTitle: true,
             backgroundColor: HelperTheme.primary,
           ),
@@ -31,7 +34,7 @@ class CalendarView extends GetView<CalendarController> {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
                   elevation: 10,
-                  margin: EdgeInsets.fromLTRB(55, 10, 55, 10),
+                  margin: const EdgeInsets.fromLTRB(55, 10, 55, 10),
                   child: Column(
                     children: [
                       const SizedBox(height: 10),
@@ -56,11 +59,11 @@ class CalendarView extends GetView<CalendarController> {
                                       DateTime.now().year,
                                       DateTime.now().month,
                                       DateTime.now().day + 30),
-                                  helpText: 'Seleccione fecha',
-                                  cancelText: 'Cerrar',
-                                  confirmText: 'Ok',
-                                  fieldLabelText: 'Ingrese fecha',
-                                  errorFormatText: 'Formato invalido',
+                                  helpText: 'calendar_seleccionar'.tr,
+                                  cancelText: 'calendar_close'.tr,
+                                  confirmText: 'calendar_ok'.tr,
+                                  fieldLabelText: 'calendar_ingrese'.tr,
+                                  errorFormatText: 'calendar_formato'.tr,
                                   builder: (context, child) {
                                     return Theme(
                                       data: ThemeData.light().copyWith(
@@ -114,11 +117,12 @@ class CalendarView extends GetView<CalendarController> {
                           const SizedBox(
                             width: 20,
                           ),
-                          controller.couponController.tipoCupo.value == 'Mi momento especial' ||
+                          controller.couponController.tipoCupo.value ==
+                                      'coupon_momento_especial'.tr ||
                                   controller.couponController.tipoCupo.value ==
-                                      'Cita medica' ||
+                                      'coupon_cita_medica'.tr ||
                                   controller.couponController.tipoCupo.value ==
-                                      'Mis tramites'
+                                      'coupon_tramites'.tr
                               ? FloatingActionButton(
                                   heroTag: "btn2",
                                   child: Icon(Icons.filter_2),

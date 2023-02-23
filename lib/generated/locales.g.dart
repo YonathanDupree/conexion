@@ -33,6 +33,22 @@ class LocaleKeys {
   static const home_select_state = 'home_select_state';
   static const profile_profile = 'profile_profile';
   static const coupon_coupon = 'coupon_coupon';
+  static const coupon_cupones = 'coupon_cupones';
+  static const coupon_cumpleanos = 'coupon_cumpleanos';
+  static const coupon_momento_especial = 'coupon_momento_especial';
+  static const coupon_cita_medica = 'coupon_cita_medica';
+  static const coupon_tramites = 'coupon_tramites';
+  static const coupon_ingreso = 'coupon_ingreso';
+  static const coupon_salida = 'coupon_salida';
+  static const coupon_usados = 'coupon_usados';
+  static const coupon_disponible = 'coupon_disponible';
+  static const calendar_seleccionar = 'calendar_seleccionar';
+  static const calendar_close = 'calendar_close';
+  static const calendar_ok = 'calendar_ok';
+  static const calendar_ingrese = 'calendar_ingrese';
+  static const calendar_formato = 'calendar_formato';
+  static const status_status = 'status_status';
+  static const request_request = 'request_request';
   static const contact_contact = 'contact_contact';
   static const exit_exit = 'exit_exit';
   static const forgot_title = 'forgot_title';
@@ -95,6 +111,22 @@ class Locales {
     'home_select_state': 'Por favor seleccionar su estado',
     'profile_profile': 'Perfil',
     'coupon_coupon': 'Mi cuponera',
+    'coupon_cupones': 'Cupones',
+    'coupon_cumpleanos': 'Mi cumpleaños',
+    'coupon_momento_especial': 'Mi momento especial',
+    'coupon_cita_medica': 'Cita medica',
+    'coupon_tramites': 'Mis tramites',
+    'coupon_ingreso': 'Mi ingreso',
+    'coupon_salida': 'Mi salida',
+    'coupon_usados': 'Cupos usados',
+    'coupon_disponible': 'Cupos disponibles',
+    'calendar_seleccionar': 'Seleccione fecha',
+    'calendar_close': 'Cerrar',
+    'calendar_ok': 'OK',
+    'calendar_ingrese': 'Ingrese fecha',
+    'calendar_formato': 'Formato invalido',
+    'status_status': 'Status',
+    'request_request': 'Solicitudes',
     'contact_contact': 'Contáctanos',
     'exit_exit': 'Cerrar sesión',
     'forgot_title': 'Recuperar contraseña',

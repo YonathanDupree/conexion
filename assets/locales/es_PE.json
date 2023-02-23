@@ -27,7 +27,29 @@
         "profile": "Perfil"
     },
     "coupon": {
-        "coupon": "Mi cuponera"
+        "coupon": "Mi cuponera",
+        "cupones": "Cupones",
+        "cumpleanos": "Mi cumpleaños",
+        "momento_especial": "Mi momento especial",
+        "cita_medica": "Cita medica",
+        "tramites": "Mis tramites",
+        "ingreso": "Mi ingreso",
+        "salida": "Mi salida",
+        "usados": "Cupos usados",
+        "disponible": "Cupos disponibles"
+    },
+    "calendar": {
+        "seleccionar": "Seleccione fecha",
+        "close": "Cerrar",
+        "ok": "OK",
+        "ingrese": "Ingrese fecha",
+        "formato": "Formato invalido"
+    },
+    "status": {
+        "status": "Status"
+    },
+    "request": {
+        "request": "Solicitudes"
     },
     "contact": {
         "contact": "Contáctanos"

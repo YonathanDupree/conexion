@@ -18,8 +18,7 @@ class CouponView extends GetView<CouponController> {
     return Obx(() => Scaffold(
         appBar: AppBar(
           backgroundColor: HelperTheme.primary,
-          title: const Text("Mi cuponera",
-              style: TextStyle(color: HelperTheme.black)),
+          title: Text('coupon_coupon'.tr, style: HelperTheme.titleBlackMd),
         ),
         body: screens[controller.tabIndex.value],
         backgroundColor: HelperTheme.white,
@@ -36,13 +35,16 @@ class CouponView extends GetView<CouponController> {
             unselectedItemColor: HelperTheme.secondary,
             iconSize: 25,
             selectedFontSize: 16,
-            items: const [
+            items: [
               BottomNavigationBarItem(
-                  icon: Icon(Icons.credit_card), label: 'Cupones'),
+                  icon: const Icon(Icons.credit_card),
+                  label: 'coupon_coupon'.tr),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.query_stats), label: 'Status'),
+                  icon: const Icon(Icons.query_stats),
+                  label: 'status_status'.tr),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.view_list), label: 'Solicitudes'),
+                  icon: const Icon(Icons.view_list),
+                  label: 'request_request'.tr),
             ])));
   }
 }
