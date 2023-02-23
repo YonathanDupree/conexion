@@ -59,12 +59,10 @@ class StatusController extends GetxController {
       horaApro.value = data.horaApro.toString();
       anotObse.value = data.anotObse.toString();
       changeIsLoading(false);
-      //_dialog.dialogClose();
     } catch (error) {
       title = "Error";
       message = error.toString();
       changeIsLoading(false);
-      //_dialog.dialogCloseError();
       SnackbarUtil().snackbarError(title, message);
     }
   }

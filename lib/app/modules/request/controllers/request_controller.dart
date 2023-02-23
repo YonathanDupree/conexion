@@ -13,6 +13,7 @@ class RequestController extends GetxController {
   //TODO: Implement RequestController
   final provider = RequestProvider();
   GetStorage box = GetStorage();
+  RxBool isLoading = true.obs;
   String numeIden = "";
   var request = <Request>[].obs;
   final anotObseController = TextEditingController();
@@ -40,16 +41,15 @@ class RequestController extends GetxController {
   Future<void> getRequest() async {
     late String title;
     late String message;
-    _dialog.dialogProgress("Espere un momomento...");
 
     try {
       List<Request> request = await provider.getRequest(numeIden);
       changeRequest(request);
-      _dialog.dialogClose();
+      changeIsLoading(false);
     } catch (error) {
       title = "Error";
       message = error.toString();
-      _dialog.dialogCloseError();
+      changeIsLoading(false);
       SnackbarUtil().snackbarError(title, message);
     }
   }
@@ -82,5 +82,9 @@ class RequestController extends GetxController {
       message = error.toString();
       SnackbarUtil().snackbarError(title, message);
     }
+  }
+
+  void changeIsLoading(bool data) {
+    isLoading(data);
   }
 }
