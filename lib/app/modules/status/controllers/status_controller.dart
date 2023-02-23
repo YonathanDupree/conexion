@@ -11,6 +11,7 @@ class StatusController extends GetxController {
 
   final statusprovider = StatusProvider();
   GetStorage box = GetStorage();
+  RxBool isLoading = true.obs;
   String numeIden = "";
   final consRegi = "".obs;
   final tipoCupo = "".obs;
@@ -44,7 +45,7 @@ class StatusController extends GetxController {
   Future<void> getStatus(String numeIden) async {
     late String title;
     late String message;
-    _dialog.dialogProgress("Espere un momomento...");
+    //_dialog.dialogProgress("Espere un momomento...");
 
     try {
       Status? data = await statusprovider.getStatus(numeIden);
@@ -57,12 +58,18 @@ class StatusController extends GetxController {
       nombEmpl.value = data.nombEmpl.toString();
       horaApro.value = data.horaApro.toString();
       anotObse.value = data.anotObse.toString();
-      _dialog.dialogClose();
+      changeIsLoading(false);
+      //_dialog.dialogClose();
     } catch (error) {
       title = "Error";
       message = error.toString();
-      _dialog.dialogCloseError();
+      changeIsLoading(false);
+      //_dialog.dialogCloseError();
       SnackbarUtil().snackbarError(title, message);
     }
+  }
+
+  void changeIsLoading(bool data) {
+    isLoading(data);
   }
 }

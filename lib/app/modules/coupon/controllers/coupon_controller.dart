@@ -32,17 +32,17 @@ class CouponController extends GetxController {
   RxString cupoSali = "0".obs;
 
   RxString urlCump =
-      "https://intranet.dupree.pe/desarrollo/libra/public/img/0.png".obs;
+      "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png".obs;
   RxString urlMome =
-      "https://intranet.dupree.pe/desarrollo/libra/public/img/0.png".obs;
+      "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png".obs;
   RxString urlTram =
-      "https://intranet.dupree.pe/desarrollo/libra/public/img/0.png".obs;
+      "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png".obs;
   RxString urlCita =
-      "https://intranet.dupree.pe/desarrollo/libra/public/img/0.png".obs;
+      "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png".obs;
   RxString urlIngr =
-      "https://intranet.dupree.pe/desarrollo/libra/public/img/0.png".obs;
+      "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png".obs;
   RxString urlSali =
-      "https://intranet.dupree.pe/desarrollo/libra/public/img/0.png".obs;
+      "https://intranet2per.azzorti.co/desarrollo/libra/public/img/0.png".obs;
 
   RxString tipoCupo = "".obs;
   RxInt cantCupo = 0.obs;
@@ -92,9 +92,9 @@ class CouponController extends GetxController {
       urlCita.value = data.urlCita.toString();
       urlIngr.value = data.urlIngr.toString();
       urlSali.value = data.urlSali.toString();
-
       changeIsLoading(false);
     } catch (error) {
+      changeIsLoading(false);
       title = "Error";
       message = error.toString();
       SnackbarUtil().snackbarError(title, message);
