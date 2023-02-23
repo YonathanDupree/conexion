@@ -86,7 +86,8 @@ class ApprovedWidget extends StatelessWidget {
                     margin: const EdgeInsets.fromLTRB(16, 5, 91, 10),
                     alignment: Alignment.bottomLeft,
                     child: Text(fechSoli,
-                        style: TextStyle(fontSize: 15, color: Colors.black)),
+                        style:
+                            const TextStyle(fontSize: 15, color: Colors.black)),
                   ),
                 ],
               ),

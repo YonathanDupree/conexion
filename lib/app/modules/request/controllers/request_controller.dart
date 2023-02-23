@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
+import '../../../ui/utils/dialog_util.dart';
+
 class RequestController extends GetxController {
   //TODO: Implement RequestController
   final provider = RequestProvider();
@@ -14,6 +16,7 @@ class RequestController extends GetxController {
   String numeIden = "";
   var request = <Request>[].obs;
   final anotObseController = TextEditingController();
+  final _dialog = DialogUtil();
 
   @override
   void onInit() {
@@ -37,13 +40,16 @@ class RequestController extends GetxController {
   Future<void> getRequest() async {
     late String title;
     late String message;
+    _dialog.dialogProgress("Espere un momomento...");
 
     try {
       List<Request> request = await provider.getRequest(numeIden);
       changeRequest(request);
+      _dialog.dialogClose();
     } catch (error) {
       title = "Error";
       message = error.toString();
+      _dialog.dialogCloseError();
       SnackbarUtil().snackbarError(title, message);
     }
   }
@@ -53,16 +59,24 @@ class RequestController extends GetxController {
     request(data);
   }
 
+  void clearRequest() {
+    request.clear();
+  }
+
   Future<void> registerRequest(String consRegi, String consCupo,
       String estaSoli, String tipoCupo, String cantCupo) async {
     late String title;
     late String message;
-
+    _dialog.dialogProgress("Espere un momomento...");
     try {
       String message = await provider.registerRequest(consRegi, consCupo,
           estaSoli, numeIden, tipoCupo, anotObseController.text, cantCupo);
+      _dialog.dialogClose();
       title = "Notificación";
-      SnackbarUtil().snackbarInfo(title, message);
+      SnackbarUtil().snackbarSuccess(title, message);
+      clearRequest();
+      await 3.delay();
+      await getRequest();
     } catch (error) {
       title = "Error";
       message = error.toString();

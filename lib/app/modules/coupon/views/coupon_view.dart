@@ -23,7 +23,7 @@ class CouponView extends GetView<CouponController> {
         ),
         body: screens[controller.tabIndex.value],
         backgroundColor: HelperTheme.white,
-        drawer: MainDrawerWidget(),
+        drawer: const MainDrawerWidget(),
         bottomNavigationBar: BottomNavigationBar(
             showUnselectedLabels: true,
             showSelectedLabels: true,

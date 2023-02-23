@@ -18,7 +18,7 @@ class EarringWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: SafeArea(
-          child: Container(
+          child: SizedBox(
         height: 200.0,
         width: MediaQuery.of(context).size.width - 20,
         child: Card(
@@ -61,7 +61,7 @@ class EarringWidget extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.fromLTRB(16, 5, 30, 10),
                     alignment: Alignment.bottomLeft,
-                    child: Text('$horaSoli',
+                    child: Text(horaSoli,
                         style:
                             const TextStyle(fontSize: 15, color: Colors.black)),
                   ),
@@ -78,8 +78,9 @@ class EarringWidget extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.fromLTRB(16, 5, 91, 10),
                     alignment: Alignment.bottomLeft,
-                    child: Text('$fechSoli',
-                        style: TextStyle(fontSize: 15, color: Colors.black)),
+                    child: Text(fechSoli,
+                        style:
+                            const TextStyle(fontSize: 15, color: Colors.black)),
                   ),
                 ],
               ),

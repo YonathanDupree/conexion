@@ -2,6 +2,7 @@ import 'package:conexion/app/modules/status/providers/status_provider.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
+import '../../../ui/utils/dialog_util.dart';
 import '../../../ui/utils/snackbar_util.dart';
 import '../status_model.dart';
 
@@ -20,6 +21,8 @@ class StatusController extends GetxController {
   final nombEmpl = "".obs;
   final horaApro = "".obs;
   final anotObse = "".obs;
+
+  final _dialog = DialogUtil();
 
   @override
   void onInit() {
@@ -41,6 +44,7 @@ class StatusController extends GetxController {
   Future<void> getStatus(String numeIden) async {
     late String title;
     late String message;
+    _dialog.dialogProgress("Espere un momomento...");
 
     try {
       Status? data = await statusprovider.getStatus(numeIden);
@@ -53,11 +57,11 @@ class StatusController extends GetxController {
       nombEmpl.value = data.nombEmpl.toString();
       horaApro.value = data.horaApro.toString();
       anotObse.value = data.anotObse.toString();
-
-      //changeIsLoading(false);
+      _dialog.dialogClose();
     } catch (error) {
       title = "Error";
       message = error.toString();
+      _dialog.dialogCloseError();
       SnackbarUtil().snackbarError(title, message);
     }
   }

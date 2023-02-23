@@ -88,7 +88,8 @@ class ObservedWidget extends StatelessWidget {
                     margin: const EdgeInsets.fromLTRB(16, 5, 91, 10),
                     alignment: Alignment.bottomLeft,
                     child: Text(fechSoli,
-                        style: TextStyle(fontSize: 15, color: Colors.black)),
+                        style:
+                            const TextStyle(fontSize: 15, color: Colors.black)),
                   ),
                 ],
               ),
@@ -111,7 +112,8 @@ class ObservedWidget extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.fromLTRB(10, 0, 0, 5),
                     child: Text(nombEmpl,
-                        style: TextStyle(fontSize: 15, color: Colors.black)),
+                        style:
+                            const TextStyle(fontSize: 15, color: Colors.black)),
                   ),
                 ],
               ),
@@ -121,7 +123,8 @@ class ObservedWidget extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.fromLTRB(10, 0, 0, 5),
                     child: Text(cargEmpl,
-                        style: TextStyle(fontSize: 15, color: Colors.black)),
+                        style:
+                            const TextStyle(fontSize: 15, color: Colors.black)),
                   ),
                 ],
               ),
@@ -131,7 +134,8 @@ class ObservedWidget extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.fromLTRB(10, 0, 0, 10),
                     child: Text(horaApro,
-                        style: TextStyle(fontSize: 15, color: Colors.black)),
+                        style:
+                            const TextStyle(fontSize: 15, color: Colors.black)),
                   ),
                 ],
               ),
@@ -142,7 +146,7 @@ class ObservedWidget extends StatelessWidget {
                     child: Text(
                       'Descripción: $anotObse',
                       textAlign: TextAlign.justify,
-                      style: TextStyle(fontSize: 15, color: Colors.black),
+                      style: const TextStyle(fontSize: 15, color: Colors.black),
                     ),
                   ),
                 ],

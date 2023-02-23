@@ -12,8 +12,8 @@ class StatusView extends GetView<StatusController> {
   const StatusView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Obx(() => SingleChildScrollView(
-          child: Center(
+    return Obx(() => Center(
+          child: SingleChildScrollView(
             child: Container(
                 child: controller.estaSoli.value == "Pendiente"
                     ? EarringWidget(
