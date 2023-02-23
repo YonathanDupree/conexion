@@ -53,7 +53,14 @@ class RequestProvider extends GetConnect {
     return request;
   }
 
-  Future registerRequest(String consRegi, String consCupo) async {
+  Future registerRequest(
+      String consRegi,
+      String consCupo,
+      String estaSoli,
+      String numeIden,
+      String tipoCupo,
+      String anotObse,
+      String cantCupo) async {
     try {
       final response = await http
           .post(
@@ -61,8 +68,15 @@ class RequestProvider extends GetConnect {
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
-        body: jsonEncode(
-            <String, String>{'cons_regi': consRegi, 'cons_cupo': consCupo}),
+        body: jsonEncode(<String, String>{
+          'cons_regi': consRegi,
+          'cons_cupo': consCupo,
+          'esta_soli': estaSoli,
+          'usua_apro': numeIden,
+          'tipo_cupo': tipoCupo,
+          'anot_obse': anotObse,
+          'cant_cupo': cantCupo
+        }),
       )
           .timeout(const Duration(seconds: 120), onTimeout: () {
         throw ('Error en tiempo de espera, Por favor intentalo nuevamente!');

@@ -18,18 +18,19 @@ class RequestController extends GetxController {
   @override
   void onInit() {
     numeIden = box.read("numeIden");
+    anotObseController.text = '';
     super.onInit();
   }
 
   @override
   Future<void> onReady() async {
-    print("onReady Request");
     await getRequest();
     super.onReady();
   }
 
   @override
   void onClose() {
+    anotObseController.dispose();
     super.onClose();
   }
 
@@ -52,14 +53,15 @@ class RequestController extends GetxController {
     request(data);
   }
 
-  Future<void> registerRequest() async {
+  Future<void> registerRequest(String consRegi, String consCupo,
+      String estaSoli, String tipoCupo, String cantCupo) async {
     late String title;
     late String message;
 
     try {
-      await provider.registerRequest("consCupo", "consRegi");
+      String message = await provider.registerRequest(consRegi, consCupo,
+          estaSoli, numeIden, tipoCupo, anotObseController.text, cantCupo);
       title = "Notificación";
-      message = 'forgot_confirm_forgot'.tr;
       SnackbarUtil().snackbarInfo(title, message);
     } catch (error) {
       title = "Error";

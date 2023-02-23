@@ -33,11 +33,11 @@ class LoginController extends GetxController {
       "icon": "assets/images/azzorti.png",
       "lang": "PE",
     },
-    {
+    /*{
       "name": "Livva",
       "icon": "assets/images/livva.png",
       "lang": "LIPE",
-    },
+    },*/
   ];
 
   void updateCountry(String country, String lang) {

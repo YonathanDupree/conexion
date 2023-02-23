@@ -72,7 +72,7 @@ class SnackbarUtil {
         right: 10,
         bottom: 10,
       ),
-      duration: const Duration(seconds: 10),
+      duration: const Duration(seconds: 5),
       isDismissible: true,
       dismissDirection: DismissDirection.endToStart,
       forwardAnimationCurve: Curves.easeOutBack,
