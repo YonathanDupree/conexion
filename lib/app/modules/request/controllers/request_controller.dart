@@ -75,7 +75,6 @@ class RequestController extends GetxController {
       title = "Notificación";
       SnackbarUtil().snackbarSuccess(title, message);
       clearRequest();
-      await 3.delay();
       await getRequest();
     } catch (error) {
       title = "Error";

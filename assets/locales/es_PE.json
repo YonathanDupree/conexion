@@ -67,10 +67,10 @@
         "fecha_solicitud": "Fecha de solicitud :",
         "fecha_aplica": "Fecha que aplica :",
         "aprobar": "Aprobar",
-        "aprobado": "APROBADO",
+        "aprobado": "Aprobado",
         "aprobar_mensaje": "¿Esta seguro que desea aprobar solicitud?",
         "observar": "Observar",
-        "observado": "OBSERVADO",
+        "observado": "Observado",
         "observar_mensaje": "¿Esta seguro de observar la solicitud?",
         "registre": "Registre observación"
     },

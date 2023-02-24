@@ -11,7 +11,6 @@ class CalendarController extends GetxController {
   final CalendarProvider provider = CalendarProvider();
   RxString fechSoli = "Seleccione".obs;
   final couponController = Get.find<CouponController>();
-  //final statusController = Get.find<StatusController>();
   final _dialog = DialogUtil();
   @override
   void onInit() {

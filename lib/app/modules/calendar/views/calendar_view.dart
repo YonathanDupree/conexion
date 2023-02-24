@@ -85,9 +85,9 @@ class CalendarView extends GetView<CalendarController> {
                                   },
                                 ).then((value) async {
                                   try {
-                                    String fech_soli =
+                                    String fechSoli =
                                         DateFormat('MM/dd/yyyy').format(value!);
-                                    controller.changeselectedFecha(fech_soli);
+                                    controller.changeselectedFecha(fechSoli);
                                   } catch (e) {
                                     debugPrint("Error cerrar");
                                   }
@@ -114,26 +114,32 @@ class CalendarView extends GetView<CalendarController> {
                               controller.registerCoupon(1);
                             },
                           ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          controller.couponController.tipoCupo.value ==
-                                      'coupon_momento_especial'.tr ||
-                                  controller.couponController.tipoCupo.value ==
-                                      'coupon_cita_medica'.tr ||
-                                  controller.couponController.tipoCupo.value ==
-                                      'coupon_tramites'.tr
-                              ? FloatingActionButton(
-                                  heroTag: "btn2",
-                                  child: Icon(Icons.filter_2),
-                                  elevation: 5.0,
-                                  backgroundColor: HelperTheme.danger,
-                                  foregroundColor: HelperTheme.primary,
-                                  onPressed: () {
-                                    controller.registerCoupon(2);
-                                  },
+                          (controller.couponController.tipoCupo.value ==
+                                          'coupon_momento_especial'.tr ||
+                                      controller.couponController.tipoCupo
+                                              .value ==
+                                          'coupon_cita_medica'.tr ||
+                                      controller.couponController.tipoCupo
+                                              .value ==
+                                          'coupon_tramites'.tr) &&
+                                  controller.couponController.cantCupo.value > 1
+                              ? Container(
+                                  margin: const EdgeInsets.only(left: 10),
+                                  child: FloatingActionButton(
+                                    heroTag: "btn2",
+                                    child: Icon(Icons.filter_2),
+                                    elevation: 5.0,
+                                    backgroundColor: HelperTheme.danger,
+                                    foregroundColor: HelperTheme.primary,
+                                    onPressed: () {
+                                      controller.registerCoupon(2);
+                                    },
+                                  ),
                                 )
-                              : Container(),
+                              : Visibility(
+                                  visible: false,
+                                  maintainSize: false,
+                                  child: Container()),
                         ],
                       ),
                       const SizedBox(height: 10),
