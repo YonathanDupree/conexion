@@ -74,7 +74,6 @@ class MainDrawerWidget extends StatelessWidget {
               );
               Get.find<HomeController>().logout();
               Get.offAllNamed(Routes.LOGIN);
-              //Get.offAndToNamed(Routes.LOGIN);
             },
           ),
           /*Container(

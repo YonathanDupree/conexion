@@ -14,7 +14,7 @@ class ContactView extends GetView<ContactController> {
       appBar: AppBar(
         backgroundColor: HelperTheme.primary,
         title: const Text("Contactanos",
-            style: const TextStyle(color: HelperTheme.black)),
+            style: TextStyle(color: HelperTheme.black)),
       ),
       body: const Center(
         child: Text("Trabajando el contactanos"),
