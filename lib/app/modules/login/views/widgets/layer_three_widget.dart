@@ -146,14 +146,14 @@ class _LayerThreeWidgetState extends State<LayerThreeWidget> {
                     top: 349,
                     child: Row(
                       children: [
-                        Checkbox(
-                          value: controller.isChecked.value,
-                          checkColor: HelperTheme.primary,
-                          activeColor: HelperTheme.black,
-                          onChanged: (bool? value) {
-                            controller.changeIsChecked(value!);
-                          },
-                        ),
+                        Obx(() => Checkbox(
+                              value: controller.isChecked.value,
+                              checkColor: HelperTheme.primary,
+                              activeColor: HelperTheme.black,
+                              onChanged: (bool? value) {
+                                controller.changeIsChecked(value!);
+                              },
+                            )),
                         Text(
                           "login_remember".tr,
                           style: HelperTheme.subTitleBlack,

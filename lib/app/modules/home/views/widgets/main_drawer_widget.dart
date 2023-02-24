@@ -77,10 +77,10 @@ class MainDrawerWidget extends StatelessWidget {
               //Get.offAndToNamed(Routes.LOGIN);
             },
           ),
-          Container(
+          /*Container(
               child: const Align(
                   alignment: FractionalOffset.bottomRight,
-                  child: FooterDrawerWidget())),
+                  child: FooterDrawerWidget())),*/
         ],
       ),
     );

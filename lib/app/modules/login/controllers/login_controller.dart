@@ -17,7 +17,7 @@ class LoginController extends GetxController {
   double buttonwidth = 200;
   GetStorage box = GetStorage();
   RxString selectedCountry = "".obs;
-  RxBool isChecked = true.obs;
+  RxBool isChecked = false.obs;
   RxString versionName = "".obs;
   final _dialog = DialogUtil();
 
@@ -33,11 +33,11 @@ class LoginController extends GetxController {
       "icon": "assets/images/azzorti.png",
       "lang": "PE",
     },
-    /*{
+    {
       "name": "Livva",
       "icon": "assets/images/livva.png",
       "lang": "LIPE",
-    },*/
+    },
   ];
 
   void updateCountry(String country, String lang) {
