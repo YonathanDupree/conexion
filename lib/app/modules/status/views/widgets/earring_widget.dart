@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../ui/themes/helper_theme.dart';
+
 class EarringWidget extends StatelessWidget {
   final String tipoCupo;
   final String estaSoli;
@@ -19,7 +21,7 @@ class EarringWidget extends StatelessWidget {
     return SingleChildScrollView(
       child: SafeArea(
           child: SizedBox(
-        height: 200.0,
+        height: 375.0,
         width: MediaQuery.of(context).size.width - 20,
         child: Card(
           color: Colors.green[50],
@@ -33,15 +35,11 @@ class EarringWidget extends StatelessWidget {
                     color: Colors.orange, size: 45),
                 title: Text(
                   tipoCupo,
-                  style: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.bold),
+                  style: HelperTheme.titleBlackSM,
                 ),
                 subtitle: Text(
                   estaSoli,
-                  style: const TextStyle(
-                      fontSize: 15,
-                      color: Colors.orange,
-                      fontWeight: FontWeight.bold),
+                  style: HelperTheme.subTitleBlackSMEarring,
                 ),
               ),
               const Padding(
@@ -50,40 +48,21 @@ class EarringWidget extends StatelessWidget {
                   thickness: 1.4,
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(15, 5, 0, 10),
-                    child: const Text('Fecha de solicitud :',
-                        style: TextStyle(fontSize: 15, color: Colors.black)),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(16, 5, 30, 10),
-                    alignment: Alignment.bottomLeft,
-                    child: Text(horaSoli,
-                        style:
-                            const TextStyle(fontSize: 15, color: Colors.black)),
-                  ),
-                ],
+              Container(
+                alignment: Alignment.centerLeft,
+                margin: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                child: Text('status_earring_fecha'.tr,
+                    style: HelperTheme.labelBlackLg),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(15, 5, 0, 10),
-                    child: const Text('Se espera usar :',
-                        style: TextStyle(fontSize: 15, color: Colors.black)),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(16, 5, 91, 10),
-                    alignment: Alignment.bottomLeft,
-                    child: Text(fechSoli,
-                        style:
-                            const TextStyle(fontSize: 15, color: Colors.black)),
-                  ),
-                ],
+              Text(horaSoli, style: HelperTheme.labelBlackLg),
+              const SizedBox(height: 10),
+              Container(
+                alignment: Alignment.centerLeft,
+                margin: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                child: Text('status_earring_usar'.tr,
+                    style: HelperTheme.labelBlackLg),
               ),
+              Text(fechSoli, style: HelperTheme.labelBlackLg)
             ],
           ),
         ),

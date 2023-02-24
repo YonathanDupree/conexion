@@ -46,7 +46,20 @@
         "formato": "Formato invalido"
     },
     "status": {
-        "status": "Status"
+        "status": "Status",
+        "earring": "Pendiente",
+        "approved": "Aprobado",
+        "Observed": "Observado",
+        "canceled": "Anulado",
+        "canceled_mensaje": "Su cupo actualmente no obtuvo ninguna respuesta, le sugerimos contactar con su jefe inmediato o realizar una nueva solicitud.",
+        "approved_fecha": "Fecha de solicitud :",
+        "approved_usar": "Se espera usar :",
+        "observed_fecha": "Fecha de solicitud :",
+        "observed_usar": "Se espera usar :",
+        "observed_observado": "Su cupón fue observado por :",
+        "earring_fecha": "Fecha de solicitud :",
+        "earring_usar": "Se espera usar :",
+        "canceled_fecha": "Fecha de solicitud :"
     },
     "request": {
         "request": "Solicitudes"

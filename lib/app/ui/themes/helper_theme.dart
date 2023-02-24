@@ -100,6 +100,30 @@ class HelperTheme {
     letterSpacing: 0.18,
     color: success,
   );
+  static const TextStyle subTitleBlackSMObserved = TextStyle(
+    fontFamily: fontName,
+    fontSize: 16,
+    letterSpacing: 0.18,
+    color: Colors.red,
+  );
+  static const TextStyle subTitleBlackSMApproved = TextStyle(
+    fontFamily: fontName,
+    fontSize: 16,
+    letterSpacing: 0.18,
+    color: Colors.green,
+  );
+  static const TextStyle subTitleBlackSMEarring = TextStyle(
+    fontFamily: fontName,
+    fontSize: 16,
+    letterSpacing: 0.18,
+    color: Colors.orange,
+  );
+  static const TextStyle subTitleBlackSMCanceled = TextStyle(
+    fontFamily: fontName,
+    fontSize: 16,
+    letterSpacing: 0.18,
+    color: Colors.blue,
+  );
   static const TextStyle subTitleBlack = TextStyle(
     fontFamily: fontName,
     fontWeight: FontWeight.bold,

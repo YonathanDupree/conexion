@@ -20,13 +20,13 @@ class StatusView extends GetView<StatusController> {
       return Center(
         child: SingleChildScrollView(
           child: Container(
-              child: controller.estaSoli.value == "Pendiente"
+              child: controller.estaSoli.value == 'status_earring'.tr
                   ? EarringWidget(
                       tipoCupo: controller.tipoCupo.value,
                       estaSoli: controller.estaSoli.value,
                       horaSoli: controller.horaSoli.value,
                       fechSoli: controller.fechSoli.value)
-                  : controller.estaSoli.value == "Aprobado"
+                  : controller.estaSoli.value == 'status_approved'.tr
                       ? ApprovedWidget(
                           tipoCupo: controller.tipoCupo.value,
                           estaSoli: controller.estaSoli.value,
@@ -36,7 +36,7 @@ class StatusView extends GetView<StatusController> {
                           cargEmpl: controller.cargEmpl.value,
                           horaApro: controller.horaApro.value,
                         )
-                      : controller.estaSoli.value == "Observado"
+                      : controller.estaSoli.value == 'status_Observed'.tr
                           ? ObservedWidget(
                               tipoCupo: controller.tipoCupo.value,
                               estaSoli: controller.estaSoli.value,
@@ -47,7 +47,7 @@ class StatusView extends GetView<StatusController> {
                               horaApro: controller.horaApro.value,
                               anotObse: controller.anotObse.value,
                             )
-                          : controller.estaSoli.value == "Anulado"
+                          : controller.estaSoli.value == 'status_canceled'.tr
                               ? CanceledWidget(
                                   tipoCupo: controller.tipoCupo.value,
                                   estaSoli: controller.estaSoli.value,

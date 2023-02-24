@@ -48,6 +48,19 @@ class LocaleKeys {
   static const calendar_ingrese = 'calendar_ingrese';
   static const calendar_formato = 'calendar_formato';
   static const status_status = 'status_status';
+  static const status_earring = 'status_earring';
+  static const status_approved = 'status_approved';
+  static const status_Observed = 'status_Observed';
+  static const status_canceled = 'status_canceled';
+  static const status_canceled_mensaje = 'status_canceled_mensaje';
+  static const status_approved_fecha = 'status_approved_fecha';
+  static const status_approved_usar = 'status_approved_usar';
+  static const status_observed_fecha = 'status_observed_fecha';
+  static const status_observed_usar = 'status_observed_usar';
+  static const status_observed_observado = 'status_observed_observado';
+  static const status_earring_fecha = 'status_earring_fecha';
+  static const status_earring_usar = 'status_earring_usar';
+  static const status_canceled_fecha = 'status_canceled_fecha';
   static const request_request = 'request_request';
   static const contact_contact = 'contact_contact';
   static const exit_exit = 'exit_exit';
@@ -126,6 +139,20 @@ class Locales {
     'calendar_ingrese': 'Ingrese fecha',
     'calendar_formato': 'Formato invalido',
     'status_status': 'Status',
+    'status_earring': 'Pendiente',
+    'status_approved': 'Aprobado',
+    'status_Observed': 'Observado',
+    'status_canceled': 'Anulado',
+    'status_canceled_mensaje':
+        'Su cupo actualmente no obtuvo ninguna respuesta, le sugerimos contactar con su jefe inmediato o realizar una nueva solicitud.',
+    'status_approved_fecha': 'Fecha de solicitud :',
+    'status_approved_usar': 'Se espera usar :',
+    'status_observed_fecha': 'Fecha de solicitud :',
+    'status_observed_usar': 'Se espera usar :',
+    'status_observed_observado': 'Su cupón fue observado por :',
+    'status_earring_fecha': 'Fecha de solicitud :',
+    'status_earring_usar': 'Se espera usar :',
+    'status_canceled_fecha': 'Fecha de solicitud :',
     'request_request': 'Solicitudes',
     'contact_contact': 'Contáctanos',
     'exit_exit': 'Cerrar sesión',

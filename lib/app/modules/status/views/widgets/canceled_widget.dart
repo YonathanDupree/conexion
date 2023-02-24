@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../ui/themes/helper_theme.dart';
+
 class CanceledWidget extends StatelessWidget {
   final String tipoCupo;
   final String estaSoli;
@@ -28,7 +30,7 @@ class CanceledWidget extends StatelessWidget {
     return SingleChildScrollView(
       child: SafeArea(
           child: SizedBox(
-        height: 225.0,
+        height: 375.0,
         width: MediaQuery.of(context).size.width - 20,
         child: Card(
           color: Colors.green[50],
@@ -42,15 +44,11 @@ class CanceledWidget extends StatelessWidget {
                     const Icon(Icons.credit_card, color: Colors.blue, size: 45),
                 title: Text(
                   tipoCupo,
-                  style: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.bold),
+                  style: HelperTheme.titleBlackSM,
                 ),
                 subtitle: Text(
                   estaSoli,
-                  style: const TextStyle(
-                      fontSize: 15,
-                      color: Colors.blue,
-                      fontWeight: FontWeight.bold),
+                  style: HelperTheme.subTitleBlackSMCanceled,
                 ),
               ),
               const Padding(
@@ -59,35 +57,21 @@ class CanceledWidget extends StatelessWidget {
                   thickness: 1.4,
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(15, 5, 0, 10),
-                    child: const Text('Fecha de solicitud :',
-                        style: TextStyle(fontSize: 15, color: Colors.black)),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(16, 5, 30, 10),
-                    alignment: Alignment.bottomLeft,
-                    child: Text(horaSoli,
-                        style:
-                            const TextStyle(fontSize: 15, color: Colors.black)),
-                  ),
-                ],
+              Container(
+                alignment: Alignment.centerLeft,
+                margin: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                child: Text('status_canceled_fecha'.tr,
+                    style: HelperTheme.labelBlackLg),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(30, 0, 30, 0),
-                    child: const Text(
-                        'Su cupo actualmente no obtuvo ninguna respuesta, le sugerimos contactar con su jefe inmediato o realizar una nueva solicitud.',
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(fontSize: 15, color: Colors.black),
-                        maxLines: 5),
-                  ),
-                ],
+              Text(horaSoli, style: HelperTheme.labelBlackLg),
+              const SizedBox(height: 10),
+              Container(
+                alignment: Alignment.centerLeft,
+                margin: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+                child: Text('status_canceled_mensaje'.tr,
+                    textAlign: TextAlign.justify,
+                    style: HelperTheme.labelBlackLg,
+                    maxLines: 5),
               ),
             ],
           ),
