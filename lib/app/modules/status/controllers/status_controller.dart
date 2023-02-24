@@ -21,6 +21,7 @@ class StatusController extends GetxController {
   final cargEmpl = "".obs;
   final nombEmpl = "".obs;
   final horaApro = "".obs;
+  final cantCupo = "".obs;
   final anotObse = "".obs;
 
   final _dialog = DialogUtil();
@@ -45,7 +46,6 @@ class StatusController extends GetxController {
   Future<void> getStatus(String numeIden) async {
     late String title;
     late String message;
-    //_dialog.dialogProgress("Espere un momomento...");
 
     try {
       Status? data = await statusprovider.getStatus(numeIden);
@@ -57,6 +57,7 @@ class StatusController extends GetxController {
       cargEmpl.value = data.cargEmpl.toString();
       nombEmpl.value = data.nombEmpl.toString();
       horaApro.value = data.horaApro.toString();
+      cantCupo.value = data.cantCupo.toString();
       anotObse.value = data.anotObse.toString();
       changeIsLoading(false);
     } catch (error) {

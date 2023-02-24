@@ -25,7 +25,8 @@ class StatusView extends GetView<StatusController> {
                       tipoCupo: controller.tipoCupo.value,
                       estaSoli: controller.estaSoli.value,
                       horaSoli: controller.horaSoli.value,
-                      fechSoli: controller.fechSoli.value)
+                      fechSoli: controller.fechSoli.value,
+                      cantCupo: controller.cantCupo.value)
                   : controller.estaSoli.value == 'status_approved'.tr
                       ? ApprovedWidget(
                           tipoCupo: controller.tipoCupo.value,
@@ -35,7 +36,7 @@ class StatusView extends GetView<StatusController> {
                           nombEmpl: controller.nombEmpl.value,
                           cargEmpl: controller.cargEmpl.value,
                           horaApro: controller.horaApro.value,
-                        )
+                          cantCupo: controller.cantCupo.value)
                       : controller.estaSoli.value == 'status_Observed'.tr
                           ? ObservedWidget(
                               tipoCupo: controller.tipoCupo.value,
@@ -46,7 +47,7 @@ class StatusView extends GetView<StatusController> {
                               cargEmpl: controller.cargEmpl.value,
                               horaApro: controller.horaApro.value,
                               anotObse: controller.anotObse.value,
-                            )
+                              cantCupo: controller.cantCupo.value)
                           : controller.estaSoli.value == 'status_canceled'.tr
                               ? CanceledWidget(
                                   tipoCupo: controller.tipoCupo.value,
@@ -57,7 +58,7 @@ class StatusView extends GetView<StatusController> {
                                   cargEmpl: controller.cargEmpl.value,
                                   horaApro: controller.horaApro.value,
                                   anotObse: controller.anotObse.value,
-                                )
+                                  cantCupo: controller.cantCupo.value)
                               : const Center(
                                   child: FadeInImage(
                                   image: AssetImage('assets/images/status.png'),

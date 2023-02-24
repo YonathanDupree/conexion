@@ -7,6 +7,7 @@ class Status {
   String? cargEmpl;
   String? nombEmpl;
   String? horaApro;
+  String? cantCupo;
   String? anotObse;
   String? mensaje;
 
@@ -19,6 +20,7 @@ class Status {
       this.cargEmpl,
       this.nombEmpl,
       this.horaApro,
+      this.cantCupo,
       this.anotObse,
       this.mensaje});
 
@@ -31,6 +33,7 @@ class Status {
     cargEmpl = json['carg_empl'];
     nombEmpl = json['nomb_empl'];
     horaApro = json['hora_apro'];
+    cantCupo = json['cant_cupo'];
     anotObse = json['anot_obse'];
     mensaje = json['mensaje'];
   }
@@ -45,6 +48,7 @@ class Status {
     data['carg_empl'] = cargEmpl;
     data['nomb_empl'] = nombEmpl;
     data['hora_apro'] = horaApro;
+    data['cant_cupo'] = cantCupo;
     data['anot_obse'] = anotObse;
     data['mensaje'] = mensaje;
     return data;

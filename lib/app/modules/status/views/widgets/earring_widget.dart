@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_brace_in_string_interps
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,12 +10,14 @@ class EarringWidget extends StatelessWidget {
   final String estaSoli;
   final String horaSoli;
   final String fechSoli;
+  final String cantCupo;
   const EarringWidget(
       {Key? key,
       required this.tipoCupo,
       required this.estaSoli,
       required this.horaSoli,
-      required this.fechSoli})
+      required this.fechSoli,
+      required this.cantCupo})
       : super(key: key);
 
   @override
@@ -33,10 +37,15 @@ class EarringWidget extends StatelessWidget {
               ListTile(
                 leading: const Icon(Icons.credit_card,
                     color: Colors.orange, size: 45),
-                title: Text(
-                  tipoCupo,
-                  style: HelperTheme.titleBlackSM,
-                ),
+                title: cantCupo == "1"
+                    ? Text(
+                        '${tipoCupo} (${cantCupo} cupón)',
+                        style: HelperTheme.titleBlackSM,
+                      )
+                    : Text(
+                        '${tipoCupo} (${cantCupo} cupones)',
+                        style: HelperTheme.titleBlackSM,
+                      ),
                 subtitle: Text(
                   estaSoli,
                   style: HelperTheme.subTitleBlackSMEarring,
