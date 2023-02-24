@@ -37,15 +37,6 @@ class HomeView extends GetView<HomeController> {
           })
         ],
       ),
-      /*SingleChildScrollView(
-        child: Column(children: const <Widget>[
-          HeaderView(),
-          FooterView(),
-          SizedBox(
-            height: 10.0,
-          ),
-        ]),
-      ),*/
       drawer: const MainDrawerWidget(),
     );
   }

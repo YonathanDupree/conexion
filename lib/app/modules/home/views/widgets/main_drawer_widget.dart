@@ -31,7 +31,7 @@ class MainDrawerWidget extends StatelessWidget {
               Get.offNamed(Routes.HOME);
             },
           ),
-          ListTile(
+          /*ListTile(
             title: Text('profile_profile'.tr, style: HelperTheme.subTitleLigh),
             leading: const Icon(Icons.person,
                 size: 25, color: HelperTheme.secondary),
@@ -41,7 +41,7 @@ class MainDrawerWidget extends StatelessWidget {
               Get.back();
               Get.offNamed(Routes.PROFILE);
             },
-          ),
+          ),*/
           ListTile(
             title: Text('coupon_coupon'.tr, style: HelperTheme.subTitleLigh),
             leading: const Icon(Icons.credit_card,
@@ -53,7 +53,7 @@ class MainDrawerWidget extends StatelessWidget {
               Get.offNamed(Routes.COUPON);
             },
           ),
-          ListTile(
+          /*ListTile(
             title: Text('contact_contact'.tr, style: HelperTheme.subTitleLigh),
             leading: const Icon(Icons.contact_phone_sharp,
                 size: 25, color: HelperTheme.secondary),
@@ -63,7 +63,7 @@ class MainDrawerWidget extends StatelessWidget {
               Get.back();
               Get.offNamed(Routes.CONTACT);
             },
-          ),
+          ),*/
           ListTile(
             title: Text('exit_exit'.tr, style: HelperTheme.subTitleLigh),
             leading: const Icon(Icons.exit_to_app_outlined,
