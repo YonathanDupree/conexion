@@ -28,7 +28,7 @@ class ApprovedWidget extends StatelessWidget {
     return SingleChildScrollView(
       child: SafeArea(
           child: SizedBox(
-        height: 375.0,
+        height: 290.0,
         width: MediaQuery.of(context).size.width - 20,
         child: Card(
           color: Colors.green[50],
@@ -80,7 +80,6 @@ class ApprovedWidget extends StatelessWidget {
               Text(nombEmpl, style: HelperTheme.labelBlackLg),
               Text(cargEmpl, style: HelperTheme.labelBlackLg),
               Container(
-                alignment: Alignment.centerLeft,
                 margin: const EdgeInsets.fromLTRB(15, 0, 0, 0),
                 child: Text(horaApro, style: HelperTheme.labelBlackLg),
               ),

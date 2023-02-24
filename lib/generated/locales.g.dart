@@ -55,6 +55,7 @@ class LocaleKeys {
   static const status_canceled_mensaje = 'status_canceled_mensaje';
   static const status_approved_fecha = 'status_approved_fecha';
   static const status_approved_usar = 'status_approved_usar';
+  static const status_approved_aprobado = 'status_approved_aprobado';
   static const status_observed_fecha = 'status_observed_fecha';
   static const status_observed_usar = 'status_observed_usar';
   static const status_observed_observado = 'status_observed_observado';
@@ -62,6 +63,16 @@ class LocaleKeys {
   static const status_earring_usar = 'status_earring_usar';
   static const status_canceled_fecha = 'status_canceled_fecha';
   static const request_request = 'request_request';
+  static const request_request_fecha_solicitud =
+      'request_request_fecha_solicitud';
+  static const request_request_fecha_aplica = 'request_request_fecha_aplica';
+  static const request_request_aprobar = 'request_request_aprobar';
+  static const request_request_aprobar_mensaje =
+      'request_request_aprobar_mensaje';
+  static const request_request_observar = 'request_request_observar';
+  static const request_request_observar_mensaje =
+      'request_request_observar_mensaje';
+  static const request_request_registre = 'request_request_registre';
   static const contact_contact = 'contact_contact';
   static const exit_exit = 'exit_exit';
   static const forgot_title = 'forgot_title';
@@ -147,6 +158,7 @@ class Locales {
         'Su cupo actualmente no obtuvo ninguna respuesta, le sugerimos contactar con su jefe inmediato o realizar una nueva solicitud.',
     'status_approved_fecha': 'Fecha de solicitud :',
     'status_approved_usar': 'Se espera usar :',
+    'status_approved_aprobado': 'Su cupón fue aprobado por :',
     'status_observed_fecha': 'Fecha de solicitud :',
     'status_observed_usar': 'Se espera usar :',
     'status_observed_observado': 'Su cupón fue observado por :',
@@ -154,6 +166,15 @@ class Locales {
     'status_earring_usar': 'Se espera usar :',
     'status_canceled_fecha': 'Fecha de solicitud :',
     'request_request': 'Solicitudes',
+    'request_request_fecha_solicitud': 'Fecha de solicitud :',
+    'request_request_fecha_aplica': 'Fecha que aplica :',
+    'request_request_aprobar': 'Aprobar',
+    'request_request_aprobar_mensaje':
+        '¿Esta seguro que desea aprobar solicitud?',
+    'request_request_observar': 'Observar',
+    'request_request_observar_mensaje':
+        '¿Esta seguro de observar la solicitud?',
+    'request_request_registre': 'Registre observación',
     'contact_contact': 'Contáctanos',
     'exit_exit': 'Cerrar sesión',
     'forgot_title': 'Recuperar contraseña',

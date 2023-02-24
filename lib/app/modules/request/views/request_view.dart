@@ -61,7 +61,7 @@ class RequestView extends GetView<RequestController> {
                                     alignment: Alignment.centerLeft,
                                     margin:
                                         const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                                    child: const Text('Fecha de solicitud :',
+                                    child: Text('request_fecha_solicitud'.tr,
                                         style: HelperTheme.labelBlackLg),
                                   ),
                                   Text(controller.request[index].horaSoli!,
@@ -71,7 +71,7 @@ class RequestView extends GetView<RequestController> {
                                     alignment: Alignment.centerLeft,
                                     margin:
                                         const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                                    child: const Text('Fecha que aplica :',
+                                    child: Text('request_fecha_aplica'.tr,
                                         style: HelperTheme.labelBlackLg),
                                   ),
                                   Text(controller.request[index].fechSoli!,
@@ -82,7 +82,7 @@ class RequestView extends GetView<RequestController> {
                                         MainAxisAlignment.spaceAround,
                                     children: [
                                       ElevatedButton.icon(
-                                        label: const Text("Aprobar",
+                                        label: Text('request_aprobar'.tr,
                                             style: HelperTheme.labelWhiteLg),
                                         icon: const Icon(Icons.check),
                                         style: HelperTheme().buttonStyleApro(),
@@ -109,8 +109,9 @@ class RequestView extends GetView<RequestController> {
                                                                         5,
                                                                     vertical:
                                                                         5),
-                                                            child: const Text(
-                                                              "¿Esta seguro que desea aprobar solicitud ?",
+                                                            child: Text(
+                                                              'request_aprobar_mensaje'
+                                                                  .tr,
                                                               textAlign:
                                                                   TextAlign
                                                                       .justify,
@@ -147,7 +148,8 @@ class RequestView extends GetView<RequestController> {
                                                                         index]
                                                                     .consCupo
                                                                     .toString(),
-                                                                "APROBADO",
+                                                                'request_aprobado'
+                                                                    .tr,
                                                                 controller
                                                                     .request[
                                                                         index]
@@ -166,7 +168,7 @@ class RequestView extends GetView<RequestController> {
                                         },
                                       ),
                                       ElevatedButton.icon(
-                                        label: const Text("Observar",
+                                        label: Text('request_observar'.tr,
                                             style: HelperTheme.labelWhiteLg),
                                         icon: const Icon(Icons.remove_red_eye),
                                         style: HelperTheme().buttonStyleObse(),
@@ -195,8 +197,9 @@ class RequestView extends GetView<RequestController> {
                                                                         5),
                                                             child: Column(
                                                               children: [
-                                                                const Text(
-                                                                  "¿ Esta seguro de observar la solicitud?",
+                                                                Text(
+                                                                  'request_observar_mensaje'
+                                                                      .tr,
                                                                   textAlign:
                                                                       TextAlign
                                                                           .justify,
@@ -270,7 +273,8 @@ class RequestView extends GetView<RequestController> {
                                                                         index]
                                                                     .consCupo
                                                                     .toString(),
-                                                                "OBSERVADO",
+                                                                'request_observado'
+                                                                    .tr,
                                                                 controller
                                                                     .request[
                                                                         index]

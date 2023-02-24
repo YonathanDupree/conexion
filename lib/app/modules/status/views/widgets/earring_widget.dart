@@ -21,7 +21,7 @@ class EarringWidget extends StatelessWidget {
     return SingleChildScrollView(
       child: SafeArea(
           child: SizedBox(
-        height: 375.0,
+        height: 200.0,
         width: MediaQuery.of(context).size.width - 20,
         child: Card(
           color: Colors.green[50],
