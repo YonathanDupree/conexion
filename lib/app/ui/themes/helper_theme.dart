@@ -6,6 +6,8 @@ class HelperTheme {
   static const Color black = Color(0xFF212529);
   static const Color background = Color(0xFFF2F3F8);
   static const Color nearlyDarkBlue = Color(0xFF2633C5);
+  static const Color hintText = Color(0xFFB4B4B4);
+  static const Color greylayout = Color(0x80FFFFFF);
 
   static const Color nearlyBlue = Color(0xFF00B6F0);
   static const Color nearlyBlack = Color(0xFF213333);
@@ -338,6 +340,19 @@ class HelperTheme {
       ),
       minimumSize: MaterialStateProperty.all(const Size(50, 50)),
       backgroundColor: MaterialStateProperty.all(white),
+      shadowColor: MaterialStateProperty.all(black),
+    );
+  }
+
+  ButtonStyle buttonStyleLogin() {
+    return ButtonStyle(
+      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
+      minimumSize: MaterialStateProperty.all(const Size(50, 50)),
+      backgroundColor: MaterialStateProperty.all(primary),
       shadowColor: MaterialStateProperty.all(black),
     );
   }
