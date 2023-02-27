@@ -14,19 +14,18 @@ class NutritionistView extends GetView<NutritionistController> {
     return Scaffold(
         backgroundColor: HelperTheme.white,
         appBar: AppBar(
-          title: const Text("Reservar cita"),
+          title: Text('specialist_reserve'.tr),
           centerTitle: true,
           backgroundColor: HelperTheme.primary,
         ),
         body: SingleChildScrollView(
-          child: Container(
-              child: Column(children: <Widget>[
+          child: Column(children: <Widget>[
             PresentationView(),
             const SizedBox(
               height: 5.0,
             ),
             QuestionsView(),
-          ])),
+          ]),
         ));
   }
 }

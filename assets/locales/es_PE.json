@@ -96,5 +96,13 @@
         "validator_password": "Campo contraseña obligatorio.",
         "validator_confirm_password": "Campo confirmar contraseña obligatorio.",
         "validator_special_characters": "La contraseña no debe contener caracteres especiales."
+    },
+    "specialist": {
+        "reserve": "Reservar cita",
+        "nutritionist": "Médico Nutricionista",
+        "press":"Presione el botón y seleccione el día y la hora disponible",
+        "about":"Sobre mí:",
+        "questions": "- Preguntas frecuentes -",
+        "consultation": "Para una consulta rápida me puede contactar por una llamada, correo o vía whatsapp"
     }
 }

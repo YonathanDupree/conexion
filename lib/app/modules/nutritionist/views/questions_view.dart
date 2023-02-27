@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class QuestionsView extends GetView<HomeController> {
-  const QuestionsView({Key? key}) : super(key: key);
+  QuestionsView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +18,7 @@ class QuestionsView extends GetView<HomeController> {
           children: [
             Container(
                 alignment: Alignment.center,
-                child: const Text("- Preguntas frecuentes -",
+                child: Text('specialist_questions'.tr,
                     style: HelperTheme.titleBlackSM),
                 padding: const EdgeInsets.fromLTRB(10, 5, 10, 0)),
             const SizedBox(
@@ -201,8 +201,8 @@ class QuestionsView extends GetView<HomeController> {
                 Container(
                     alignment: Alignment.center,
                     width: 300,
-                    child: const Text(
-                      "Para una consulta rápida me puede contactar por una llamada, correo o vía whatsapp",
+                    child: Text(
+                      'specialist_consultation'.tr,
                       style: HelperTheme.labelBlackXS,
                       textAlign: TextAlign.center,
                     ),

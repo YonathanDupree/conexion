@@ -92,6 +92,12 @@ class LocaleKeys {
       'forgot_validator_confirm_password';
   static const forgot_validator_special_characters =
       'forgot_validator_special_characters';
+  static const specialist_reserve = 'specialist_reserve';
+  static const specialist_nutritionist = 'specialist_nutritionist';
+  static const specialist_press = 'specialist_press';
+  static const specialist_about = 'specialist_about';
+  static const specialist_questions = 'specialist_questions';
+  static const specialist_consultation = 'specialist_consultation';
 }
 
 class Locales {
@@ -195,5 +201,13 @@ class Locales {
         'Campo confirmar contraseña obligatorio.',
     'forgot_validator_special_characters':
         'La contraseña no debe contener caracteres especiales.',
+    'specialist_reserve': 'Reservar cita',
+    'specialist_nutritionist': 'Médico Nutricionista',
+    'specialist_press':
+        'Presione el botón y seleccione el día y la hora disponible',
+    'specialist_about': 'Sobre mí:',
+    'specialist_questions': '- Preguntas frecuentes -',
+    'specialist_consultation':
+        'Para una consulta rápida me puede contactar por una llamada, correo o vía whatsapp',
   };
 }

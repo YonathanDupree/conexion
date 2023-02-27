@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import '../../home/controllers/home_controller.dart';
 
 class PresentationView extends GetView<HomeController> {
-  const PresentationView({Key? key}) : super(key: key);
+  PresentationView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -38,8 +38,8 @@ class PresentationView extends GetView<HomeController> {
                     children: [
                       Text(controller.specialist[0].nombSani.toString(),
                           style: HelperTheme.titleBlackSM),
-                      const Text(
-                        "Médico Nutricionista",
+                      Text(
+                        'specialist_nutritionist'.tr,
                         style: HelperTheme.subTitleBlack,
                       ),
                       const SizedBox(
@@ -90,9 +90,10 @@ class PresentationView extends GetView<HomeController> {
                           },
                           icon: const Icon(Icons.calendar_month,
                               color: HelperTheme.secondary),
-                          label: const Text(
-                            "Reservar cita",
-                            style: TextStyle(color: HelperTheme.secondary),
+                          label: Text(
+                            'specialist_reserve'.tr,
+                            style:
+                                const TextStyle(color: HelperTheme.secondary),
                           ),
                         ),
                       ),
@@ -102,8 +103,8 @@ class PresentationView extends GetView<HomeController> {
                       Container(
                         width: 150,
                         alignment: Alignment.center,
-                        child: const Text(
-                          "Presione el botón y seleccione el día y la hora disponible",
+                        child: Text(
+                          'specialist_press'.tr,
                           style: HelperTheme.labelBlackXS,
                           textAlign: TextAlign.center,
                         ),
@@ -124,7 +125,7 @@ class PresentationView extends GetView<HomeController> {
                 Container(
                     alignment: Alignment.bottomLeft,
                     padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
-                    child: const Text("Sobre mí:",
+                    child: Text('specialist_about'.tr,
                         style: HelperTheme.titleBlackSM)),
                 Container(
                     padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
