@@ -14,21 +14,25 @@ class PresentationView extends GetView<HomeController> {
         Container(
           margin: const EdgeInsets.all(10),
           child: Card(
+            color: HelperTheme.nearlyWhite,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: FadeInImage(
-                        image: NetworkImage(
-                            controller.specialist[0].imagPers.toString()),
-                        placeholder:
-                            const AssetImage('assets/images/loading.gif'),
-                        fit: BoxFit.cover,
-                        height: 150,
-                        width: 100),
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(0, 5, 0, 5),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15),
+                      child: FadeInImage(
+                          image: NetworkImage(
+                              controller.specialist[0].imagPers.toString()),
+                          placeholder:
+                              const AssetImage('assets/images/loading.gif'),
+                          fit: BoxFit.cover,
+                          height: 150,
+                          width: 100),
+                    ),
                   ),
                   Column(
                     children: [
@@ -112,6 +116,7 @@ class PresentationView extends GetView<HomeController> {
         Container(
           margin: const EdgeInsets.fromLTRB(10, 0, 10, 5),
           child: Card(
+            color: HelperTheme.nearlyWhite,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
             child: Column(

@@ -5,15 +5,15 @@ import 'package:conexion/app/ui/themes/helper_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class QuestionsView extends GetView<HomeController> {
   const QuestionsView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
+      margin: const EdgeInsets.fromLTRB(10, 0, 10, 10),
       child: Card(
+        color: HelperTheme.nearlyWhite,
         child: Column(
           children: [
             Container(
@@ -36,21 +36,20 @@ class QuestionsView extends GetView<HomeController> {
                     ),
                     padding: const EdgeInsets.fromLTRB(20, 5, 10, 5)),
                 Container(
-                    alignment: Alignment.bottomLeft,
-                    child: InkWell(
-                        child: const Text(
-                          "¿Por qué es importante ir a un nutricionista?",
-                          style: HelperTheme.labelBackMd,
-                        ),
-                        onTap: () {
-                          /*_respuestapregunta.build(context,
-                                "Es importante porque el nutricionista es el profesional encargado de evaluar y dar un diagnóstico nutricional de acuerdo con las necesidades y requerimientos de cada persona, para dar un buen manejo a su alimentación y asegurar su bienestar y buena salud.");*/
-                        }),
-                    padding: const EdgeInsets.fromLTRB(0, 5, 10, 5)),
+                  alignment: Alignment.bottomLeft,
+                  child: InkWell(
+                      child: const Text(
+                        "¿Por qué es importante ir a un nutricionista?",
+                        style: HelperTheme.labelBackMd,
+                      ),
+                      onTap: () {
+                        controller.answer("1");
+                      }),
+                ),
               ],
             ),
             const SizedBox(
-              height: 2.5,
+              height: 5.0,
             ),
             Row(
               children: [
@@ -70,14 +69,13 @@ class QuestionsView extends GetView<HomeController> {
                         style: HelperTheme.labelBackMd,
                       ),
                       onTap: () {
-                        /*_respuestapregunta.build(context,
-                              "Tener una correcta hidratación diaria es muy importante porque ayuda a eliminar toxinas, mejorar el metabolismo, mejorar la digestión y ayuda a nivelar la temperatura corporal. La cantidad adecuada es aproximadamente de 8 a 10 vasos de agua, dependiendo de la actividad física y el peso corporal de la persona.");*/
+                        controller.answer("2");
                       }),
                 ),
               ],
             ),
             const SizedBox(
-              height: 2.5,
+              height: 5.0,
             ),
             Row(
               children: [
@@ -97,14 +95,13 @@ class QuestionsView extends GetView<HomeController> {
                         style: HelperTheme.labelBackMd,
                       ),
                       onTap: () {
-                        /*_respuestapregunta.build(context,
-                              "Las frutas y verduras son importantes porque cumplen la función de regular el organismo, nos aportan vitaminas y minerales, antioxidantes y fibra soluble que el cuerpo necesita para mejorar el metabolismo, la digestión, previene el estreñimiento y además tener buenas defensas que el cuerpo necesita.");*/
+                        controller.answer("3");
                       }),
                 ),
               ],
             ),
             const SizedBox(
-              height: 2.5,
+              height: 5.0,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -125,14 +122,13 @@ class QuestionsView extends GetView<HomeController> {
                         style: HelperTheme.labelBackMd,
                       ),
                       onTap: () {
-                        /*_respuestapregunta.build(context,
-                              "Dejar de comer no ayuda a bajar de peso, puesto que el cuerpo necesita cubrir sus necesidades nutricionales para que funcione adecuadamente. Es por lo que se recomienda comer 5 veces al día cada 3 horas para ayudar a la digestión. Si en todo caso; el objetivo es bajar de peso, es necesario asesorarse con un nutricionista para que le haga un plan de nutrición adecuado en cantidad y calidad de alimentos.");*/
+                        controller.answer("4");
                       }),
                 ),
               ],
             ),
             const SizedBox(
-              height: 2.5,
+              height: 5.0,
             ),
             Row(
               children: [
@@ -152,8 +148,7 @@ class QuestionsView extends GetView<HomeController> {
                         style: HelperTheme.labelBackMd,
                       ),
                       onTap: () {
-                        /*_respuestapregunta.build(context,
-                              "El tener una adecuada alimentación es la clave para tener una buena salud y un peso adecuado, pero no solo ello es lo único que se debe hacer, lo recomendable es hidratarse diariamente, realizar actividad física de 30 a 40 minutos y descansar de 6 a 7 horas para que el cuerpo se reponga y realice sus actividades de una manera sana.");*/
+                        controller.answer("5");
                       }),
                 ),
               ],
@@ -171,9 +166,8 @@ class QuestionsView extends GetView<HomeController> {
                           height: 50.0,
                           scale: 1.0,
                           alignment: Alignment.topRight),
-                      onTap: () async {
-                        await launch('tel:' +
-                            controller.specialist[0].celuSani.toString());
+                      onTap: () {
+                        controller.callCelu(0);
                       }),
                 ),
                 Expanded(
@@ -185,19 +179,7 @@ class QuestionsView extends GetView<HomeController> {
                         scale: 1.0,
                       ),
                       onTap: () async {
-                        final Uri params = Uri(
-                          scheme: 'mailto',
-                          path: controller.specialist[0].mailSani.toString(),
-                          query:
-                              'subject=Reservar cita&body=Buen día deseo reservar una cita', //add subject and body here
-                        );
-                        var url = params.toString();
-
-                        if (await canLaunch(url)) {
-                          await launch(url);
-                        } else {
-                          throw 'Could not launch $url';
-                        }
+                        controller.sendMail(0);
                       }),
                 ),
                 Expanded(
@@ -208,10 +190,7 @@ class QuestionsView extends GetView<HomeController> {
                           scale: 1.0,
                           alignment: Alignment.topLeft),
                       onTap: () async {
-                        if (await canLaunch("https://wa.me/+51" +
-                            controller.specialist[0].celuSani.toString())) {
-                          await launch("https://wa.me/+51" + "966105060");
-                        }
+                        controller.sendWhatsapp(0);
                       }),
                 ),
               ],

@@ -41,7 +41,7 @@ class DialogUtil {
                 Container(
                   width: 400,
                   height: 400,
-                  margin: EdgeInsets.all(15.0),
+                  margin: const EdgeInsets.all(15.0),
                   color: Colors.transparent,
                   child: const Center(
                     child: Image(
@@ -52,6 +52,46 @@ class DialogUtil {
             ),
           ),
         ));
+  }
+
+  void dialogAnswer(String menssage) {
+    Get.dialog(
+        barrierDismissible: true,
+        Material(
+            type: MaterialType.transparency,
+            child: AlertDialog(
+              title: Image.asset(
+                'assets/images/conexion.jpg',
+                width: 100.0,
+                height: 75.0,
+                scale: 1.0,
+              ),
+              content: SingleChildScrollView(
+                child: ListBody(
+                  children: <Widget>[
+                    Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 5, vertical: 5),
+                        child: Text(menssage,
+                            textAlign: TextAlign.justify,
+                            overflow: TextOverflow.ellipsis,
+                            style: HelperTheme.subTitleLigh,
+                            maxLines: 20))
+                  ],
+                ),
+              ),
+              actions: <Widget>[
+                ElevatedButton(
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                  child:
+                      const Text('Ok', style: TextStyle(color: Colors.white)),
+                  onPressed: () async {
+                    Get.back();
+                  },
+                ),
+              ],
+            )));
   }
 
   void dialogClose() {
