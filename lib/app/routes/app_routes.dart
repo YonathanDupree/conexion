@@ -14,6 +14,8 @@ abstract class Routes {
   static const CALENDAR = _Paths.CALENDAR;
   static const STATUS = _Paths.STATUS;
   static const REQUEST = _Paths.REQUEST;
+  static const NUTRITIONIST = _Paths.NUTRITIONIST;
+  static const PSYCHOLOGIST = _Paths.PSYCHOLOGIST;
 }
 
 abstract class _Paths {
@@ -29,4 +31,6 @@ abstract class _Paths {
   static const CALENDAR = '/calendar';
   static const STATUS = '/status';
   static const REQUEST = '/request';
+  static const NUTRITIONIST = '/nutritionist';
+  static const PSYCHOLOGIST = '/psychologist';
 }

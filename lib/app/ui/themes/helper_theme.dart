@@ -147,6 +147,13 @@ class HelperTheme {
     color: white,
     letterSpacing: 0.18,
   );
+  static const TextStyle labelBlackXS = TextStyle(
+    fontFamily: fontName,
+    fontWeight: FontWeight.w400,
+    fontSize: 10,
+    letterSpacing: 0.18,
+    color: black,
+  );
   static const TextStyle labelWhiteXl = TextStyle(
     fontFamily: fontName,
     fontWeight: FontWeight.w400,

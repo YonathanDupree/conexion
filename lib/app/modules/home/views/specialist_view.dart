@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
+
 class SpecialistView extends GetView<HomeController> {
   const SpecialistView({Key? key}) : super(key: key);
   @override
@@ -36,8 +38,7 @@ class SpecialistView extends GetView<HomeController> {
                       width: 150),
             ))),
         onTap: () async {
-          print(controller.specialist[0].imagPort.toString());
-          print(controller.getSliderI().length);
+          Get.toNamed(Routes.NUTRITIONIST);
         },
       ),
       InkWell(
@@ -68,7 +69,8 @@ class SpecialistView extends GetView<HomeController> {
                         width: 150),
               ))),
           onTap: () async {
-            print(controller.specialist[1].imagPort.toString());
+            Get.toNamed(Routes.PSYCHOLOGIST);
+            //print(controller.specialist[1].imagPort.toString());
           }),
     ]);
   }
