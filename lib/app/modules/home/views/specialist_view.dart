@@ -1,14 +1,12 @@
 import 'package:conexion/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 
-class CardWidget extends StatelessWidget {
-  const CardWidget({Key? key}) : super(key: key);
-
+class SpecialistView extends GetView<HomeController> {
+  const SpecialistView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<HomeController>();
-
     return Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
       InkWell(
         child: Obx(() => Card(

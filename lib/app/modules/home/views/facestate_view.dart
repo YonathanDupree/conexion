@@ -1,16 +1,15 @@
 import 'package:conexion/app/modules/home/controllers/home_controller.dart';
-import 'package:conexion/app/ui/themes/helper_theme.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 
-class DropDownWidget extends StatelessWidget {
-  const DropDownWidget({super.key});
+import '../../../ui/themes/helper_theme.dart';
 
+class FacestateView extends GetView<HomeController> {
+  const FacestateView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<HomeController>();
-
     return SizedBox(
       height: 50.0,
       width: 200,

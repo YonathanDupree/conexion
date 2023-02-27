@@ -1,7 +1,7 @@
 import 'package:conexion/app/modules/home/controllers/home_controller.dart';
-import 'package:conexion/app/modules/home/views/widgets/camera_widger.dart';
-import 'package:conexion/app/modules/home/views/widgets/card_widget.dart';
-import 'package:conexion/app/modules/home/views/widgets/dropdownbutton_widget.dart';
+import 'package:conexion/app/modules/home/views/camera_view.dart';
+import 'package:conexion/app/modules/home/views/facestate_view.dart';
+import 'package:conexion/app/modules/home/views/specialist_view.dart';
 import 'package:conexion/app/ui/themes/helper_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -49,17 +49,17 @@ class HeaderView extends GetView<HomeController> {
                               const SizedBox(
                                 height: 5.0,
                               ),
-                              const DropDownWidget(),
+                              const FacestateView(),
                             ],
                           ),
-                          const CameraWidget()
+                          const CameraView()
                         ],
                       ),
                     ),
                     const SizedBox(
                       height: 5.0,
                     ),
-                    const CardWidget()
+                    const SpecialistView()
                   ])),
         ]);
   }

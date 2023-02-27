@@ -1,14 +1,12 @@
 import 'package:conexion/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 
-class CameraWidget extends StatelessWidget {
-  const CameraWidget({Key? key}) : super(key: key);
-
+class CameraView extends GetView<HomeController> {
+  const CameraView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<HomeController>();
-
     return GestureDetector(
       onTap: () {},
       child: controller.urlsFoto != ""
