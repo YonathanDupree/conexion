@@ -170,32 +170,86 @@ class HomeController extends GetxController {
     }
   }
 
-  Future<void> answer(String questions) async {
+  Future<void> answer(String questions, String specialist) async {
     late String answer;
 
-    switch (questions) {
-      case "1":
-        answer =
-            "Es importante porque el nutricionista es el profesional encargado de evaluar y dar un diagnóstico nutricional de acuerdo con las necesidades y requerimientos de cada persona, para dar un buen manejo a su alimentación y asegurar su bienestar y buena salud.";
-        break;
-      case "2":
-        answer =
-            "Tener una correcta hidratación diaria es muy importante porque ayuda a eliminar toxinas, mejorar el metabolismo, mejorar la digestión y ayuda a nivelar la temperatura corporal. La cantidad adecuada es aproximadamente de 8 a 10 vasos de agua, dependiendo de la actividad física y el peso corporal de la persona.";
-        break;
-      case "3":
-        answer =
-            "Las frutas y verduras son importantes porque cumplen la función de regular el organismo, nos aportan vitaminas y minerales, antioxidantes y fibra soluble que el cuerpo necesita para mejorar el metabolismo, la digestión, previene el estreñimiento y además tener buenas defensas que el cuerpo necesita.";
-        break;
-      case "4":
-        answer =
-            "Dejar de comer no ayuda a bajar de peso, puesto que el cuerpo necesita cubrir sus necesidades nutricionales para que funcione adecuadamente. Es por lo que se recomienda comer 5 veces al día cada 3 horas para ayudar a la digestión. Si en todo caso; el objetivo es bajar de peso, es necesario asesorarse con un nutricionista para que le haga un plan de nutrición adecuado en cantidad y calidad de alimentos.";
-        break;
-      case "5":
-        answer =
-            "El tener una adecuada alimentación es la clave para tener una buena salud y un peso adecuado, pero no solo ello es lo único que se debe hacer, lo recomendable es hidratarse diariamente, realizar actividad física de 30 a 40 minutos y descansar de 6 a 7 horas para que el cuerpo se reponga y realice sus actividades de una manera sana.";
-        break;
-      default:
-        answer = "";
+    if (specialist == "N") {
+      switch (questions) {
+        case "1":
+          answer =
+              "Es importante porque el nutricionista es el profesional encargado de evaluar y dar un diagnóstico nutricional de acuerdo con las necesidades y requerimientos de cada persona, para dar un buen manejo a su alimentación y asegurar su bienestar y buena salud.";
+          break;
+        case "2":
+          answer =
+              "Tener una correcta hidratación diaria es muy importante porque ayuda a eliminar toxinas, mejorar el metabolismo, mejorar la digestión y ayuda a nivelar la temperatura corporal. La cantidad adecuada es aproximadamente de 8 a 10 vasos de agua, dependiendo de la actividad física y el peso corporal de la persona.";
+          break;
+        case "3":
+          answer =
+              "Las frutas y verduras son importantes porque cumplen la función de regular el organismo, nos aportan vitaminas y minerales, antioxidantes y fibra soluble que el cuerpo necesita para mejorar el metabolismo, la digestión, previene el estreñimiento y además tener buenas defensas que el cuerpo necesita.";
+          break;
+        case "4":
+          answer =
+              "Dejar de comer no ayuda a bajar de peso, puesto que el cuerpo necesita cubrir sus necesidades nutricionales para que funcione adecuadamente. Es por lo que se recomienda comer 5 veces al día cada 3 horas para ayudar a la digestión. Si en todo caso; el objetivo es bajar de peso, es necesario asesorarse con un nutricionista para que le haga un plan de nutrición adecuado en cantidad y calidad de alimentos.";
+          break;
+        case "5":
+          answer =
+              "El tener una adecuada alimentación es la clave para tener una buena salud y un peso adecuado, pero no solo ello es lo único que se debe hacer, lo recomendable es hidratarse diariamente, realizar actividad física de 30 a 40 minutos y descansar de 6 a 7 horas para que el cuerpo se reponga y realice sus actividades de una manera sana.";
+          break;
+        default:
+          answer = "";
+      }
+    }
+
+    if (specialist == "P") {
+      switch (questions) {
+        case "1":
+          answer = "- Tener un espacio solo para ti.\n"
+              "- Comprender realmente qué te sucede.\n"
+              "- Ser escuchado sin que te juzguen.\n"
+              "- Obtener un punto de vista más global y objetivo.\n"
+              "- Conocerte mejor y comprender a las personas.\n"
+              "- Aprender a gestionar tus emociones, pensamientos y comportamientos.\n"
+              "- Desarrollar habilidades de solución de conflictos.";
+          break;
+        case "2":
+          answer =
+              "Se realizan las primeras preguntas para entender el problema, los síntomas y los objetivos que quieres alcanzar por medio de nuestro ayuda.\n " +
+                  "Lo más importante de la primera entrevista es darle forma a los malestares y  plantear las primeras hipótesis de trabajo. Tu psicólogo te informará de cómo trabaja, de la metodología, horarios y precios de las consultas..";
+          break;
+        case "3":
+          answer =
+              "Cualquier aprendizaje requiere una evolución. Aprender habilidades psicológicas para hacer frente a nuestros malestares requiere, probablemente, aún más tiempo que otras habilidades. No son tangibles, no se puede coger con las manos como se hace con una raqueta o una pelota al aprender a jugar al tenis. Por tanto la evolución de la terapia tendría una forma almenada y escalonada. Pocas veces, o ninguna, el cambio será lineal hacia el bienestar.";
+          break;
+        case "4":
+          answer = "Estos son algunos aspectos a tener en cuenta:\n"
+              "- Cambios bruscos de humor y conflictos más frecuentes que en etapas anteriores.\n"
+              "- Sentimientos de ansiedad emocional y física mantenidos a lo largo de los días.\n"
+              "- Llanto continuado y dificultad para afrontar las rutinas.\n"
+              "- Dificultad para decidirse a salir de casa. Aislamiento social.\n"
+              "- Incapacidad o dificultad seria para trabajar o estudiar, según sea el caso.\n"
+              "- Haber vivido experiencias traumáticas.\n"
+              "- Higiene básica descuidada, exponerse en riegos innecesarios con frecuencia: como peleas, abuso de drogas y alcohol.\n"
+              "- Desorientación, ver u oír cosas que nadie más lo hace, olvidar hechos importantes.";
+          break;
+        case "5":
+          answer =
+              "Esto es comprensible porque eres un ser humano con diferentes emociones y sentimientos. Recuerda que el Psicólogo  está preparado y  que tiene como juramento el pacto de confidencialidad.";
+          break;
+        case "6":
+          answer =
+              "Desde luego que no. Pensar que uno tiene que estar «loco» para ver a un psicólogo es un mito. Las personas acuden al psicólogo por una gran variedad de razones, que incluyen aprender a manejar mejor el estrés, aliviar los síntomas emocionales angustiosos, superar una fobia, mejorar sus relaciones con los demás… Algunas personas buscan la ayuda de un psicólogo clínico porque están afrontando una crisis específica en la que necesitan ayuda, mientras que otras buscan mejorar su vida.";
+          break;
+        case "7":
+          answer =
+              "No es necesario que prepares nada como tal. Lo importante es que estés presente en la sesión con la intención de ser abierto y honesto contigo mismo. Otro aspecto muy importante es que vengas con un compromiso firme, tanto contigo mismo, como con el proceso de la consulta que vas a iniciar. Corroboro que las personas que se comprometen con las sesiones firmemente obtienen mejores y más rápidos resultados.";
+          break;
+        case "8":
+          answer =
+              "Todo lo que hables con tu psicólogo es confidencial. Es un espacio de legítima verdad y sinceridad de ambas.";
+          break;
+        default:
+          answer = "";
+      }
     }
 
     _dialog.dialogAnswer(answer);
