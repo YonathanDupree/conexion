@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:get/get.dart';
@@ -34,6 +35,8 @@ class UserProvider extends GetConnect {
           .timeout(const Duration(seconds: 120), onTimeout: () {
         throw ('Error en tiempo de espera, Por favor intentalo nuevamente!');
       });
+
+      inspect(response.request);
 
       var responseJson = jsonDecode(response.body);
       switch (response.statusCode) {

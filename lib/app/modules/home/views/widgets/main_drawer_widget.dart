@@ -31,7 +31,7 @@ class MainDrawerWidget extends StatelessWidget {
               Get.offNamed(Routes.HOME);
             },
           ),
-          ListTile(
+          /*ListTile(
             title: Text('profile_profile'.tr, style: HelperTheme.subTitleLigh),
             leading: const Icon(Icons.person,
                 size: 25, color: HelperTheme.secondary),
@@ -41,7 +41,7 @@ class MainDrawerWidget extends StatelessWidget {
               Get.back();
               Get.offNamed(Routes.PROFILE);
             },
-          ),
+          ),*/
           ListTile(
             title: Text('coupon_coupon'.tr, style: HelperTheme.subTitleLigh),
             leading: const Icon(Icons.credit_card,
