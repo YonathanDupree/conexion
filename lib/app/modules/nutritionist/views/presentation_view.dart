@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../../home/controllers/home_controller.dart';
 
 class PresentationView extends GetView<HomeController> {
@@ -64,6 +65,7 @@ class PresentationView extends GetView<HomeController> {
                                   5) //content padding inside button
                               ),
                           onPressed: () async {
+                            Get.toNamed(Routes.RESERVE);
                             /*_loading.build(context);
                             _ListFecha.clear();
                             _ListHora.clear();

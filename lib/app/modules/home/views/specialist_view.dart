@@ -70,7 +70,6 @@ class SpecialistView extends GetView<HomeController> {
               ))),
           onTap: () async {
             Get.toNamed(Routes.PSYCHOLOGIST);
-            //print(controller.specialist[1].imagPort.toString());
           }),
     ]);
   }

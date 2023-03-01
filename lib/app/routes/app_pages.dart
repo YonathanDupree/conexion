@@ -20,6 +20,8 @@ import '../modules/psychologist/bindings/psychologist_binding.dart';
 import '../modules/psychologist/views/psychologist_view.dart';
 import '../modules/request/bindings/request_binding.dart';
 import '../modules/request/views/request_view.dart';
+import '../modules/reserve/bindings/reserve_binding.dart';
+import '../modules/reserve/views/reserve_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 import '../modules/status/bindings/status_binding.dart';
@@ -92,6 +94,11 @@ class AppPages {
       name: _Paths.PSYCHOLOGIST,
       page: () => const PsychologistView(),
       binding: PsychologistBinding(),
+    ),
+    GetPage(
+      name: _Paths.RESERVE,
+      page: () => const ReserveView(),
+      binding: ReserveBinding(),
     ),
   ];
 }
