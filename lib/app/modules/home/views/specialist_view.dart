@@ -70,6 +70,7 @@ class SpecialistView extends GetView<HomeController> {
                         width: 150),
               ))),
           onTap: () async {
+            controller.getReserve("P");
             Get.toNamed(Routes.PSYCHOLOGIST);
           }),
     ]);

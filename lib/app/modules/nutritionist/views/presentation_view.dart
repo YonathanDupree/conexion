@@ -66,29 +66,6 @@ class PresentationView extends GetView<HomeController> {
                               ),
                           onPressed: () async {
                             Get.toNamed(Routes.RESERVE);
-                            /*_loading.build(context);
-                            _ListFecha.clear();
-                            _ListHora.clear();
-                            HttpOverrides.global = MyHttpOverrides();
-                            final response =
-                                await _cargarhorario.getCargarHorarios("N");
-        
-                            if (response[0].mensaje != "") {
-                              String body = response[0].mensaje!;
-                              String tipo = 'error';
-                              Navigator.of(context, rootNavigator: true)
-                                  .pop('dialog');
-                              _servermessage.build(context, body);
-                            } else {
-                              for (var i = 0; i < response.length; i++) {
-                                _ListFecha.add(response[i].fech_cita.toString());
-                                _ListHora.add(response[i].hora_cita.toString());
-                              }
-                              Navigator.of(context, rootNavigator: true)
-                                  .pop('dialog');
-                              _horariosdisponible.build(
-                                  context, _ListFecha, _ListHora);
-                            }*/
                           },
                           icon: const Icon(Icons.calendar_month,
                               color: HelperTheme.secondary),

@@ -279,13 +279,13 @@ class HomeController extends GetxController {
   Future<void> getReserve(String codiSani) async {
     late String title;
     late String message;
+    eventsList.clear();
 
     try {
       List<Reserve> reserve = await reserveprovider.getReserve(codiSani);
       changeReserve(reserve);
       changeSani(codiSani);
 
-      eventsList.clear();
       for (var i = 0; i < reserve.length; i++) {
         DateTime dateTime = DateTime.parse(reserve[i].fechCita.toString());
 
@@ -317,15 +317,19 @@ class HomeController extends GetxController {
 
     List<String> partes = event.split(" ");
     String horaCita = partes[3];
-
+    String modaCita = partes[1];
+    _dialog.dialogProgress("Espere unos segundos ..");
     try {
       message = await reserveprovider.registrerReserve(
-          fechCita, horaCita, codiSani!, numeIden!);
+          fechCita, horaCita, codiSani!, numeIden!, modaCita);
       title = "Notificación";
+      _dialog.dialogClose();
       SnackbarUtil().snackbarSuccess(title, message);
     } catch (error) {
+      //Get.back();
       title = "Error";
       message = error.toString();
+      _dialog.dialogCloseError();
       SnackbarUtil().snackbarError(title, message);
     }
   }

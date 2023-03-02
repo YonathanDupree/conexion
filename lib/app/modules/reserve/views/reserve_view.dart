@@ -2,6 +2,7 @@ import 'dart:collection';
 
 import 'package:conexion/app/modules/home/controllers/home_controller.dart';
 import 'package:conexion/app/modules/nutritionist/controllers/nutritionist_controller.dart';
+import 'package:conexion/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -117,14 +118,59 @@ class ReserveView extends GetView<HomeController> {
                               ),
                               child: ListTile(
                                 onTap: () {
-                                  controller.homeController.registrerReserve(
-                                      controller.selectedDay, event.toString());
-                                  /*print("Entro");
-                                  print(controller.selectedDay.toString());
-                                  print("aaaa");
-                                  print(controller.selectedDay.runtimeType);
-                                  print("bbbb");
-                                  print(event.toString());*/
+                                  showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return AlertDialog(
+                                          title: Image.asset(
+                                            'assets/images/logo_texto.png',
+                                            width: 100.0,
+                                            height: 50.0,
+                                            scale: 1.0,
+                                          ),
+                                          content: SingleChildScrollView(
+                                            child: ListBody(
+                                              children: <Widget>[
+                                                Container(
+                                                    padding: const EdgeInsets
+                                                            .symmetric(
+                                                        horizontal: 5,
+                                                        vertical: 5),
+                                                    child: Text(
+                                                      'Esta seguro que desea reserva una cita?'
+                                                          .tr,
+                                                      textAlign:
+                                                          TextAlign.justify,
+                                                      overflow:
+                                                          TextOverflow.ellipsis,
+                                                      style: HelperTheme
+                                                          .labelBackMd,
+                                                      maxLines: 3,
+                                                    )),
+                                              ],
+                                            ),
+                                          ),
+                                          actions: <Widget>[
+                                            ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                  backgroundColor:
+                                                      Colors.green),
+                                              child: const Text('Si',
+                                                  style: TextStyle(
+                                                      color: Colors.white)),
+                                              onPressed: () async {
+                                                await controller.homeController
+                                                    .registrerReserve(
+                                                        controller.selectedDay,
+                                                        event.toString());
+                                                Get.toNamed(Routes.HOME);
+                                              },
+                                            ),
+                                          ],
+                                        );
+                                      }).then((value) {
+                                    Get.back();
+                                  });
                                 },
                                 title: Text(event.toString()),
                               ),

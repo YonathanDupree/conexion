@@ -52,7 +52,7 @@ class ReserveProvider extends GetConnect {
   }
 
   Future registrerReserve(String fechCita, String horaCita, String codiSani,
-      String numeIden) async {
+      String numeIden, String modaCita) async {
     String message = "";
     try {
       final response = await http
@@ -65,7 +65,8 @@ class ReserveProvider extends GetConnect {
           'fech_cita': fechCita,
           'hora_cita': horaCita,
           'codi_sani': codiSani,
-          'nume_iden': numeIden
+          'nume_iden': numeIden,
+          'moda_cita': modaCita
         }),
       )
           .timeout(const Duration(seconds: 120), onTimeout: () {
