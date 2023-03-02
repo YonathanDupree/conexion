@@ -2,8 +2,10 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:conexion/app/modules/home/providers/home_provider.dart';
+import 'package:conexion/app/modules/home/providers/reserve_provider.dart';
 import 'package:conexion/app/modules/home/providers/slid_provider.dart';
 import 'package:conexion/app/modules/home/providers/spec_provider.dart';
+import 'package:conexion/app/modules/home/reserve_model.dart';
 import 'package:conexion/app/modules/home/spec_model.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -15,14 +17,24 @@ import '../slid_model.dart';
 
 class HomeController extends GetxController {
   //TODO: Implement HomeController
-  final HomeProvider provider = HomeProvider();
-  final SpecProvider specprovider = SpecProvider();
-  final SlidProvider slidprovider = SlidProvider();
+  final provider = HomeProvider();
+  final specprovider = SpecProvider();
+  final slidprovider = SlidProvider();
+  final reserveprovider = ReserveProvider();
+
+  var reserve = <Reserve>[].obs;
+  Map<DateTime, List> eventsList = {};
+
+  int getHashCode(DateTime key) {
+    return key.day * 1000000 + key.month * 10000 + key.year;
+  }
 
   GetStorage box = GetStorage();
   String? nombEmpl = "";
+  String? numeIden = "";
   String? estaUsua;
   String? urlsFoto;
+  String? codiSani = "";
   final _dialog = DialogUtil();
 
   var specialist = <Spec>[].obs;
@@ -31,8 +43,7 @@ class HomeController extends GetxController {
 
   @override
   Future<void> onInit() async {
-    print("onInit");
-
+    numeIden = box.read("numeIden");
     nombEmpl = box.read("nombEmpl");
     urlsFoto = box.read("urlsFoto");
 
@@ -61,12 +72,11 @@ class HomeController extends GetxController {
   ];
 
   Future<void> saveEmotion() async {
-    box.read("numeIden");
     late String title;
     late String message;
 
     try {
-      message = await provider.saveEmotion(box.read("numeIden"), estaUsua!);
+      message = await provider.saveEmotion(numeIden!, estaUsua!);
       title = "Notificación";
       SnackbarUtil().snackbarSuccess(title, message);
     } catch (error) {
@@ -264,5 +274,72 @@ class HomeController extends GetxController {
     box.remove("numeIden");
     box.remove("nombEmpl");
     box.remove("urlsFoto");
+  }
+
+  Future<void> getReserve(String codiSani) async {
+    late String title;
+    late String message;
+
+    try {
+      List<Reserve> reserve = await reserveprovider.getReserve(codiSani);
+      changeReserve(reserve);
+      changeSani(codiSani);
+
+      eventsList.clear();
+      for (var i = 0; i < reserve.length; i++) {
+        DateTime dateTime = DateTime.parse(reserve[i].fechCita.toString());
+
+        if (eventsList.containsKey(
+            DateTime.utc(dateTime.year, dateTime.month, dateTime.day))) {
+          eventsList[DateTime.utc(dateTime.year, dateTime.month, dateTime.day)]
+              ?.add(
+                  'Modalidad ${reserve[i].modaCita} Hora: ${reserve[i].horaCita}');
+        } else {
+          eventsList[
+              DateTime.utc(dateTime.year, dateTime.month, dateTime.day)] = [
+            'Modalidad ${reserve[i].modaCita} Hora: ${reserve[i].horaCita}'
+          ];
+        }
+      }
+    } catch (error) {
+      title = "Error";
+      message = error.toString();
+      SnackbarUtil().snackbarError(title, message);
+    }
+  }
+
+  Future<void> registrerReserve(DateTime? fecha, String event) async {
+    late String title;
+    late String message;
+
+    String fechCita =
+        "${fecha?.month.toString().padLeft(2, '0')}/${fecha?.day.toString().padLeft(2, '0')}/${fecha?.year}";
+
+    List<String> partes = event.split(" ");
+    String horaCita = partes[3];
+
+    try {
+      message = await reserveprovider.registrerReserve(
+          fechCita, horaCita, codiSani!, numeIden!);
+      title = "Notificación";
+      SnackbarUtil().snackbarSuccess(title, message);
+    } catch (error) {
+      title = "Error";
+      message = error.toString();
+      SnackbarUtil().snackbarError(title, message);
+    }
+  }
+
+  void changeSani(String data) {
+    codiSani = data;
+  }
+
+  void changeReserve(List<Reserve> data) {
+    reserve.clear();
+    reserve(data);
+  }
+
+  void clearReserve() {
+    reserve.clear();
   }
 }

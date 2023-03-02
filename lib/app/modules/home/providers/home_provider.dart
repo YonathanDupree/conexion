@@ -13,7 +13,7 @@ class HomeProvider extends GetConnect {
   }
 
   Future saveEmotion(String numeIden, String estaUsua) async {
-    String respuesta = "";
+    String message = "";
     try {
       final response = await http
           .post(
@@ -31,7 +31,7 @@ class HomeProvider extends GetConnect {
       var responseJson = jsonDecode(response.body);
       switch (response.statusCode) {
         case 200:
-          respuesta = responseJson["message"];
+          message = responseJson["message"];
           break;
         case 404:
           throw (responseJson["message"]);
@@ -42,6 +42,6 @@ class HomeProvider extends GetConnect {
       throw ('Error en el formato del servicio.');
     }
 
-    return respuesta;
+    return message;
   }
 }

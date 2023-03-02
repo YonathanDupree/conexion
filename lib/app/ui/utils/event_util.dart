@@ -15,7 +15,7 @@ class Event {
   @override
   String toString() => title;
 
-  Map<DateTime, List> _eventsList = {};
+  //Map<DateTime, List> _eventsList = {};
 }
 
 /// Example events.
