@@ -168,4 +168,7 @@ class ReserveController extends GetxController {
     reserve.clear();
   }*/
 
+  Future<void> dialogClose() async {
+    Get.back();
+  }
 }

@@ -159,17 +159,17 @@ class ReserveView extends GetView<HomeController> {
                                                   style: TextStyle(
                                                       color: Colors.white)),
                                               onPressed: () async {
+                                                await controller.dialogClose();
                                                 await controller.homeController
                                                     .registrerReserve(
                                                         controller.selectedDay,
                                                         event.toString());
-                                                Get.toNamed(Routes.HOME);
                                               },
                                             ),
                                           ],
                                         );
                                       }).then((value) {
-                                    Get.back();
+                                    controller.dialogClose();
                                   });
                                 },
                                 title: Text(event.toString()),

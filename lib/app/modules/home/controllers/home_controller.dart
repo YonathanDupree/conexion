@@ -281,6 +281,8 @@ class HomeController extends GetxController {
     late String message;
     eventsList.clear();
 
+    _dialog.dialogProgress("Cargando ...");
+
     try {
       List<Reserve> reserve = await reserveprovider.getReserve(codiSani);
       changeReserve(reserve);
@@ -301,9 +303,11 @@ class HomeController extends GetxController {
           ];
         }
       }
+      _dialog.dialogCloseError();
     } catch (error) {
       title = "Error";
       message = error.toString();
+      _dialog.dialogCloseError();
       SnackbarUtil().snackbarError(title, message);
     }
   }
@@ -312,25 +316,30 @@ class HomeController extends GetxController {
     late String title;
     late String message;
 
+    _dialog.dialogProgress("Espere unos segundos ..");
+
     String fechCita =
         "${fecha?.month.toString().padLeft(2, '0')}/${fecha?.day.toString().padLeft(2, '0')}/${fecha?.year}";
 
     List<String> partes = event.split(" ");
     String horaCita = partes[3];
     String modaCita = partes[1];
-    _dialog.dialogProgress("Espere unos segundos ..");
+
     try {
       message = await reserveprovider.registrerReserve(
           fechCita, horaCita, codiSani!, numeIden!, modaCita);
       title = "Notificación";
-      _dialog.dialogClose();
+      _dialog.dialogCloseError();
       SnackbarUtil().snackbarSuccess(title, message);
+      await 5.delay();
+      getReserve(codiSani!);
     } catch (error) {
-      //Get.back();
       title = "Error";
       message = error.toString();
       _dialog.dialogCloseError();
       SnackbarUtil().snackbarError(title, message);
+      await 5.delay();
+      getReserve(codiSani!);
     }
   }
 

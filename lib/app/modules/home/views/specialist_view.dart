@@ -38,8 +38,8 @@ class SpecialistView extends GetView<HomeController> {
                       width: 150),
             ))),
         onTap: () async {
-          controller.getReserve("N");
           Get.toNamed(Routes.NUTRITIONIST);
+          await controller.getReserve("N");
         },
       ),
       InkWell(
@@ -70,8 +70,8 @@ class SpecialistView extends GetView<HomeController> {
                         width: 150),
               ))),
           onTap: () async {
-            controller.getReserve("P");
             Get.toNamed(Routes.PSYCHOLOGIST);
+            await controller.getReserve("P");
           }),
     ]);
   }
