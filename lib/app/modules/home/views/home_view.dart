@@ -15,6 +15,7 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: HelperTheme.black),
         backgroundColor: HelperTheme.primary,
         title: Text('home_name'.tr,
             style: const TextStyle(color: HelperTheme.black)),

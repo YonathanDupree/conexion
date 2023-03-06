@@ -32,8 +32,9 @@ class ReserveView extends GetView<HomeController> {
           return Scaffold(
               backgroundColor: HelperTheme.white,
               appBar: AppBar(
-                title: const Text('Reservar cita',
-                    style: TextStyle(color: Colors.black)),
+                iconTheme: const IconThemeData(color: HelperTheme.black),
+                title: Text('specialist_reserve'.tr,
+                    style: const TextStyle(color: Colors.black)),
                 backgroundColor: HelperTheme.primary,
               ),
               body: Column(
@@ -41,6 +42,10 @@ class ReserveView extends GetView<HomeController> {
                   TableCalendar(
                     locale: 'es_PE',
                     weekendDays: const [DateTime.saturday, DateTime.sunday],
+                    enabledDayPredicate: (date) {
+                      return (date.weekday != DateTime.sunday &&
+                          date.weekday != DateTime.saturday);
+                    },
                     firstDay: kFirstDay,
                     lastDay: kLastDay,
                     focusedDay: controller.focusedDay,
@@ -111,8 +116,9 @@ class ReserveView extends GetView<HomeController> {
                               ),
                               child: Text(
                                 '${events.length}',
-                                style:
-                                    const TextStyle(color: HelperTheme.black),
+                                style: const TextStyle(
+                                    color: HelperTheme.black,
+                                    fontWeight: FontWeight.bold),
                               ),
                             )
                           : null,
@@ -142,10 +148,25 @@ class ReserveView extends GetView<HomeController> {
                                 vertical: 4.0,
                               ),
                               decoration: BoxDecoration(
+                                color:
+                                    controller.getData(event.toString(), "M") ==
+                                            'P'
+                                        ? HelperTheme.primary
+                                        : HelperTheme.nearlyBlue,
                                 border: Border.all(),
                                 borderRadius: BorderRadius.circular(12.0),
                               ),
                               child: ListTile(
+                                leading:
+                                    controller.getData(event.toString(), "M") ==
+                                            'P'
+                                        ? const Icon(Icons.timer)
+                                        : const Icon(Icons.computer),
+                                title: Text(
+                                    controller.getData(event.toString(), "H"),
+                                    style: HelperTheme.labelBlackLg),
+                                subtitle: Text(
+                                    controller.getData(event.toString(), "D")),
                                 onTap: () {
                                   showDialog(
                                       context: context,
@@ -166,8 +187,7 @@ class ReserveView extends GetView<HomeController> {
                                                         horizontal: 5,
                                                         vertical: 5),
                                                     child: Text(
-                                                      'Esta seguro que desea reserva una cita?'
-                                                          .tr,
+                                                      "Esta seguro que desea reserva una cita para el día ${controller.getData(event, 'F')} en la ${controller.getData(event, 'D').toLowerCase()}.",
                                                       textAlign:
                                                           TextAlign.justify,
                                                       overflow:
@@ -183,7 +203,7 @@ class ReserveView extends GetView<HomeController> {
                                             ElevatedButton(
                                               style: ElevatedButton.styleFrom(
                                                   backgroundColor:
-                                                      Colors.green),
+                                                      HelperTheme.success),
                                               child: const Text('Si',
                                                   style: TextStyle(
                                                       color: Colors.white)),
@@ -201,7 +221,6 @@ class ReserveView extends GetView<HomeController> {
                                     controller.dialogClose();
                                   });
                                 },
-                                title: Text(event.toString()),
                               ),
                             ))
                         .toList(),

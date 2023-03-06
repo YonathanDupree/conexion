@@ -1,5 +1,6 @@
 {
-    "moda_cita": "Presencial",
+    "desc_moda": "Presencial",
+    "moda_cita": "P",
     "fech_cita": "2023-03-02",
     "hora_cita": "16:00",
     "codi_sani": "N"

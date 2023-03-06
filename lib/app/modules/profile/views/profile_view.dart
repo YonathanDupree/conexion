@@ -12,6 +12,7 @@ class ProfileView extends GetView<ProfileController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: HelperTheme.black),
         backgroundColor: HelperTheme.primary,
         title: const Text("Perfil",
             style: const TextStyle(color: HelperTheme.black)),

@@ -12,6 +12,7 @@ class CalendarView extends GetView<CalendarController> {
   Widget build(BuildContext context) {
     return Obx(() => Scaffold(
           appBar: AppBar(
+            iconTheme: const IconThemeData(color: HelperTheme.black),
             title: Text(
               controller.couponController.tipoCupo.value,
               style: HelperTheme.titleBlackMd,

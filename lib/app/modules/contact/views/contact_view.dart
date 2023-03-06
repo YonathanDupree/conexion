@@ -12,6 +12,7 @@ class ContactView extends GetView<ContactController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: HelperTheme.black),
         backgroundColor: HelperTheme.primary,
         title: const Text("Contactanos",
             style: TextStyle(color: HelperTheme.black)),

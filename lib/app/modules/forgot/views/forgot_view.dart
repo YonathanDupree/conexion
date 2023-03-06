@@ -13,6 +13,7 @@ class ForgotView extends GetView<ForgotController> {
     return Scaffold(
       backgroundColor: HelperTheme.white,
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: HelperTheme.black),
         title: Text('forgot_title'.tr),
         centerTitle: true,
         backgroundColor: HelperTheme.primary,

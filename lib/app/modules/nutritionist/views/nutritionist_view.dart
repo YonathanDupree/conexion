@@ -14,6 +14,7 @@ class NutritionistView extends GetView<NutritionistController> {
     return Scaffold(
         backgroundColor: HelperTheme.white,
         appBar: AppBar(
+          iconTheme: const IconThemeData(color: HelperTheme.black),
           title: Text('specialist_reserve'.tr,
               style: const TextStyle(color: Colors.black)),
           backgroundColor: HelperTheme.primary,

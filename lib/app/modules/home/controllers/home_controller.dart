@@ -295,11 +295,11 @@ class HomeController extends GetxController {
             DateTime.utc(dateTime.year, dateTime.month, dateTime.day))) {
           eventsList[DateTime.utc(dateTime.year, dateTime.month, dateTime.day)]
               ?.add(
-                  'Modalidad ${reserve[i].modaCita} Hora: ${reserve[i].horaCita}');
+                  '${reserve[i].descModa} ${reserve[i].horaCita} ${reserve[i].modaCita} ${reserve[i].fechCita}');
         } else {
           eventsList[
               DateTime.utc(dateTime.year, dateTime.month, dateTime.day)] = [
-            'Modalidad ${reserve[i].modaCita} Hora: ${reserve[i].horaCita}'
+            '${reserve[i].descModa} ${reserve[i].horaCita} ${reserve[i].modaCita} ${reserve[i].fechCita}'
           ];
         }
       }
@@ -322,12 +322,12 @@ class HomeController extends GetxController {
         "${fecha?.month.toString().padLeft(2, '0')}/${fecha?.day.toString().padLeft(2, '0')}/${fecha?.year}";
 
     List<String> partes = event.split(" ");
-    String horaCita = partes[3];
-    String modaCita = partes[1];
+    String descModa = partes[0];
+    String horaCita = partes[1];
 
     try {
       message = await reserveprovider.registrerReserve(
-          fechCita, horaCita, codiSani!, numeIden!, modaCita);
+          fechCita, horaCita, codiSani!, numeIden!, descModa);
       title = "Notificación";
       _dialog.dialogCloseError();
       SnackbarUtil().snackbarSuccess(title, message);

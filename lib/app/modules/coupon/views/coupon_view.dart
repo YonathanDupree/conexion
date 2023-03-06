@@ -17,6 +17,7 @@ class CouponView extends GetView<CouponController> {
 
     return Obx(() => Scaffold(
         appBar: AppBar(
+          iconTheme: const IconThemeData(color: HelperTheme.black),
           backgroundColor: HelperTheme.primary,
           title: Text('coupon_coupon'.tr, style: HelperTheme.titleBlackMd),
         ),

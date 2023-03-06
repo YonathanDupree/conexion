@@ -5,10 +5,12 @@ import 'package:conexion/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:intl/intl.dart';
 
 class ReserveController extends GetxController {
   //TODO: Implement ReserveController
   final homeController = Get.find<HomeController>();
+
   //final provider = ReserveProvider();
   //var reserve = <Reserve>[].obs;
   //late final ValueNotifier<List<Event>> selectedEvents;
@@ -168,5 +170,29 @@ class ReserveController extends GetxController {
 
   Future<void> dialogClose() async {
     Get.back();
+  }
+
+  String getData(String event, String data) {
+    List<String> partes = event.split(" ");
+    switch (data) {
+      case "D":
+        String modaCita = partes[0];
+        return 'Modalidad $modaCita';
+      case "H":
+        String horaCita = partes[1];
+        return 'Hora $horaCita';
+      case "M":
+        String modaCita = partes[2];
+        return modaCita;
+      case "F":
+        String fechCita = partes[3];
+        String horaCita = partes[1];
+        final DateFormat formatter = DateFormat('dd/MM/yyyy');
+        DateTime fecha = DateTime.parse(fechCita);
+        fechCita = formatter.format(fecha);
+
+        return '$fechCita a las $horaCita horas';
+    }
+    return '';
   }
 }
