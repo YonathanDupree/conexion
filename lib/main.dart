@@ -9,6 +9,7 @@ import 'package:get_storage/get_storage.dart';
 import 'app/modules/splash/bindings/splash_binding.dart';
 import 'app/routes/app_pages.dart';
 import 'generated/locales.g.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 class PostHttpOverrides extends HttpOverrides {
   @override
@@ -20,6 +21,9 @@ class PostHttpOverrides extends HttpOverrides {
 }
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting();
+
   await GetStorage.init();
   GetStorage box = GetStorage();
   final lang = box.read("lang");
@@ -29,7 +33,6 @@ Future<void> main() async {
     locale = Locale('es', lang);
   }
   HttpOverrides.global = PostHttpOverrides();
-
   runApp(
     GetMaterialApp(
       translationsKeys: AppTranslation.translations,

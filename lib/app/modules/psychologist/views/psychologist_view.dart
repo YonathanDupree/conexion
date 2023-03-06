@@ -14,8 +14,8 @@ class PsychologistView extends GetView<PsychologistController> {
     return Scaffold(
         backgroundColor: HelperTheme.white,
         appBar: AppBar(
-          title: Text('specialist_reserve'.tr),
-          centerTitle: true,
+          title: Text('specialist_reserve'.tr,
+              style: const TextStyle(color: Colors.black)),
           backgroundColor: HelperTheme.primary,
         ),
         body: SingleChildScrollView(

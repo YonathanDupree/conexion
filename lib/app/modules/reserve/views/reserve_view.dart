@@ -1,7 +1,6 @@
 import 'dart:collection';
 
 import 'package:conexion/app/modules/home/controllers/home_controller.dart';
-import 'package:conexion/app/modules/nutritionist/controllers/nutritionist_controller.dart';
 import 'package:conexion/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
@@ -33,32 +32,25 @@ class ReserveView extends GetView<HomeController> {
           return Scaffold(
               backgroundColor: HelperTheme.white,
               appBar: AppBar(
-                title: const Text('Reservar cita'),
-                centerTitle: true,
+                title: const Text('Reservar cita',
+                    style: TextStyle(color: Colors.black)),
                 backgroundColor: HelperTheme.primary,
               ),
               body: Column(
                 children: [
                   TableCalendar(
+                    locale: 'es_PE',
+                    weekendDays: const [DateTime.saturday, DateTime.sunday],
                     firstDay: kFirstDay,
                     lastDay: kLastDay,
                     focusedDay: controller.focusedDay,
-                    //rangeStartDay: controller.rangeStart,
-                    //rangeEndDay: controller.rangeEnd,
                     calendarFormat: controller.calendarFormat,
-                    //rangeSelectionMode: controller.rangeSelectionMode,
                     eventLoader: getEventForDay,
                     startingDayOfWeek: StartingDayOfWeek.monday,
                     selectedDayPredicate: (day) {
                       return isSameDay(controller.selectedDay, day);
                     },
-                    /*onDaySelected: (selectedDay, focusedDay) {
-                    if (!isSameDay(controller.selectedDay, selectedDay)) {
-                      controller.changeSelectDay(selectedDay, focusedDay);
-                    }
-                  },*/
                     onDaySelected: controller.onDaySelected,
-                    //onRangeSelected: controller.onRangeSelected,
                     onFormatChanged: (format) {
                       if (controller.calendarFormat != format) {
                         controller.changeCalendarFormat(format);
@@ -68,6 +60,7 @@ class ReserveView extends GetView<HomeController> {
                       controller.focusedDay = focusedDay;
                     },
                     calendarStyle: const CalendarStyle(
+                      markersAlignment: Alignment.bottomRight,
                       outsideDaysVisible: false,
                       canMarkersOverflow: true,
                       todayTextStyle: TextStyle(
@@ -87,11 +80,46 @@ class ReserveView extends GetView<HomeController> {
                             fontSize: 18.0,
                             color: HelperTheme.black)),
                     calendarBuilders: CalendarBuilders(
+                      selectedBuilder: (context, date, events) => Container(
+                          margin: const EdgeInsets.all(4.0),
+                          alignment: Alignment.center,
+                          decoration: const BoxDecoration(
+                            color: HelperTheme.primary,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Text(
+                            date.day.toString(),
+                            style: const TextStyle(color: HelperTheme.black),
+                          )),
+                      todayBuilder: (context, date, events) => Container(
+                          margin: const EdgeInsets.all(4.0),
+                          alignment: Alignment.center,
+                          decoration: const BoxDecoration(
+                              color: HelperTheme.warning,
+                              shape: BoxShape.circle),
+                          child: Text(
+                            date.day.toString(),
+                            style: const TextStyle(color: HelperTheme.black),
+                          )),
+                      markerBuilder: (context, day, events) => events.isNotEmpty
+                          ? Container(
+                              width: 17.0,
+                              height: 17.0,
+                              alignment: Alignment.center,
+                              decoration: const BoxDecoration(
+                                color: HelperTheme.success,
+                              ),
+                              child: Text(
+                                '${events.length}',
+                                style:
+                                    const TextStyle(color: HelperTheme.black),
+                              ),
+                            )
+                          : null,
                       dowBuilder: (context, day) {
                         if (day.weekday == DateTime.sunday ||
                             day.weekday == DateTime.saturday) {
-                          final text = DateFormat.E().format(day);
-
+                          final text = DateFormat.E('es').format(day);
                           return Center(
                             child: Text(
                               text,
@@ -99,6 +127,7 @@ class ReserveView extends GetView<HomeController> {
                             ),
                           );
                         }
+                        return null;
                       },
                     ),
                   ),
@@ -176,33 +205,7 @@ class ReserveView extends GetView<HomeController> {
                               ),
                             ))
                         .toList(),
-                  )
-
-                      /*child: ValueListenableBuilder<List<Event>>(
-                      valueListenable: controller.selectedEvents,
-                      builder: (context, value, _) {
-                        return ListView.builder(
-                          itemCount: value.length,
-                          itemBuilder: (context, index) {
-                            return Container(
-                              margin: const EdgeInsets.symmetric(
-                                horizontal: 12.0,
-                                vertical: 4.0,
-                              ),
-                              decoration: BoxDecoration(
-                                border: Border.all(),
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              child: ListTile(
-                                onTap: () => print('${value[index]}'),
-                                title: Text('${value[index]}'),
-                              ),
-                            );
-                          },
-                        );
-                      },
-                    ),*/
-                      ),
+                  )),
                 ],
               ));
         });

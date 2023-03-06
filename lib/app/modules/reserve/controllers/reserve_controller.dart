@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import '../../../ui/utils/snackbar_util.dart';
-
 class ReserveController extends GetxController {
   //TODO: Implement ReserveController
   final homeController = Get.find<HomeController>();
