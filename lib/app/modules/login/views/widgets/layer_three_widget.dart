@@ -79,7 +79,7 @@ class _LayerThreeWidgetState extends State<LayerThreeWidget> {
                             fillColor: HelperTheme.white,
                             filled: true,
                             contentPadding:
-                                const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                                const EdgeInsets.fromLTRB(0, 10, 10, 10),
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10.0),
                                 borderSide:
@@ -190,8 +190,8 @@ class _LayerThreeWidgetState extends State<LayerThreeWidget> {
                     Positioned(
                       right: 110,
                       top: 469,
-                      child: GestureDetector(
-                        onTap: () async {
+                      child: InkWell(
+                        onTap: () {
                           Get.toNamed(Routes.FORGOT);
                         },
                         child: Container(
@@ -210,7 +210,7 @@ class _LayerThreeWidgetState extends State<LayerThreeWidget> {
                     ),
                     const Positioned(
                       right: 160,
-                      top: 480,
+                      top: 500,
                       child: Center(
                         child: Image(
                             image:

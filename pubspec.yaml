@@ -33,7 +33,7 @@ flutter:
     - assets/icons/
 
 flutter_icons: 
-  image_path: assets/images/conexion.jpg
+  image_path: "assets/images/conexion.png"
   ios: true
   android: true
 

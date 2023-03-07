@@ -86,9 +86,11 @@ class LoginController extends GetxController {
         if (isChecked.value) {
           box.write("codiUsua", codiUsuaController.text);
           box.write("clavUsua", clavUsuaController.text);
+          box.write("isChecked", true);
         } else {
           box.remove('codiUsua');
           box.remove('clavUsua');
+          box.write("isChecked", false);
         }
         box.write("isLogin", "S");
         box.write("numeIden", data?.numeIden.toString());
@@ -114,6 +116,7 @@ class LoginController extends GetxController {
     selectedCountry.value = box.read("country") ?? '';
     codiUsuaController.text = box.read("codiUsua") ?? '';
     clavUsuaController.text = box.read("clavUsua") ?? '';
+    isChecked.value = box.read("isChecked") ?? false;
     super.onInit();
   }
 
