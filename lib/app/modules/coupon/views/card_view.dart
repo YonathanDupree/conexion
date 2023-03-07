@@ -299,7 +299,7 @@ class CardView extends GetView<CouponController> {
                         animation: true,
                         animationDuration: 2000,
                         lineHeight: 30.0,
-                        percent: double.parse("10") / 100,
+                        percent: double.parse(controller.totaUsad.value) / 100,
                         center: Text(
                             "${double.parse((double.parse(controller.totaUsad.value)).toStringAsFixed(1))} %",
                             style: HelperTheme.labelBlackLg),

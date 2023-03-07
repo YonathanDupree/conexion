@@ -46,53 +46,128 @@ class CalendarView extends GetView<CalendarController> {
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: HelperTheme.info),
                               onPressed: () {
-                                showDatePicker(
-                                  context: context,
-                                  initialDate: DateTime(
-                                      DateTime.now().year,
-                                      DateTime.now().month,
-                                      DateTime.now().day + 2),
-                                  firstDate: DateTime(
-                                      DateTime.now().year,
-                                      DateTime.now().month,
-                                      DateTime.now().day + 2),
-                                  lastDate: DateTime(
-                                      DateTime.now().year,
-                                      DateTime.now().month,
-                                      DateTime.now().day + 30),
-                                  helpText: 'calendar_seleccionar'.tr,
-                                  cancelText: 'calendar_close'.tr,
-                                  confirmText: 'calendar_ok'.tr,
-                                  fieldLabelText: 'calendar_ingrese'.tr,
-                                  errorFormatText: 'calendar_formato'.tr,
-                                  builder: (context, child) {
-                                    return Theme(
-                                      data: ThemeData.light().copyWith(
-                                          primaryColor: HelperTheme.primary,
-                                          colorScheme: const ColorScheme.light(
-                                              primary: HelperTheme.primary,
-                                              onPrimary: Colors.black),
-                                          buttonTheme: const ButtonThemeData(
-                                            textTheme: ButtonTextTheme.primary,
-                                          ),
-                                          textButtonTheme: TextButtonThemeData(
-                                            style: TextButton.styleFrom(
-                                              foregroundColor: Colors
-                                                  .black, // button text color
-                                            ),
-                                          )), // This will change to light theme.
-                                      child: SizedBox(child: child),
-                                    );
-                                  },
-                                ).then((value) async {
-                                  try {
-                                    String fechSoli =
-                                        DateFormat('MM/dd/yyyy').format(value!);
-                                    controller.changeselectedFecha(fechSoli);
-                                  } catch (e) {
-                                    debugPrint("Error cerrar");
-                                  }
-                                });
+                                controller.couponController.tipoCupo.value ==
+                                        'Mi cumpleaños'
+                                    ? showDatePicker(
+                                        context: context,
+                                        initialDate: controller.couponController
+                                            .getDate(
+                                                controller.couponController
+                                                    .fechNaci.value,
+                                                'I'),
+                                        firstDate: controller.couponController
+                                            .getDate(
+                                                controller.couponController
+                                                    .fechNaci.value,
+                                                'F'),
+                                        lastDate: controller.couponController
+                                            .getDate(
+                                                controller.couponController
+                                                    .fechNaci.value,
+                                                'L'),
+                                        helpText: 'calendar_seleccionar'.tr,
+                                        cancelText: 'calendar_close'.tr,
+                                        confirmText: 'calendar_ok'.tr,
+                                        fieldLabelText: 'calendar_ingrese'.tr,
+                                        errorFormatText: 'calendar_formato'.tr,
+                                        builder: (context, child) {
+                                          return Theme(
+                                            data: ThemeData.light().copyWith(
+                                                primaryColor: HelperTheme
+                                                    .primary,
+                                                colorScheme:
+                                                    const ColorScheme.light(
+                                                        primary:
+                                                            HelperTheme.primary,
+                                                        onPrimary:
+                                                            Colors.black),
+                                                buttonTheme:
+                                                    const ButtonThemeData(
+                                                  textTheme:
+                                                      ButtonTextTheme.primary,
+                                                ),
+                                                textButtonTheme:
+                                                    TextButtonThemeData(
+                                                  style: TextButton.styleFrom(
+                                                    foregroundColor: Colors
+                                                        .black, // button text color
+                                                  ),
+                                                )), // This will change to light theme.
+                                            child: SizedBox(child: child),
+                                          );
+                                        },
+                                      ).then((value) async {
+                                        try {
+                                          String fechSoli =
+                                              DateFormat('MM/dd/yyyy')
+                                                  .format(value!);
+                                          controller
+                                              .changeselectedFecha(fechSoli);
+                                        } catch (e) {
+                                          debugPrint("Error cerrar");
+                                        }
+                                      })
+                                    : showDatePicker(
+                                        context: context,
+                                        selectableDayPredicate:
+                                            (DateTime date) {
+                                          return date.weekday != 6 &&
+                                              date.weekday != 7;
+                                        },
+                                        initialDate: DateTime(
+                                            DateTime.now().year,
+                                            DateTime.now().month,
+                                            DateTime.now().day + 2),
+                                        firstDate: DateTime(
+                                            DateTime.now().year,
+                                            DateTime.now().month,
+                                            DateTime.now().day + 2),
+                                        lastDate: DateTime(
+                                            DateTime.now().year,
+                                            DateTime.now().month,
+                                            DateTime.now().day + 30),
+                                        helpText: 'calendar_seleccionar'.tr,
+                                        cancelText: 'calendar_close'.tr,
+                                        confirmText: 'calendar_ok'.tr,
+                                        fieldLabelText: 'calendar_ingrese'.tr,
+                                        errorFormatText: 'calendar_formato'.tr,
+                                        builder: (context, child) {
+                                          return Theme(
+                                            data: ThemeData.light().copyWith(
+                                                primaryColor: HelperTheme
+                                                    .primary,
+                                                colorScheme:
+                                                    const ColorScheme.light(
+                                                        primary:
+                                                            HelperTheme.primary,
+                                                        onPrimary:
+                                                            Colors.black),
+                                                buttonTheme:
+                                                    const ButtonThemeData(
+                                                  textTheme:
+                                                      ButtonTextTheme.primary,
+                                                ),
+                                                textButtonTheme:
+                                                    TextButtonThemeData(
+                                                  style: TextButton.styleFrom(
+                                                    foregroundColor: Colors
+                                                        .black, // button text color
+                                                  ),
+                                                )), // This will change to light theme.
+                                            child: SizedBox(child: child),
+                                          );
+                                        },
+                                      ).then((value) async {
+                                        try {
+                                          String fechSoli =
+                                              DateFormat('MM/dd/yyyy')
+                                                  .format(value!);
+                                          controller
+                                              .changeselectedFecha(fechSoli);
+                                        } catch (e) {
+                                          debugPrint("Error cerrar");
+                                        }
+                                      });
                               },
                               icon: const Icon(Icons
                                   .calendar_month), //icon data for elevated button

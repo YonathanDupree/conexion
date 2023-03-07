@@ -20,6 +20,10 @@ class CouponController extends GetxController {
 
   String numeIden = "";
   RxString consCupo = "0".obs;
+  RxString fechNaci = "".obs;
+  RxString numeDias = "0".obs;
+  RxInt min = 0.obs;
+  RxInt max = 0.obs;
   RxString jefeInme = "0".obs;
   RxString autoEmp1 = "0".obs;
   RxString autoEmp2 = "0".obs;
@@ -76,6 +80,8 @@ class CouponController extends GetxController {
     try {
       Coupon? data = await couponprovider.getCoupon(numeIden);
       consCupo.value = data!.consCupo.toString();
+      fechNaci.value = data.fechNaci.toString();
+      numeDias.value = data.numeDias.toString();
       jefeInme.value = data.jefeInme.toString();
       autoEmp1.value = data.autoEmp1.toString();
       autoEmp2.value = data.autoEmp2.toString();
@@ -92,6 +98,7 @@ class CouponController extends GetxController {
       urlCita.value = data.urlCita.toString();
       urlIngr.value = data.urlIngr.toString();
       urlSali.value = data.urlSali.toString();
+      await changePosi(numeDias.value);
       changeIsLoading(false);
     } catch (error) {
       changeIsLoading(false);
@@ -126,5 +133,32 @@ class CouponController extends GetxController {
 
   void changeCantCupo(int data) {
     cantCupo(data);
+  }
+
+  Future<void> changePosi(String numeDias) async {
+    min.value = int.parse(numeDias) - 1;
+    max.value = 7 - min.value;
+    if (int.parse(numeDias) == 0) {
+      min.value = 6;
+      max.value = 1;
+    }
+  }
+
+  DateTime getDate(String fecha, String t) {
+    DateTime dateTime = DateTime(DateTime.now().year,
+        DateTime.parse(fecha).month, DateTime.parse(fecha).day);
+
+    switch (t) {
+      case 'I':
+        dateTime = dateTime;
+        break;
+      case 'F':
+        dateTime = dateTime.subtract(Duration(days: min.value));
+        break;
+      case 'L':
+        dateTime = dateTime.add(Duration(days: max.value));
+        break;
+    }
+    return dateTime;
   }
 }

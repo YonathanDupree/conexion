@@ -47,6 +47,10 @@ class CalendarController extends GetxController {
       SnackbarUtil().snackbarError(title, message);
     } else {
       try {
+        print(
+          couponController.consCupo.value,
+        );
+        print(fechSoli.value);
         String message = await provider.registerCoupon(
             couponController.consCupo.value,
             couponController.numeIden,
