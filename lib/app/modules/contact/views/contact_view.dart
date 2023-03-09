@@ -14,13 +14,12 @@ class ContactView extends GetView<ContactController> {
       appBar: AppBar(
         iconTheme: const IconThemeData(color: HelperTheme.black),
         backgroundColor: HelperTheme.primary,
-        title: const Text("Contactanos",
-            style: TextStyle(color: HelperTheme.black)),
+        title: const Text("Contactanos", style: HelperTheme.titleBlackMd),
       ),
       body: const Center(
         child: Text("Trabajando el contactanos"),
       ),
-      drawer: MainDrawerWidget(),
+      drawer: const MainDrawerWidget(),
     );
   }
 }

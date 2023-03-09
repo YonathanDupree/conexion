@@ -1,5 +1,4 @@
 import 'package:conexion/app/modules/home/controllers/home_controller.dart';
-import 'package:conexion/app/modules/home/views/widgets/footer_drawer_widget.dart';
 import 'package:conexion/app/modules/home/views/widgets/header_drawer_widget.dart';
 import 'package:conexion/app/ui/themes/helper_theme.dart';
 import 'package:flutter/material.dart';
@@ -64,6 +63,21 @@ class MainDrawerWidget extends StatelessWidget {
               Get.offNamed(Routes.CONTACT);
             },
           ),*/
+          ListTile(
+            title: const Text('Seguros', style: HelperTheme.subTitleLigh),
+            leading: Image.asset('assets/images/ic_seguro.png',
+                width: 25.0,
+                height: 25.0,
+                scale: 1.0,
+                color: HelperTheme.secondary,
+                fit: BoxFit.cover),
+            tileColor:
+                Get.currentRoute == Routes.SURE ? HelperTheme.primary : null,
+            onTap: () {
+              //Get.back();
+              Get.offNamed(Routes.SURE);
+            },
+          ),
           ListTile(
             title: Text('exit_exit'.tr, style: HelperTheme.subTitleLigh),
             leading: const Icon(Icons.exit_to_app_outlined,

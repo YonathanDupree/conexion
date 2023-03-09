@@ -26,6 +26,8 @@ import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 import '../modules/status/bindings/status_binding.dart';
 import '../modules/status/views/status_view.dart';
+import '../modules/sure/bindings/sure_binding.dart';
+import '../modules/sure/views/sure_view.dart';
 
 part 'app_routes.dart';
 
@@ -99,6 +101,11 @@ class AppPages {
       name: _Paths.RESERVE,
       page: () => const ReserveView(),
       binding: ReserveBinding(),
+    ),
+    GetPage(
+      name: _Paths.SURE,
+      page: () => const SureView(),
+      binding: SureBinding(),
     ),
   ];
 }

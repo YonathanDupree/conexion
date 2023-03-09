@@ -34,7 +34,7 @@ class ReserveView extends GetView<HomeController> {
               appBar: AppBar(
                 iconTheme: const IconThemeData(color: HelperTheme.black),
                 title: Text('specialist_reserve'.tr,
-                    style: const TextStyle(color: Colors.black)),
+                    style: HelperTheme.titleBlackMd),
                 backgroundColor: HelperTheme.primary,
               ),
               body: Column(

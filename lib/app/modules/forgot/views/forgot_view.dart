@@ -14,8 +14,7 @@ class ForgotView extends GetView<ForgotController> {
       backgroundColor: HelperTheme.white,
       appBar: AppBar(
         iconTheme: const IconThemeData(color: HelperTheme.black),
-        title: Text('forgot_title'.tr),
-        centerTitle: true,
+        title: Text('forgot_title'.tr, style: HelperTheme.titleBlackMd),
         backgroundColor: HelperTheme.primary,
       ),
       body: Center(

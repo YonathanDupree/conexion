@@ -225,6 +225,13 @@ class HelperTheme {
     letterSpacing: 0.18,
     color: black,
   );
+  static const TextStyle labelSecondaryLg = TextStyle(
+    fontFamily: fontName,
+    fontWeight: FontWeight.w400,
+    fontSize: 18,
+    letterSpacing: 0.18,
+    color: secondary,
+  );
   static const TextStyle labelBlackLgUnder = TextStyle(
     fontFamily: fontName,
     fontWeight: FontWeight.bold,
