@@ -18,6 +18,7 @@ abstract class Routes {
   static const PSYCHOLOGIST = _Paths.PSYCHOLOGIST;
   static const RESERVE = _Paths.RESERVE;
   static const SURE = _Paths.SURE;
+  static const SECTION = _Paths.SECTION;
 }
 
 abstract class _Paths {
@@ -37,4 +38,5 @@ abstract class _Paths {
   static const PSYCHOLOGIST = '/psychologist';
   static const RESERVE = '/reserve';
   static const SURE = '/sure';
+  static const SECTION = '/section';
 }

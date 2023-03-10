@@ -22,6 +22,8 @@ import '../modules/request/bindings/request_binding.dart';
 import '../modules/request/views/request_view.dart';
 import '../modules/reserve/bindings/reserve_binding.dart';
 import '../modules/reserve/views/reserve_view.dart';
+import '../modules/section/bindings/section_binding.dart';
+import '../modules/section/views/section_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 import '../modules/status/bindings/status_binding.dart';
@@ -106,6 +108,11 @@ class AppPages {
       name: _Paths.SURE,
       page: () => const SureView(),
       binding: SureBinding(),
+    ),
+    GetPage(
+      name: _Paths.SECTION,
+      page: () => const SectionView(),
+      binding: SectionBinding(),
     ),
   ];
 }

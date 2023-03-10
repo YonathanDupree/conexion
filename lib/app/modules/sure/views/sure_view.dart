@@ -85,7 +85,9 @@ class SureView extends GetView<SureController> {
                               backgroundImage: AssetImage(
                                   'assets/icons/${controller.section[index].drawIcon.toString()}')),
                           onTap: () async {
-                            //_launchUrl(_ListUrlsSubs![index]);
+                            controller.goToSure(
+                                controller.section[index].nombSecc.toString(),
+                                controller.section[index].drawPort.toString());
                           }),
                     ),
                   )),
