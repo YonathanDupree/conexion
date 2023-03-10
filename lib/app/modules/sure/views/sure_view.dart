@@ -44,7 +44,7 @@ class SureView extends GetView<SureController> {
                   color: HelperTheme.primary,
                   borderRadius: BorderRadius.horizontal(
                     left: Radius.circular(0),
-                    right: Radius.circular(20),
+                    right: Radius.circular(15),
                   ),
                 ),
                 child: const Padding(

@@ -50,20 +50,12 @@ class SureController extends GetxController {
     section(data);
   }
 
-  void goToSure(String nombSecc, String drawPort) {
-    Get.toNamed(Routes.SECTION);
-    changedata(nombSecc, drawPort);
-    /*switch (nombSecc) {
-      case value:
-        Get.toNamed(Routes.PSYCHOLOGIST);
-        break;
-      case value:
-        Get.toNamed(Routes.PSYCHOLOGIST);
-        break;
-    }*/
+  Future<void> goToSure(String n, String d) async {
+    await changedata(n, d);
+    Get.toNamed(Routes.SUBSECTION);
   }
 
-  void changedata(String n, String d) {
+  Future<void> changedata(String n, String d) async {
     nombSecc.value = n;
     drawPort.value = d;
   }

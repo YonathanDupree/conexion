@@ -19,6 +19,7 @@ abstract class Routes {
   static const RESERVE = _Paths.RESERVE;
   static const SURE = _Paths.SURE;
   static const SECTION = _Paths.SECTION;
+  static const SUBSECTION = _Paths.SUBSECTION;
 }
 
 abstract class _Paths {
@@ -39,4 +40,5 @@ abstract class _Paths {
   static const RESERVE = '/reserve';
   static const SURE = '/sure';
   static const SECTION = '/section';
+  static const SUBSECTION = '/subsection';
 }
